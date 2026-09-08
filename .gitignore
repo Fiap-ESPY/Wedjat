@@ -1,0 +1,13 @@
+# Dados de transcrição podem ser grandes ou sensíveis e não devem ir para o Git.
+ANON_transcricao.json
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Artefatos locais do Python.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+

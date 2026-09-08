@@ -1,0 +1,9 @@
+{
+  "input_records": 1174,
+  "output_meetings": 1126,
+  "exact_duplicates_removed": 48,
+  "total_transcript_characters": 44055895,
+  "total_speaker_turns": 334763,
+  "shortest_transcript_characters": 304,
+  "longest_transcript_characters": 185575
+}

@@ -1,0 +1,15 @@
+interface:
+  display_name: Wedjat Project Context
+  short_description: Contexto técnico do Wedjat para NLP, BERTimbau, chunks e Sprint
+    3.
+  default_prompt: Use o contexto do projeto Wedjat, inspecione o repositório como
+    fonte de verdade e execute a tarefa solicitada preservando a arquitetura atual.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
