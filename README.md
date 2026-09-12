@@ -1,231 +1,172 @@
 # Wedjat
 
-O Wedjat transforma transcrições extensas de reuniões em dados preparados para
-experimentos de classificação e extração de insights de negócio.
+Wedjat é uma ferramenta de inteligência comercial para analisar transcrições de
+reuniões, identificar possíveis oportunidades de negócio e relacionar as
+necessidades encontradas com produtos, conceitos e evidências da base de
+conhecimento TOTVS.
 
-## Fluxo em notebooks
+O projeto combina classificação supervisionada com RAG (*Retrieval-Augmented
+Generation*). Atualmente, a saída final é estruturada e fundamentada em fontes;
+o sistema ainda não gera respostas livres com um modelo de linguagem.
 
-O desenvolvimento é centralizado em notebooks executáveis e documentados.
+## O que a ferramenta faz
 
-### 01 — Limpeza e entendimento das reuniões
+A versão atual consegue:
 
-`notebooks/01_data_understanding.ipynb` contém o código completo que:
+- limpar e validar transcrições anonimizadas;
+- remover reuniões duplicadas;
+- dividir transcrições longas em chunks compatíveis com transformers;
+- detectar possíveis oportunidades comerciais em cada chunk;
+- agregar os resultados no nível da reunião;
+- recuperar produtos, dores, sinais e comparações na base TOTVS;
+- devolver nível de evidência, política de uso e URLs das fontes;
+- impedir que documentos sem fonte sustentem afirmações factuais;
+- manter hipóteses explicitamente separadas de fatos;
+- produzir relatórios sem salvar o texto das transcrições nas previsões finais.
 
-1. lê o arquivo NDJSON em streaming, sem carregar todas as transcrições na memória;
-2. valida `ID_MEETING` e `ANON_TRANSCRICAO`;
-3. normaliza apenas espaços e quebras de linha, sem remover palavras;
-4. remove duplicatas exatas pelo identificador da reunião;
-5. interrompe o processamento se um mesmo ID possuir conteúdos diferentes;
-6. acrescenta contagens de caracteres e turnos de locutor;
-7. gera um resumo sem copiar transcrições para logs ou relatórios;
-8. apresenta o esquema e estatísticas agregadas para orientar o chunking.
+## Como funciona
 
-Saídas:
+```text
+Transcrição anonimizada
+        ↓
+Limpeza e deduplicação
+        ↓
+Chunking com tokenizer BERTimbau
+        ↓
+Classificação de oportunidade por chunk
+        ↓
+Agregação e detecção de contexto misto por reunião
+        ↓
+Busca semântica na base TOTVS com multilingual-e5-small
+        ↓
+Insight estruturado + produto + evidência + fontes
+```
 
-- `data/processed/meetings.jsonl`: uma reunião única por linha;
-- `reports/metrics/data_preparation_summary.json`: auditoria numérica do processo.
+## Modelos e estratégias avaliados
 
-### 02 — Base de conhecimento TOTVS
+Para a classificação de oportunidade foram comparados:
 
-`notebooks/02_rag_knowledge_base.ipynb` carrega e valida a base já convertida
-em `data/knowledge_base/totvs_rag_kb_v1.json`, audita sua estrutura e executa
-uma busca lexical mínima que servirá como baseline para o RAG.
+- TF-IDF + Regressão Logística;
+- BERTimbau com fine-tuning.
 
-### 03 — Tokenização e chunking
+O BERTimbau foi selecionado como modelo provisório por apresentar melhor
+desempenho equilibrado na pseudo-validação. O baseline lexical continua sendo
+uma referência barata e obteve o maior recall nesse experimento.
 
-`notebooks/03_tokenization_and_chunking.ipynb` usa o tokenizer do
-`neuralmind/bert-base-portuguese-cased` para criar janelas de até 510 tokens de
-conteúdo, com sobreposição-alvo de 64 tokens e limites em palavras completas.
-Cada chunk preserva reunião, ordem, offsets de caracteres e locutores.
+Para a recuperação da base foram comparados:
 
-Saídas:
+- busca lexical BM25 com aliases;
+- embeddings do BERTimbau base;
+- recuperação híbrida;
+- `multilingual-e5-small`, especializado em busca semântica.
 
-- `data/processed/chunks_bertimbau.jsonl`: chunks com texto, ignorados pelo Git;
-- `reports/metrics/chunking_summary.json`: auditoria agregada do chunking.
+O E5 foi o melhor retriever no conjunto inicial de 32 consultas, com Recall@5
+de 98,44%, Hit@5 de 100%, MRR de 92,19% e nDCG@5 de 93,47%.
 
-### 04 — Alvo supervisionado e BERTimbau
+Essas métricas são experimentais. O conjunto de consultas foi construído a
+partir da própria base, e o classificador ainda foi treinado com pseudo-rótulos.
+Os números não representam precisão comprovada em produção.
 
-`notebooks/04_target_and_bertimbau.ipynb` define oportunidade comercial como
-primeiro alvo binário, documenta o guia inicial de anotação e demonstra com
-textos sintéticos como o BERTimbau tokeniza e representará os chunks. O
-notebook também comprova que os dados atuais ainda não possuem rótulos.
+## Estado atual
 
-### 05 — Supervisão fraca e split seguro
+O pipeline completo já processa:
 
-`notebooks/05_weak_supervision_and_split.ipynb` combina um rotulador por regras
-apoiado pelo RAG com um rotulador semântico por protótipos do BERTimbau. Somente
-as concordâncias são salvas como pseudo-rótulos; previsões automáticas não são
-tratadas como verdade-terreno.
+- 1.174 registros de entrada;
+- 1.126 reuniões únicas após remover 48 duplicatas;
+- 29.972 chunks;
+- 107 documentos na base de conhecimento TOTVS;
+- 29 grupos de aliases de produtos, módulos e concorrentes.
 
-Na primeira execução foram analisados 3.000 chunks das 1.126 reuniões e gerados
-906 pseudo-rótulos: 376 de oportunidade e 530 de não oportunidade. A divisão de
-desenvolvimento usa 679 desses pseudo-rótulos, com 388 reuniões no treino e 98
-na validação. Uma fila cega com 150 chunks de 150 reuniões reservadas foi criada
-para auditoria humana. Não existe vazamento entre treino, validação e auditoria.
+A integração final gera
+`data/processed/meeting_commercial_insights.jsonl`, contendo apenas IDs,
+probabilidades, documentos recuperados, produtos, categorias, políticas de
+grounding e fontes.
 
-Saídas:
+A aplicação completa marcou muitas reuniões como candidatas e encontrou grande
+quantidade de contexto misto. Isso indica que os limiares e a agregação precisam
+ser calibrados com reuniões rotuladas por pessoas antes de qualquer uso real.
 
-- `data/processed/pseudo_labels_opportunity.jsonl`: dados de desenvolvimento;
-- `data/processed/annotation_queue_opportunity.jsonl`: fila para rótulos humanos;
-- `reports/metrics/weak_supervision_summary.json`: resultados agregados.
+## Estrutura do projeto
 
-### 06 — Baseline TF-IDF + Regressão Logística
+```text
+Wedjat/
+├── data/
+│   ├── raw/                 # transcrições anonimizadas
+│   ├── knowledge_base/      # base TOTVS, aliases e consultas de avaliação
+│   └── processed/           # artefatos gerados localmente
+├── notebooks/               # pipeline completo, numerado de 01 a 11
+├── reports/
+│   ├── figures/             # gráficos e matrizes de confusão
+│   └── metrics/             # métricas agregadas dos experimentos
+├── COLAB_README.md           # instruções específicas para Google Colab
+├── O_QUE_FIZEMOS_NO_PROJETO.md
+├── TODO.md
+└── requirements.txt
+```
 
-`notebooks/06_baseline_tfidf_logreg.ipynb` treina o baseline no split agrupado
-do notebook 05. O modelo usa unigramas e bigramas, `class_weight=balanced` e
-limiar 0,5. O vocabulário é ajustado somente nos 539 chunks de treino e avaliado
-em 140 chunks de 98 reuniões exclusivas.
+O histórico técnico detalhado, com todas as decisões e resultados por notebook,
+está em [O_QUE_FIZEMOS_NO_PROJETO.md](O_QUE_FIZEMOS_NO_PROJETO.md).
 
-Contra os pseudo-rótulos, o baseline obteve accuracy de 95,71%, precision de
-90,63%, recall de 100% e F1 de 95,08% para oportunidade. A matriz de confusão
-foi `[[76, 6], [0, 58]]`. Esses valores provavelmente são otimistas porque parte
-dos pseudo-rótulos também foi criada com sinais lexicais; eles não substituem a
-avaliação humana.
+## Como executar
 
-Saídas:
+### Google Colab
 
-- `reports/metrics/baseline_tfidf_logreg_metrics.json`: métricas completas;
-- `reports/figures/baseline_tfidf_logreg_confusion_matrix.png`: matriz;
-- `data/processed/baseline_tfidf_logreg_validation_predictions.jsonl`: previsões;
-- `data/processed/baseline_tfidf_logreg_errors.jsonl`: erros sem transcrições;
-- `data/processed/baseline_tfidf_logreg.joblib`: modelo local não versionado.
+Use o arquivo `Wedjat_Entrega_Colab.zip` e siga as instruções de
+[COLAB_README.md](COLAB_README.md). Ative um runtime com GPU e execute os
+notebooks de 01 a 11 na ordem numérica.
 
-### 07 — Fine-tuning do BERTimbau
+### Ambiente local
 
-`notebooks/07_bertimbau_finetuning.ipynb` ajusta o checkpoint
-`neuralmind/bert-base-portuguese-cased` no mesmo split do baseline. O treino usa
-512 tokens, batch físico 4, acumulação de gradiente 2, FP16, pesos de classe,
-AdamW e três épocas. Assim, cada entrada preserva o limite completo definido no
-chunking.
+Recomenda-se Python 3.12 e uma GPU CUDA para os notebooks do BERTimbau.
 
-O melhor checkpoint foi o da terceira época. Contra os pseudo-rótulos, obteve
-accuracy de 97,86%, precision de 96,61%, recall de 98,28% e F1 de 97,44% para
-oportunidade. A matriz foi `[[80, 2], [1, 57]]`. Na RTX 3050, o treinamento
-levou aproximadamente 104 segundos e atingiu pico de 2,14 GB de VRAM.
+```bash
+python -m venv .venv
+```
 
-Saídas:
+Ative o ambiente virtual, instale uma versão do PyTorch apropriada para sua GPU
+e depois execute:
 
-- `reports/metrics/bertimbau_finetuning_metrics.json`: configuração e métricas;
-- `reports/figures/bertimbau_confusion_matrix.png`: matriz de confusão;
-- `data/processed/bertimbau_opportunity_best/`: melhor checkpoint local;
-- `data/processed/bertimbau_validation_predictions.jsonl`: previsões;
-- `data/processed/bertimbau_validation_errors.jsonl`: erros sem transcrições.
+```bash
+pip install -r requirements.txt
+jupyter notebook
+```
 
-Esses resultados permitem a comparação técnica com o baseline, mas continuam
-sujeitos ao viés dos pseudo-rótulos e não substituem o conjunto humano final.
+O PyTorch não é fixado no `requirements.txt`, porque a distribuição correta
+depende da versão de CUDA ou do runtime do Colab.
 
-### 08 — Comparação dos modelos
+## Principais artefatos
 
-`notebooks/08_model_comparison.ipynb` valida que os dois modelos foram avaliados
-nos mesmos 140 chunks de 98 reuniões e recalcula todas as métricas de forma
-pareada. Também executa teste exato de McNemar e bootstrap com duas mil
-reamostragens agrupadas por reunião.
+- `reports/metrics/model_comparison.json`: comparação dos classificadores;
+- `reports/metrics/rag_retrieval_evaluation.json`: avaliação inicial do RAG;
+- `reports/metrics/sentence_embeddings_retrieval.json`: avaliação do E5;
+- `reports/metrics/final_integration_summary.json`: resumo do pipeline completo;
+- `data/processed/meeting_commercial_insights.jsonl`: resultado por reunião.
 
-O BERTimbau venceu em accuracy, precision, F1 de oportunidade e F1 macro. O
-baseline venceu na métrica principal, recall de oportunidade, por 100% contra
-98,28%. Os modelos acertaram juntos 133 chunks; o baseline acertou sozinho um,
-o BERTimbau acertou sozinho quatro e ambos erraram dois.
+## Privacidade e uso responsável
 
-O teste de McNemar resultou em `p=0,375`, e os intervalos de 95% do bootstrap
-incluem zero para as diferenças de accuracy e F1. Assim, a vantagem observada do
-BERTimbau não é conclusiva nesta amostra.
+As transcrições, mesmo anonimizadas, devem ser tratadas como dados sensíveis.
+Elas e os artefatos processados ficam fora do Git. Não publique o ZIP de entrega,
+não compartilhe o runtime do Colab e mantenha o Google Drive restrito.
 
-Mesmo com essa incerteza, o **BERTimbau foi selecionado como melhor modelo
-provisório do experimento atual**: venceu quatro das cinco métricas, reduziu o
-total de erros de seis para três e obteve Brier score 0,0159 contra 0,1061 do
-baseline. O baseline continua sendo a opção mais barata e venceu no recall.
+O Wedjat deve ser usado como apoio à revisão comercial. Ele não deve tomar
+decisões automáticas sobre clientes, vendedores ou oportunidades enquanto não
+houver avaliação humana representativa, calibração e monitoramento.
 
-Com custo unitário para revisar um falso positivo, o ponto de equilíbrio ocorre
-quando um falso negativo custa quatro revisões: abaixo disso o BERTimbau tem menor
-custo observado; acima disso o baseline tem menor custo. O BERTimbau ocupa cerca
-de 415,54 MB contra 0,69 MB do baseline e exige muito mais treinamento. A seleção
-para produção permanece pendente até a avaliação humana.
+## Próximas funcionalidades
 
-Saídas:
+As próximas evoluções planejadas são:
 
-- `reports/metrics/model_comparison.json`: comparação e decisão provisória;
-- `reports/figures/model_comparison_metrics.png`: métricas lado a lado;
-- `reports/figures/model_comparison_confusion_matrices.png`: matrizes pareadas;
-- `data/processed/model_comparison_disagreements.jsonl`: divergências sem texto.
+1. concluir a anotação humana da fila reservada;
+2. criar um conjunto de teste final exclusivamente humano;
+3. medir precisão real dos pseudo-rotuladores e classificadores;
+4. calibrar limiares e agregação no nível da reunião;
+5. implementar NER para extrair produtos, empresas, dores e concorrentes;
+6. usar entidades extraídas como filtros da recuperação semântica;
+7. separar fatos e inferências dentro de documentos mistos da base;
+8. registrar data de verificação e validade das fontes;
+9. avaliar o pipeline ponta a ponta com reuniões anotadas;
+10. adicionar uma interface para consulta e revisão dos insights;
+11. gerar respostas narrativas com citações verificáveis;
+12. adicionar monitoramento de qualidade, drift e feedback humano.
 
-### 09 — Evolução e avaliação do retrieval do RAG
-
-`notebooks/09_rag_retrieval_evolution.ipynb` compara quatro retrievers sobre 32
-consultas curadas: BM25 com aliases, embeddings do BERTimbau base, fusão híbrida
-por RRF e híbrida com reranking por evidência. A avaliação calcula Recall@1/3/5,
-Hit@1/3/5, MRR e nDCG.
-
-O melhor método foi BM25 com aliases, com Recall@5 de 93,75%, Hit@5 de 96,88%,
-MRR de 76,64% e nDCG@5 de 80,36%. Mean pooling do BERTimbau base obteve
-Recall@5 de 67,19%, mostrando que o encoder genérico não é automaticamente um
-bom modelo de similaridade. A fusão híbrida alcançou Recall@5 de 85,94%; o bônus
-por evidência não melhorou o resultado e não foi escolhido como padrão.
-
-O notebook também audita keywords, aplica 29 grupos de aliases e cria um contrato
-de contexto que transporta URLs, nível de evidência e política de uso. Hipóteses
-devem permanecer hipóteses, e documentos sem fonte não podem sustentar fatos.
-
-Saídas:
-
-- `data/knowledge_base/rag_aliases.json`: aliases versionáveis;
-- `data/knowledge_base/rag_evaluation_queries.json`: conjunto de avaliação;
-- `reports/metrics/rag_retrieval_evaluation.json`: métricas e rankings;
-- `reports/metrics/rag_keyword_audit.json`: auditoria das keywords;
-- `reports/figures/rag_retrieval_comparison.png`: comparação visual;
-- `data/processed/rag_bertimbau_embeddings.npz`: embeddings locais.
-
-### 10 — Embeddings especializados
-
-`notebooks/10_sentence_embeddings_retrieval.ipynb` avalia o encoder
-`intfloat/multilingual-e5-small` com prefixos `query:` e `passage:`, mean pooling
-com máscara e normalização L2. Ele é comparado de forma pareada ao BM25, ao
-BERTimbau base e à fusão BM25 + E5.
-
-O E5 foi o vencedor: Recall@5 98,44%, Hit@5 100%, MRR 92,19% e nDCG@5
-93,47%. O índice tem 384 dimensões e foi gerado na RTX 3050. A fusão com BM25
-empatou em Recall@5, mas teve MRR menor; por isso o E5 isolado passou a ser o
-retriever padrão provisório.
-
-Saídas:
-
-- `reports/metrics/sentence_embeddings_retrieval.json`: métricas e rankings;
-- `reports/figures/sentence_embeddings_retrieval.png`: gráfico comparativo;
-- `data/processed/rag_multilingual_e5_small_embeddings.npz`: índice local.
-
-### 11 — Integração final
-
-`notebooks/11_final_integration.ipynb` executa o classificador BERTimbau nos
-29.972 chunks, agrega os resultados nas 1.126 reuniões e consulta a base TOTVS
-com o E5 vencedor. O resultado por reunião contém probabilidades, índices dos
-chunks de apoio, produtos/categorias, nível de evidência, política de uso e URLs,
-mas nunca salva o texto das transcrições.
-
-A regra operacional provisória exige pelo menos dois chunks com probabilidade
-de oportunidade ≥ 0,80 e densidade mínima de 5% na reunião. Foram geradas 975
-reuniões candidatas, todas com ao menos uma evidência com fonte. Porém 935 também
-possuem chunks fortemente negativos, indicando contexto misto. Essa taxa alta é
-um alerta de calibração: os pseudo-rótulos não permitem estimar precisão real nem
-selecionar o pipeline para produção sem uma avaliação humana no nível da reunião.
-
-Saídas:
-
-- `data/processed/meeting_commercial_insights.jsonl`: insights por reunião sem texto;
-- `reports/metrics/final_integration_summary.json`: cobertura, contratos e limitações.
-
-## GPU local e Google Colab
-
-Os notebooks detectam automaticamente CUDA e usam CPU como fallback. O notebook
-05 foi validado em uma NVIDIA GeForce RTX 3050 de 8 GB com batch 8 e sequências
-de até 512 tokens. No Colab, selecione um ambiente com GPU, abra a raiz do
-projeto e instale as dependências com `pip install -r requirements.txt`.
-
-O PyTorch não fica fixado no arquivo de dependências, pois a distribuição correta
-depende do CUDA local e o Colab já fornece uma versão compatível com seu runtime.
-
-No VS Code, selecione `Wedjat (Python 3.12 CUDA)`. Esse kernel aponta diretamente
-para o Python que contém NumPy, scikit-learn, Transformers e PyTorch com CUDA.
-Não use `Python 3.12 (FIAP)`, pois ele pertence a outro projeto.
-
-Cada notebook possui células Markdown que registram as decisões metodológicas
-antes das células de código correspondentes.
-
+O acompanhamento detalhado das tarefas está em [TODO.md](TODO.md).
