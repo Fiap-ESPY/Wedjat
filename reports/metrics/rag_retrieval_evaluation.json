@@ -1,0 +1,2284 @@
+{
+  "schema_version": "1.0",
+  "knowledge_base": "data\\knowledge_base\\totvs_rag_kb_v1.json",
+  "documents": 107,
+  "evaluation_queries": 32,
+  "query_set_warning": "Conjunto inicial curado a partir da própria base; deve ser revisado por especialista de negócio.",
+  "aliases_file": "data\\knowledge_base\\rag_aliases.json",
+  "alias_groups": 29,
+  "retrievers": {
+    "bm25_aliases": {
+      "description": "BM25 com campos ponderados, stopwords e aliases"
+    },
+    "bertimbau_embeddings": {
+      "description": "Mean pooling do BERTimbau base e similaridade de cosseno"
+    },
+    "hybrid_rrf": {
+      "description": "Fusão BM25 + embeddings por RRF",
+      "rrf_k": 60
+    },
+    "hybrid_evidence_rerank": {
+      "description": "RRF com bônus pequeno por evidência e fontes"
+    }
+  },
+  "metrics": {
+    "bm25_aliases": {
+      "mrr": 0.76640625,
+      "recall@1": 0.625,
+      "hit@1": 0.625,
+      "ndcg@1": 0.625,
+      "recall@3": 0.890625,
+      "hit@3": 0.90625,
+      "ndcg@3": 0.7841297536816085,
+      "recall@5": 0.9375,
+      "hit@5": 0.96875,
+      "ndcg@5": 0.8036313324317286
+    },
+    "bertimbau_embeddings": {
+      "mrr": 0.5557051402571282,
+      "recall@1": 0.4375,
+      "hit@1": 0.4375,
+      "ndcg@1": 0.4375,
+      "recall@3": 0.59375,
+      "hit@3": 0.59375,
+      "ndcg@3": 0.5278996643973242,
+      "recall@5": 0.671875,
+      "hit@5": 0.6875,
+      "ndcg@5": 0.5630690781073047
+    },
+    "hybrid_rrf": {
+      "mrr": 0.6502426242236025,
+      "recall@1": 0.46875,
+      "hit@1": 0.46875,
+      "ndcg@1": 0.46875,
+      "recall@3": 0.796875,
+      "hit@3": 0.8125,
+      "ndcg@3": 0.6657300338198358,
+      "recall@5": 0.859375,
+      "hit@5": 0.875,
+      "ndcg@5": 0.6912778264857088
+    },
+    "hybrid_evidence_rerank": {
+      "mrr": 0.6475297619047619,
+      "recall@1": 0.46875,
+      "hit@1": 0.46875,
+      "ndcg@1": 0.46875,
+      "recall@3": 0.765625,
+      "hit@3": 0.78125,
+      "ndcg@3": 0.6501050338198358,
+      "recall@5": 0.859375,
+      "hit@5": 0.875,
+      "ndcg@5": 0.6891114689255022
+    }
+  },
+  "best_retriever_by_recall5_then_mrr": "bm25_aliases",
+  "query_details": {
+    "bm25_aliases": [
+      {
+        "query_id": "Q001",
+        "expected_ids": [
+          "TOTVS-PAIN-001"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-001",
+          "TOTVS-PAIN-010",
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-SIGNAL-007"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q002",
+        "expected_ids": [
+          "TOTVS-PAIN-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-002",
+          "TOTVS-SIGNAL-001",
+          "TOTVS-PAIN-011",
+          "TOTVS-GLOSS-017",
+          "TOTVS-PROD-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q003",
+        "expected_ids": [
+          "TOTVS-PAIN-003"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-TAX-001",
+          "TOTVS-PAIN-015",
+          "TOTVS-PAIN-003",
+          "TOTVS-PROD-028",
+          "TOTVS-GLOSS-008"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q004",
+        "expected_ids": [
+          "TOTVS-PAIN-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-004",
+          "TOTVS-TAX-001",
+          "TOTVS-PROD-008",
+          "TOTVS-CONC-006",
+          "TOTVS-PROD-007"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q005",
+        "expected_ids": [
+          "TOTVS-PAIN-005"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-020",
+          "TOTVS-PAIN-005",
+          "TOTVS-GLOSS-002",
+          "TOTVS-SIGNAL-010",
+          "TOTVS-PAIN-016"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q006",
+        "expected_ids": [
+          "TOTVS-PAIN-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-006",
+          "TOTVS-PROD-021",
+          "TOTVS-PROD-020",
+          "TOTVS-PROD-024",
+          "TOTVS-PROD-022"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q007",
+        "expected_ids": [
+          "TOTVS-PAIN-007"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-007",
+          "TOTVS-PROD-023",
+          "TOTVS-PROD-020",
+          "TOTVS-PROD-022",
+          "TOTVS-SIGNAL-008"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q008",
+        "expected_ids": [
+          "TOTVS-PAIN-008"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-015",
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-008",
+          "TOTVS-PROD-019",
+          "TOTVS-GLOSS-024"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q009",
+        "expected_ids": [
+          "TOTVS-PAIN-009"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-009",
+          "TOTVS-PROD-019",
+          "TOTVS-PROD-001",
+          "TOTVS-PROD-002",
+          "TOTVS-ECOSSISTEMA-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q010",
+        "expected_ids": [
+          "TOTVS-PAIN-010"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-GLOSS-025",
+          "TOTVS-PAIN-010",
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-PROD-026"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q011",
+        "expected_ids": [
+          "TOTVS-PAIN-011"
+        ],
+        "first_relevant_rank": 5,
+        "top5_ids": [
+          "TOTVS-GLOSS-026",
+          "TOTVS-PROD-013",
+          "TOTVS-PROD-014",
+          "TOTVS-GLOSS-027",
+          "TOTVS-PAIN-011"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q012",
+        "expected_ids": [
+          "TOTVS-PAIN-012"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-GLOSS-014",
+          "TOTVS-PAIN-012",
+          "TOTVS-SIGNAL-004",
+          "TOTVS-GLOSS-015",
+          "TOTVS-PAIN-002"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q013",
+        "expected_ids": [
+          "TOTVS-PAIN-013"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-013",
+          "TOTVS-GLOSS-016",
+          "TOTVS-SIGNAL-002",
+          "TOTVS-TAX-001",
+          "TOTVS-SIGNAL-004"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q014",
+        "expected_ids": [
+          "TOTVS-PAIN-014"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-014",
+          "TOTVS-PROD-026",
+          "TOTVS-CONC-009",
+          "TOTVS-GLOSS-016",
+          "TOTVS-PAIN-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q015",
+        "expected_ids": [
+          "TOTVS-PAIN-015"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-029",
+          "TOTVS-PAIN-015",
+          "TOTVS-PROD-028",
+          "TOTVS-PROD-027",
+          "TOTVS-PROD-030"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q016",
+        "expected_ids": [
+          "TOTVS-PAIN-016"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-031",
+          "TOTVS-PAIN-016",
+          "TOTVS-PROD-027",
+          "TOTVS-GLOSS-028",
+          "TOTVS-TAX-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q017",
+        "expected_ids": [
+          "TOTVS-PAIN-017"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-GLOSS-005",
+          "TOTVS-PROD-018",
+          "TOTVS-PAIN-017",
+          "TOTVS-GLOSS-019",
+          "TOTVS-PROD-004"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q018",
+        "expected_ids": [
+          "TOTVS-PAIN-018"
+        ],
+        "first_relevant_rank": 8,
+        "top5_ids": [
+          "TOTVS-PROD-016",
+          "TOTVS-RAG-001",
+          "TOTVS-TAX-001",
+          "TOTVS-GLOSS-001",
+          "TOTVS-PROD-017"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q019",
+        "expected_ids": [
+          "TOTVS-CONC-001"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-001",
+          "TOTVS-PROD-001",
+          "TOTVS-PROD-002",
+          "TOTVS-PROD-005",
+          "TOTVS-COMP-KW-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q020",
+        "expected_ids": [
+          "TOTVS-CONC-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-002",
+          "TOTVS-PROD-001",
+          "TOTVS-PROD-010",
+          "TOTVS-CONC-001",
+          "TOTVS-PROD-013"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q021",
+        "expected_ids": [
+          "TOTVS-CONC-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-003",
+          "TOTVS-COMP-KW-001",
+          "TOTVS-PROD-006",
+          "TOTVS-PROD-004",
+          "TOTVS-PROD-014"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q022",
+        "expected_ids": [
+          "TOTVS-CONC-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-004",
+          "TOTVS-PROD-020",
+          "TOTVS-PROD-022",
+          "TOTVS-PROD-024",
+          "TOTVS-PROD-025"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q023",
+        "expected_ids": [
+          "TOTVS-CONC-005"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-005",
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-022",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-024"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q024",
+        "expected_ids": [
+          "TOTVS-CONC-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-006",
+          "TOTVS-PROD-007",
+          "TOTVS-PROD-008",
+          "TOTVS-PROD-009",
+          "TOTVS-COMP-KW-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q025",
+        "expected_ids": [
+          "TOTVS-CONC-007"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-007",
+          "TOTVS-PROD-007",
+          "TOTVS-PROD-008",
+          "TOTVS-PROD-009",
+          "TOTVS-COMP-KW-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q026",
+        "expected_ids": [
+          "TOTVS-CONC-008"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-021",
+          "TOTVS-CONC-005",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-022"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q027",
+        "expected_ids": [
+          "TOTVS-CONC-009"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-009",
+          "TOTVS-PROD-026",
+          "TOTVS-CONC-010",
+          "TOTVS-COMP-KW-001",
+          "TOTVS-PAIN-014"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q028",
+        "expected_ids": [
+          "TOTVS-CONC-010"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-010",
+          "TOTVS-COMP-KW-001",
+          "TOTVS-CONC-009",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-030"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q029",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-001"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-COMP-ERP-001",
+          "TOTVS-PAIN-001",
+          "TOTVS-GLOSS-003",
+          "TOTVS-GLOSS-007",
+          "TOTVS-GLOSS-020"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q030",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-COMP-ERP-003",
+          "TOTVS-GLOSS-007",
+          "TOTVS-GLOSS-020",
+          "TOTVS-GLOSS-001",
+          "TOTVS-GLOSS-025"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q031",
+        "expected_ids": [
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-001"
+        ],
+        "first_relevant_rank": 5,
+        "top5_ids": [
+          "TOTVS-TAX-001",
+          "TOTVS-GLOSS-012",
+          "TOTVS-PROD-015",
+          "TOTVS-GLOSS-029",
+          "TOTVS-SIGNAL-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.5
+      },
+      {
+        "query_id": "Q032",
+        "expected_ids": [
+          "TOTVS-PAIN-013",
+          "TOTVS-SIGNAL-002"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-CONC-003",
+          "TOTVS-GLOSS-016",
+          "TOTVS-PAIN-013",
+          "TOTVS-PAIN-012",
+          "TOTVS-PROD-027"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 0.5
+      }
+    ],
+    "bertimbau_embeddings": [
+      {
+        "query_id": "Q001",
+        "expected_ids": [
+          "TOTVS-PAIN-001"
+        ],
+        "first_relevant_rank": 27,
+        "top5_ids": [
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-SIGNAL-007",
+          "TOTVS-COMP-ERP-004",
+          "TOTVS-PAIN-010"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q002",
+        "expected_ids": [
+          "TOTVS-PAIN-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-002",
+          "TOTVS-PAIN-008",
+          "TOTVS-PROD-030",
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-015"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q003",
+        "expected_ids": [
+          "TOTVS-PAIN-003"
+        ],
+        "first_relevant_rank": 92,
+        "top5_ids": [
+          "TOTVS-PROD-030",
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-028",
+          "TOTVS-PROD-019",
+          "TOTVS-PROD-012"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q004",
+        "expected_ids": [
+          "TOTVS-PAIN-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-004",
+          "TOTVS-PROD-030",
+          "TOTVS-GLOSS-008",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-014"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q005",
+        "expected_ids": [
+          "TOTVS-PAIN-005"
+        ],
+        "first_relevant_rank": 11,
+        "top5_ids": [
+          "TOTVS-PROD-030",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-014",
+          "TOTVS-COMP-ERP-003"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q006",
+        "expected_ids": [
+          "TOTVS-PAIN-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-006",
+          "TOTVS-PROD-024",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-021",
+          "TOTVS-ECOSSISTEMA-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q007",
+        "expected_ids": [
+          "TOTVS-PAIN-007"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-SIGNAL-008",
+          "TOTVS-PAIN-007",
+          "TOTVS-PROD-023",
+          "TOTVS-PROD-019",
+          "TOTVS-PROD-030"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q008",
+        "expected_ids": [
+          "TOTVS-PAIN-008"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-PROD-019",
+          "TOTVS-PROD-030",
+          "TOTVS-PAIN-008",
+          "TOTVS-PROD-029",
+          "TOTVS-SIGNAL-008"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q009",
+        "expected_ids": [
+          "TOTVS-PAIN-009"
+        ],
+        "first_relevant_rank": 4,
+        "top5_ids": [
+          "TOTVS-PROD-019",
+          "TOTVS-GLOSS-017",
+          "TOTVS-PROD-030",
+          "TOTVS-PAIN-009",
+          "TOTVS-PROD-029"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q010",
+        "expected_ids": [
+          "TOTVS-PAIN-010"
+        ],
+        "first_relevant_rank": 6,
+        "top5_ids": [
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-011",
+          "TOTVS-COMP-ERP-003"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q011",
+        "expected_ids": [
+          "TOTVS-PAIN-011"
+        ],
+        "first_relevant_rank": 6,
+        "top5_ids": [
+          "TOTVS-GLOSS-026",
+          "TOTVS-PROD-014",
+          "TOTVS-PROD-013",
+          "TOTVS-PROD-012",
+          "TOTVS-COMP-ERP-003"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q012",
+        "expected_ids": [
+          "TOTVS-PAIN-012"
+        ],
+        "first_relevant_rank": 7,
+        "top5_ids": [
+          "TOTVS-GLOSS-014",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-SIGNAL-004",
+          "TOTVS-PROD-018",
+          "TOTVS-CONC-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q013",
+        "expected_ids": [
+          "TOTVS-PAIN-013"
+        ],
+        "first_relevant_rank": 19,
+        "top5_ids": [
+          "TOTVS-PROD-018",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-COMP-ERP-002",
+          "TOTVS-COMP-ERP-001",
+          "TOTVS-COMP-ERP-003"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q014",
+        "expected_ids": [
+          "TOTVS-PAIN-014"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-026",
+          "TOTVS-PAIN-014",
+          "TOTVS-PAIN-016",
+          "TOTVS-CONC-009",
+          "TOTVS-ECOSSISTEMA-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q015",
+        "expected_ids": [
+          "TOTVS-PAIN-015"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-028",
+          "TOTVS-PAIN-015",
+          "TOTVS-PROD-027",
+          "TOTVS-PROD-019"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q016",
+        "expected_ids": [
+          "TOTVS-PAIN-016"
+        ],
+        "first_relevant_rank": 4,
+        "top5_ids": [
+          "TOTVS-PROD-030",
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-031",
+          "TOTVS-PAIN-016",
+          "TOTVS-PROD-028"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q017",
+        "expected_ids": [
+          "TOTVS-PAIN-017"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-018",
+          "TOTVS-PAIN-017",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-COMP-ERP-002",
+          "TOTVS-COMP-ERP-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q018",
+        "expected_ids": [
+          "TOTVS-PAIN-018"
+        ],
+        "first_relevant_rank": 39,
+        "top5_ids": [
+          "TOTVS-PROD-016",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-GLOSS-014",
+          "TOTVS-PROD-018",
+          "TOTVS-PROD-024"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q019",
+        "expected_ids": [
+          "TOTVS-CONC-001"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-001",
+          "TOTVS-GLOSS-021",
+          "TOTVS-CONC-002",
+          "TOTVS-PROD-001",
+          "TOTVS-GLOSS-020"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q020",
+        "expected_ids": [
+          "TOTVS-CONC-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-002",
+          "TOTVS-GLOSS-021",
+          "TOTVS-GLOSS-020",
+          "TOTVS-COMP-ERP-004",
+          "TOTVS-PROD-010"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q021",
+        "expected_ids": [
+          "TOTVS-CONC-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-003",
+          "TOTVS-GLOSS-016",
+          "TOTVS-GLOSS-002",
+          "TOTVS-GLOSS-018",
+          "TOTVS-PROD-002"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q022",
+        "expected_ids": [
+          "TOTVS-CONC-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-004",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-020",
+          "TOTVS-PROD-022",
+          "TOTVS-GLOSS-002"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q023",
+        "expected_ids": [
+          "TOTVS-CONC-005"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-005",
+          "TOTVS-PROD-022",
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-020"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q024",
+        "expected_ids": [
+          "TOTVS-CONC-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-006",
+          "TOTVS-CONC-007",
+          "TOTVS-PROD-008",
+          "TOTVS-PROD-007",
+          "TOTVS-GLOSS-003"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q025",
+        "expected_ids": [
+          "TOTVS-CONC-007"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-007",
+          "TOTVS-PROD-008",
+          "TOTVS-GLOSS-003",
+          "TOTVS-GLOSS-022",
+          "TOTVS-PROD-007"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q026",
+        "expected_ids": [
+          "TOTVS-CONC-008"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-022",
+          "TOTVS-PROD-021",
+          "TOTVS-CONC-005",
+          "TOTVS-PROD-020"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q027",
+        "expected_ids": [
+          "TOTVS-CONC-009"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-009",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-024",
+          "TOTVS-CONC-010",
+          "TOTVS-CONC-008"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q028",
+        "expected_ids": [
+          "TOTVS-CONC-010"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-010",
+          "TOTVS-CONC-003",
+          "TOTVS-CONC-009",
+          "TOTVS-COMP-KW-001",
+          "TOTVS-PROD-004"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q029",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-001"
+        ],
+        "first_relevant_rank": 8,
+        "top5_ids": [
+          "TOTVS-GLOSS-020",
+          "TOTVS-GLOSS-003",
+          "TOTVS-GLOSS-007",
+          "TOTVS-PAIN-001",
+          "TOTVS-GLOSS-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q030",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-COMP-ERP-003",
+          "TOTVS-PROD-004",
+          "TOTVS-GLOSS-025",
+          "TOTVS-GLOSS-020",
+          "TOTVS-GLOSS-007"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q031",
+        "expected_ids": [
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-001"
+        ],
+        "first_relevant_rank": 4,
+        "top5_ids": [
+          "TOTVS-PROD-015",
+          "TOTVS-PROD-019",
+          "TOTVS-PROD-018",
+          "TOTVS-PAIN-008",
+          "TOTVS-COMP-ERP-003"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.5
+      },
+      {
+        "query_id": "Q032",
+        "expected_ids": [
+          "TOTVS-PAIN-013",
+          "TOTVS-SIGNAL-002"
+        ],
+        "first_relevant_rank": 21,
+        "top5_ids": [
+          "TOTVS-GLOSS-017",
+          "TOTVS-COMP-ERP-001",
+          "TOTVS-PAIN-014",
+          "TOTVS-PAIN-017",
+          "TOTVS-PAIN-016"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      }
+    ],
+    "hybrid_rrf": [
+      {
+        "query_id": "Q001",
+        "expected_ids": [
+          "TOTVS-PAIN-001"
+        ],
+        "first_relevant_rank": 7,
+        "top5_ids": [
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-PAIN-010",
+          "TOTVS-SIGNAL-007",
+          "TOTVS-PROD-026"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q002",
+        "expected_ids": [
+          "TOTVS-PAIN-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-002",
+          "TOTVS-PAIN-011",
+          "TOTVS-GLOSS-017",
+          "TOTVS-GLOSS-026",
+          "TOTVS-SIGNAL-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q003",
+        "expected_ids": [
+          "TOTVS-PAIN-003"
+        ],
+        "first_relevant_rank": 23,
+        "top5_ids": [
+          "TOTVS-PROD-028",
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-030",
+          "TOTVS-PAIN-015",
+          "TOTVS-GLOSS-008"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q004",
+        "expected_ids": [
+          "TOTVS-PAIN-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-004",
+          "TOTVS-PROD-008",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-007",
+          "TOTVS-PROD-012"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q005",
+        "expected_ids": [
+          "TOTVS-PAIN-005"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-030",
+          "TOTVS-PAIN-005",
+          "TOTVS-PROD-024",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-012"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q006",
+        "expected_ids": [
+          "TOTVS-PAIN-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-006",
+          "TOTVS-PROD-021",
+          "TOTVS-PROD-024",
+          "TOTVS-PROD-020",
+          "TOTVS-CONC-005"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q007",
+        "expected_ids": [
+          "TOTVS-PAIN-007"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-007",
+          "TOTVS-PROD-023",
+          "TOTVS-SIGNAL-008",
+          "TOTVS-PROD-019",
+          "TOTVS-PROD-030"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q008",
+        "expected_ids": [
+          "TOTVS-PAIN-008"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-019",
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-008",
+          "TOTVS-PROD-015",
+          "TOTVS-PAIN-009"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q009",
+        "expected_ids": [
+          "TOTVS-PAIN-009"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-019",
+          "TOTVS-PAIN-009",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-PROD-030",
+          "TOTVS-PROD-015"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q010",
+        "expected_ids": [
+          "TOTVS-PAIN-010"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-PAIN-010",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-011"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q011",
+        "expected_ids": [
+          "TOTVS-PAIN-011"
+        ],
+        "first_relevant_rank": 4,
+        "top5_ids": [
+          "TOTVS-GLOSS-026",
+          "TOTVS-PROD-013",
+          "TOTVS-PROD-014",
+          "TOTVS-PAIN-011",
+          "TOTVS-GLOSS-027"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q012",
+        "expected_ids": [
+          "TOTVS-PAIN-012"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-GLOSS-014",
+          "TOTVS-SIGNAL-004",
+          "TOTVS-PAIN-012",
+          "TOTVS-GLOSS-015",
+          "TOTVS-PAIN-002"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q013",
+        "expected_ids": [
+          "TOTVS-PAIN-013"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-SIGNAL-002",
+          "TOTVS-PAIN-013",
+          "TOTVS-GLOSS-016",
+          "TOTVS-GLOSS-017",
+          "TOTVS-PROD-016"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q014",
+        "expected_ids": [
+          "TOTVS-PAIN-014"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-026",
+          "TOTVS-PAIN-014",
+          "TOTVS-CONC-009",
+          "TOTVS-SIGNAL-009",
+          "TOTVS-COMP-ERP-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q015",
+        "expected_ids": [
+          "TOTVS-PAIN-015"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-028",
+          "TOTVS-PAIN-015",
+          "TOTVS-PROD-027",
+          "TOTVS-PROD-030"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q016",
+        "expected_ids": [
+          "TOTVS-PAIN-016"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-031",
+          "TOTVS-PAIN-016",
+          "TOTVS-PROD-027",
+          "TOTVS-GLOSS-028",
+          "TOTVS-PROD-026"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q017",
+        "expected_ids": [
+          "TOTVS-PAIN-017"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-018",
+          "TOTVS-PAIN-017",
+          "TOTVS-GLOSS-005",
+          "TOTVS-PROD-017",
+          "TOTVS-PROD-015"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q018",
+        "expected_ids": [
+          "TOTVS-PAIN-018"
+        ],
+        "first_relevant_rank": 14,
+        "top5_ids": [
+          "TOTVS-PROD-016",
+          "TOTVS-PROD-017",
+          "TOTVS-RAG-001",
+          "TOTVS-GLOSS-014",
+          "TOTVS-ECOSSISTEMA-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q019",
+        "expected_ids": [
+          "TOTVS-CONC-001"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-001",
+          "TOTVS-PROD-001",
+          "TOTVS-GLOSS-021",
+          "TOTVS-CONC-002",
+          "TOTVS-PROD-004"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q020",
+        "expected_ids": [
+          "TOTVS-CONC-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-002",
+          "TOTVS-PROD-010",
+          "TOTVS-PROD-001",
+          "TOTVS-CONC-001",
+          "TOTVS-GLOSS-021"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q021",
+        "expected_ids": [
+          "TOTVS-CONC-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-003",
+          "TOTVS-PROD-002",
+          "TOTVS-PROD-013",
+          "TOTVS-PROD-004",
+          "TOTVS-PROD-014"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q022",
+        "expected_ids": [
+          "TOTVS-CONC-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-004",
+          "TOTVS-PROD-020",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-022",
+          "TOTVS-PROD-024"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q023",
+        "expected_ids": [
+          "TOTVS-CONC-005"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-005",
+          "TOTVS-PROD-022",
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-020"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q024",
+        "expected_ids": [
+          "TOTVS-CONC-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-006",
+          "TOTVS-PROD-007",
+          "TOTVS-PROD-008",
+          "TOTVS-CONC-007",
+          "TOTVS-PROD-009"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q025",
+        "expected_ids": [
+          "TOTVS-CONC-007"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-007",
+          "TOTVS-PROD-008",
+          "TOTVS-PROD-007",
+          "TOTVS-GLOSS-003",
+          "TOTVS-CONC-006"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q026",
+        "expected_ids": [
+          "TOTVS-CONC-008"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-021",
+          "TOTVS-PROD-022",
+          "TOTVS-CONC-005",
+          "TOTVS-PROD-025"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q027",
+        "expected_ids": [
+          "TOTVS-CONC-009"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-009",
+          "TOTVS-PROD-026",
+          "TOTVS-CONC-010",
+          "TOTVS-PROD-024",
+          "TOTVS-CONC-008"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q028",
+        "expected_ids": [
+          "TOTVS-CONC-010"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-010",
+          "TOTVS-COMP-KW-001",
+          "TOTVS-CONC-009",
+          "TOTVS-CONC-003",
+          "TOTVS-PROD-026"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q029",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-001"
+        ],
+        "first_relevant_rank": 5,
+        "top5_ids": [
+          "TOTVS-GLOSS-003",
+          "TOTVS-GLOSS-020",
+          "TOTVS-PAIN-001",
+          "TOTVS-GLOSS-007",
+          "TOTVS-COMP-ERP-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q030",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-COMP-ERP-003",
+          "TOTVS-GLOSS-007",
+          "TOTVS-GLOSS-020",
+          "TOTVS-GLOSS-025",
+          "TOTVS-PROD-004"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q031",
+        "expected_ids": [
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-001"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-015",
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-003",
+          "TOTVS-PROD-028",
+          "TOTVS-GLOSS-029"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 0.5
+      },
+      {
+        "query_id": "Q032",
+        "expected_ids": [
+          "TOTVS-PAIN-013",
+          "TOTVS-SIGNAL-002"
+        ],
+        "first_relevant_rank": 10,
+        "top5_ids": [
+          "TOTVS-GLOSS-017",
+          "TOTVS-COMP-ERP-001",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-PROD-018",
+          "TOTVS-GLOSS-016"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      }
+    ],
+    "hybrid_evidence_rerank": [
+      {
+        "query_id": "Q001",
+        "expected_ids": [
+          "TOTVS-PAIN-001"
+        ],
+        "first_relevant_rank": 7,
+        "top5_ids": [
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-PAIN-010",
+          "TOTVS-SIGNAL-007",
+          "TOTVS-PROD-026"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q002",
+        "expected_ids": [
+          "TOTVS-PAIN-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-002",
+          "TOTVS-PAIN-011",
+          "TOTVS-GLOSS-017",
+          "TOTVS-GLOSS-026",
+          "TOTVS-SIGNAL-001"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q003",
+        "expected_ids": [
+          "TOTVS-PAIN-003"
+        ],
+        "first_relevant_rank": 25,
+        "top5_ids": [
+          "TOTVS-PROD-028",
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-030",
+          "TOTVS-PAIN-015",
+          "TOTVS-GLOSS-008"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q004",
+        "expected_ids": [
+          "TOTVS-PAIN-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-004",
+          "TOTVS-PROD-008",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-007",
+          "TOTVS-PROD-012"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q005",
+        "expected_ids": [
+          "TOTVS-PAIN-005"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-030",
+          "TOTVS-PAIN-005",
+          "TOTVS-PROD-024",
+          "TOTVS-PROD-026",
+          "TOTVS-PROD-012"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q006",
+        "expected_ids": [
+          "TOTVS-PAIN-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-006",
+          "TOTVS-PROD-021",
+          "TOTVS-PROD-024",
+          "TOTVS-PROD-020",
+          "TOTVS-CONC-005"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q007",
+        "expected_ids": [
+          "TOTVS-PAIN-007"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-PAIN-007",
+          "TOTVS-PROD-023",
+          "TOTVS-SIGNAL-008",
+          "TOTVS-PROD-019",
+          "TOTVS-PROD-030"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q008",
+        "expected_ids": [
+          "TOTVS-PAIN-008"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-019",
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-008",
+          "TOTVS-PROD-015",
+          "TOTVS-PAIN-009"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q009",
+        "expected_ids": [
+          "TOTVS-PAIN-009"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-019",
+          "TOTVS-PAIN-009",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-PROD-030",
+          "TOTVS-PROD-015"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q010",
+        "expected_ids": [
+          "TOTVS-PAIN-010"
+        ],
+        "first_relevant_rank": 4,
+        "top5_ids": [
+          "TOTVS-PROD-012",
+          "TOTVS-PROD-010",
+          "TOTVS-PROD-026",
+          "TOTVS-PAIN-010",
+          "TOTVS-PROD-011"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q011",
+        "expected_ids": [
+          "TOTVS-PAIN-011"
+        ],
+        "first_relevant_rank": 4,
+        "top5_ids": [
+          "TOTVS-GLOSS-026",
+          "TOTVS-PROD-013",
+          "TOTVS-PROD-014",
+          "TOTVS-PAIN-011",
+          "TOTVS-GLOSS-027"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q012",
+        "expected_ids": [
+          "TOTVS-PAIN-012"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-GLOSS-014",
+          "TOTVS-SIGNAL-004",
+          "TOTVS-PAIN-012",
+          "TOTVS-GLOSS-015",
+          "TOTVS-PAIN-002"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q013",
+        "expected_ids": [
+          "TOTVS-PAIN-013"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-SIGNAL-002",
+          "TOTVS-PAIN-013",
+          "TOTVS-GLOSS-016",
+          "TOTVS-GLOSS-017",
+          "TOTVS-PROD-016"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q014",
+        "expected_ids": [
+          "TOTVS-PAIN-014"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-026",
+          "TOTVS-PAIN-014",
+          "TOTVS-CONC-009",
+          "TOTVS-COMP-ERP-001",
+          "TOTVS-SIGNAL-009"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q015",
+        "expected_ids": [
+          "TOTVS-PAIN-015"
+        ],
+        "first_relevant_rank": 3,
+        "top5_ids": [
+          "TOTVS-PROD-029",
+          "TOTVS-PROD-028",
+          "TOTVS-PAIN-015",
+          "TOTVS-PROD-027",
+          "TOTVS-PROD-030"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q016",
+        "expected_ids": [
+          "TOTVS-PAIN-016"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-031",
+          "TOTVS-PAIN-016",
+          "TOTVS-PROD-027",
+          "TOTVS-GLOSS-028",
+          "TOTVS-PROD-026"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q017",
+        "expected_ids": [
+          "TOTVS-PAIN-017"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-018",
+          "TOTVS-PAIN-017",
+          "TOTVS-GLOSS-005",
+          "TOTVS-PROD-017",
+          "TOTVS-PROD-015"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q018",
+        "expected_ids": [
+          "TOTVS-PAIN-018"
+        ],
+        "first_relevant_rank": 14,
+        "top5_ids": [
+          "TOTVS-PROD-016",
+          "TOTVS-PROD-017",
+          "TOTVS-RAG-001",
+          "TOTVS-GLOSS-014",
+          "TOTVS-ECOSSISTEMA-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      },
+      {
+        "query_id": "Q019",
+        "expected_ids": [
+          "TOTVS-CONC-001"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-001",
+          "TOTVS-PROD-001",
+          "TOTVS-GLOSS-021",
+          "TOTVS-CONC-002",
+          "TOTVS-PROD-004"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q020",
+        "expected_ids": [
+          "TOTVS-CONC-002"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-002",
+          "TOTVS-PROD-010",
+          "TOTVS-PROD-001",
+          "TOTVS-CONC-001",
+          "TOTVS-GLOSS-021"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q021",
+        "expected_ids": [
+          "TOTVS-CONC-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-003",
+          "TOTVS-PROD-002",
+          "TOTVS-PROD-013",
+          "TOTVS-PROD-004",
+          "TOTVS-PROD-014"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q022",
+        "expected_ids": [
+          "TOTVS-CONC-004"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-004",
+          "TOTVS-PROD-020",
+          "TOTVS-PROD-022",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-024"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q023",
+        "expected_ids": [
+          "TOTVS-CONC-005"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-005",
+          "TOTVS-PROD-022",
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-025",
+          "TOTVS-PROD-020"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q024",
+        "expected_ids": [
+          "TOTVS-CONC-006"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-006",
+          "TOTVS-PROD-007",
+          "TOTVS-PROD-008",
+          "TOTVS-CONC-007",
+          "TOTVS-PROD-009"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q025",
+        "expected_ids": [
+          "TOTVS-CONC-007"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-007",
+          "TOTVS-PROD-008",
+          "TOTVS-PROD-007",
+          "TOTVS-GLOSS-003",
+          "TOTVS-CONC-006"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q026",
+        "expected_ids": [
+          "TOTVS-CONC-008"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-008",
+          "TOTVS-PROD-021",
+          "TOTVS-PROD-022",
+          "TOTVS-CONC-005",
+          "TOTVS-PROD-025"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q027",
+        "expected_ids": [
+          "TOTVS-CONC-009"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-009",
+          "TOTVS-PROD-026",
+          "TOTVS-CONC-010",
+          "TOTVS-PROD-024",
+          "TOTVS-CONC-008"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q028",
+        "expected_ids": [
+          "TOTVS-CONC-010"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-CONC-010",
+          "TOTVS-CONC-009",
+          "TOTVS-COMP-KW-001",
+          "TOTVS-CONC-003",
+          "TOTVS-PROD-026"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q029",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-001"
+        ],
+        "first_relevant_rank": 5,
+        "top5_ids": [
+          "TOTVS-GLOSS-003",
+          "TOTVS-GLOSS-020",
+          "TOTVS-PAIN-001",
+          "TOTVS-GLOSS-007",
+          "TOTVS-COMP-ERP-001"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q030",
+        "expected_ids": [
+          "TOTVS-COMP-ERP-003"
+        ],
+        "first_relevant_rank": 1,
+        "top5_ids": [
+          "TOTVS-COMP-ERP-003",
+          "TOTVS-GLOSS-007",
+          "TOTVS-GLOSS-020",
+          "TOTVS-GLOSS-025",
+          "TOTVS-PROD-004"
+        ],
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0
+      },
+      {
+        "query_id": "Q031",
+        "expected_ids": [
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-001"
+        ],
+        "first_relevant_rank": 2,
+        "top5_ids": [
+          "TOTVS-PROD-015",
+          "TOTVS-PAIN-008",
+          "TOTVS-SIGNAL-003",
+          "TOTVS-PROD-028",
+          "TOTVS-GLOSS-029"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 0.5
+      },
+      {
+        "query_id": "Q032",
+        "expected_ids": [
+          "TOTVS-PAIN-013",
+          "TOTVS-SIGNAL-002"
+        ],
+        "first_relevant_rank": 10,
+        "top5_ids": [
+          "TOTVS-GLOSS-017",
+          "TOTVS-COMP-ERP-001",
+          "TOTVS-ECOSSISTEMA-001",
+          "TOTVS-PROD-018",
+          "TOTVS-GLOSS-016"
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0
+      }
+    ]
+  },
+  "embedding": {
+    "checkpoint": "neuralmind/bert-base-portuguese-cased",
+    "pooling": "attention-mask mean pooling",
+    "dimensions": 768,
+    "max_length": 512,
+    "device": "cuda",
+    "document_embedding_seconds": 1.2724937000002683,
+    "query_embedding_seconds": 0.1280774000006204
+  },
+  "keyword_audit": "reports\\metrics\\rag_keyword_audit.json",
+  "grounding_contract": {
+    "sources_are_returned": true,
+    "hypotheses_have_explicit_policy": true,
+    "documents_without_sources_cannot_support_facts": true
+  }
+}

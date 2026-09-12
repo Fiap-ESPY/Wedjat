@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "model": "BERTimbau fine-tuned for sequence classification",
+  "checkpoint": "neuralmind/bert-base-portuguese-cased",
+  "target": "oportunidade_comercial_binaria_no_chunk",
+  "evaluation_reference": "pseudo_labels_rule_and_bert_agreement",
+  "warning": "Estas métricas não estimam desempenho real; falta avaliação contra rótulos humanos.",
+  "seed": 42,
+  "threshold": 0.5,
+  "train_chunks": 539,
+  "validation_chunks": 140,
+  "train_meetings": 388,
+  "validation_meetings": 98,
+  "meeting_overlap": 0,
+  "train_label_counts": {
+    "1": 218,
+    "0": 321
+  },
+  "validation_label_counts": {
+    "0": 82,
+    "1": 58
+  },
+  "training_config": {
+    "max_length": 512,
+    "epochs_requested": 3,
+    "best_epoch": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "physical_batch_size": 4,
+    "gradient_accumulation_steps": 2,
+    "effective_batch_size": 8,
+    "warmup_steps": 20,
+    "class_weights": [
+      0.8395638465881348,
+      1.2362384796142578
+    ],
+    "fp16": true,
+    "gradient_checkpointing": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3447258003999467,
+      "validation_loss": 0.12526914833911829,
+      "accuracy": 0.9357142857142857,
+      "precision_oportunidade": 0.8656716417910447,
+      "recall_oportunidade": 1.0,
+      "f1_oportunidade": 0.928,
+      "f1_macro": 0.9349677419354838
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.13424801633819414,
+      "validation_loss": 0.08584724900179676,
+      "accuracy": 0.9714285714285714,
+      "precision_oportunidade": 0.9354838709677419,
+      "recall_oportunidade": 1.0,
+      "f1_oportunidade": 0.9666666666666667,
+      "f1_macro": 0.9708333333333333
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.061574359276679265,
+      "validation_loss": 0.042010027183485885,
+      "accuracy": 0.9785714285714285,
+      "precision_oportunidade": 0.9661016949152542,
+      "recall_oportunidade": 0.9827586206896551,
+      "f1_oportunidade": 0.9743589743589743,
+      "f1_macro": 0.9779770331917571
+    }
+  ],
+  "metrics": {
+    "loss": 0.042010027183485885,
+    "accuracy": 0.9785714285714285,
+    "precision_oportunidade": 0.9661016949152542,
+    "recall_oportunidade": 0.9827586206896551,
+    "f1_oportunidade": 0.9743589743589743,
+    "precision_macro": 0.9768780079514543,
+    "recall_macro": 0.9791841883936081,
+    "f1_macro": 0.9779770331917571,
+    "precision_weighted": 0.978725375900517,
+    "recall_weighted": 0.9785714285714285,
+    "f1_weighted": 0.9785972718488056
+  },
+  "classification_report": {
+    "nao_oportunidade": {
+      "precision": 0.9876543209876543,
+      "recall": 0.975609756097561,
+      "f1-score": 0.9815950920245399,
+      "support": 82.0
+    },
+    "oportunidade": {
+      "precision": 0.9661016949152542,
+      "recall": 0.9827586206896551,
+      "f1-score": 0.9743589743589743,
+      "support": 58.0
+    },
+    "accuracy": 0.9785714285714285,
+    "macro avg": {
+      "precision": 0.9768780079514543,
+      "recall": 0.9791841883936081,
+      "f1-score": 0.9779770331917571,
+      "support": 140.0
+    },
+    "weighted avg": {
+      "precision": 0.978725375900517,
+      "recall": 0.9785714285714285,
+      "f1-score": 0.9785972718488056,
+      "support": 140.0
+    }
+  },
+  "confusion_matrix_order": [
+    [
+      "TN",
+      "FP"
+    ],
+    [
+      "FN",
+      "TP"
+    ]
+  ],
+  "confusion_matrix": [
+    [
+      80,
+      2
+    ],
+    [
+      1,
+      57
+    ]
+  ],
+  "error_counts": {
+    "false_positive": 2,
+    "false_negative": 1,
+    "total": 3
+  },
+  "primary_metric": {
+    "name": "recall_oportunidade",
+    "value": 0.9827586206896551,
+    "justification": "Perder uma oportunidade relevante tende a ser mais custoso do que revisar um falso positivo."
+  },
+  "hardware": {
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 3050",
+    "peak_gpu_memory_mb": 2137.5498046875
+  },
+  "training_seconds": 103.75482229999943,
+  "python_version": "3.12.10",
+  "torch_version": "2.14.0+cu130",
+  "transformers_version": "5.17.0"
+}

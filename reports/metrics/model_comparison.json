@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "evaluation_reference": "pseudo_labels_rule_and_bert_agreement",
+  "warning": "Comparação contra pseudo-rótulos; a decisão final exige o conjunto humano reservado.",
+  "paired_chunks": 140,
+  "validation_meetings": 98,
+  "same_split_verified": true,
+  "metrics": {
+    "accuracy": {
+      "baseline_tfidf_logreg": 0.9571428571428572,
+      "bertimbau": 0.9785714285714285,
+      "delta_bertimbau_minus_baseline": 0.021428571428571352,
+      "winner": "bertimbau"
+    },
+    "precision_oportunidade": {
+      "baseline_tfidf_logreg": 0.90625,
+      "bertimbau": 0.9661016949152542,
+      "delta_bertimbau_minus_baseline": 0.05985169491525422,
+      "winner": "bertimbau"
+    },
+    "recall_oportunidade": {
+      "baseline_tfidf_logreg": 1.0,
+      "bertimbau": 0.9827586206896551,
+      "delta_bertimbau_minus_baseline": -0.017241379310344862,
+      "winner": "baseline_tfidf_logreg"
+    },
+    "f1_oportunidade": {
+      "baseline_tfidf_logreg": 0.9508196721311475,
+      "bertimbau": 0.9743589743589743,
+      "delta_bertimbau_minus_baseline": 0.023539302227826853,
+      "winner": "bertimbau"
+    },
+    "f1_macro": {
+      "baseline_tfidf_logreg": 0.9564224942934219,
+      "bertimbau": 0.9779770331917571,
+      "delta_bertimbau_minus_baseline": 0.02155453889833525,
+      "winner": "bertimbau"
+    }
+  },
+  "confusion_matrices": {
+    "order": [
+      [
+        "TN",
+        "FP"
+      ],
+      [
+        "FN",
+        "TP"
+      ]
+    ],
+    "baseline_tfidf_logreg": [
+      [
+        76,
+        6
+      ],
+      [
+        0,
+        58
+      ]
+    ],
+    "bertimbau": [
+      [
+        80,
+        2
+      ],
+      [
+        1,
+        57
+      ]
+    ]
+  },
+  "paired_outcomes": {
+    "both_correct": 133,
+    "baseline_only_correct": 1,
+    "bertimbau_only_correct": 4,
+    "both_wrong": 2
+  },
+  "probability_quality": {
+    "baseline_tfidf_logreg": {
+      "roc_auc": 0.9997897392767031,
+      "average_precision": 0.9997077732320282,
+      "brier_score": 0.10607319382883235
+    },
+    "bertimbau": {
+      "roc_auc": 0.9995794785534062,
+      "average_precision": 0.9994252873563219,
+      "brier_score": 0.01587229530947863
+    }
+  },
+  "full_recall_threshold_diagnostic": {
+    "baseline_tfidf_logreg": {
+      "threshold": 0.52536265,
+      "precision_oportunidade": 0.9830508474576272,
+      "recall_oportunidade": 1.0,
+      "f1_oportunidade": 0.9914529914529915,
+      "false_positive": 1,
+      "false_negative": 0,
+      "warning": "Diagnóstico na validação; não usar como limiar final."
+    },
+    "bertimbau": {
+      "threshold": 0.10167862,
+      "precision_oportunidade": 0.9666666666666667,
+      "recall_oportunidade": 1.0,
+      "f1_oportunidade": 0.9830508474576272,
+      "false_positive": 2,
+      "false_negative": 0,
+      "warning": "Diagnóstico na validação; não usar como limiar final."
+    }
+  },
+  "operational_cost_analysis": {
+    "false_positive_cost": 1.0,
+    "false_negative_cost_break_even": 4.0,
+    "interpretation": "BERTimbau tem menor custo se FN custar menos de 4 revisões; baseline tem menor custo se custar mais de 4."
+  },
+  "resource_tradeoff": {
+    "baseline_fit_seconds": 0.3826875000004293,
+    "bertimbau_training_seconds": 103.75482229999943,
+    "baseline_model_size_mb": 0.6909379959106445,
+    "bertimbau_model_size_mb": 415.53709411621094
+  },
+  "mcnemar_exact": {
+    "discordant_total": 5,
+    "pvalue_two_sided": 0.375,
+    "interpretation": "A diferença de acertos não é conclusiva com esta amostra se p >= 0.05."
+  },
+  "grouped_bootstrap": {
+    "unit": "meeting_id",
+    "repetitions": 2000,
+    "seed": 42,
+    "delta_order": "bertimbau_minus_baseline",
+    "metrics": {
+      "accuracy": {
+        "observed_delta": 0.021428571428571352,
+        "ci95_low": -0.007815600198412697,
+        "ci95_high": 0.05845110771581362,
+        "probability_bertimbau_better": 0.8275
+      },
+      "precision_oportunidade": {
+        "observed_delta": 0.05985169491525422,
+        "ci95_low": -0.00022631597258457314,
+        "ci95_high": 0.1339039848473809,
+        "probability_bertimbau_better": 0.9515
+      },
+      "recall_oportunidade": {
+        "observed_delta": -0.017241379310344862,
+        "ci95_low": -0.05555555555555558,
+        "ci95_high": 0.0,
+        "probability_bertimbau_better": 0.0
+      },
+      "f1_oportunidade": {
+        "observed_delta": 0.023539302227826853,
+        "ci95_low": -0.013327175775244888,
+        "ci95_high": 0.06792919978539644,
+        "probability_bertimbau_better": 0.8275
+      },
+      "f1_macro": {
+        "observed_delta": 0.02155453889833525,
+        "ci95_low": -0.009401569025941827,
+        "ci95_high": 0.05929875911291204,
+        "probability_bertimbau_better": 0.835
+      }
+    }
+  },
+  "decision": {
+    "primary_metric": "recall_oportunidade",
+    "primary_metric_justification": "Falsos negativos podem impedir que oportunidades comerciais cheguem ao time responsável.",
+    "primary_metric_winner_on_pseudo_labels": "baseline_tfidf_logreg",
+    "balanced_performance_winner_on_pseudo_labels": "bertimbau",
+    "best_model_current_experiment": "bertimbau",
+    "selection_status": "provisional_until_human_evaluation",
+    "selection_reasons": [
+      "Venceu em accuracy, precision, F1 de oportunidade e F1 macro.",
+      "Cometeu três erros contra seis do baseline no mesmo conjunto.",
+      "Acertou sozinho quatro casos, enquanto o baseline acertou sozinho um.",
+      "Apresentou Brier score menor, indicando probabilidades mais próximas dos pseudo-rótulos.",
+      "O recall pode ser priorizado depois por calibração de limiar em dados humanos."
+    ],
+    "final_model_selected": null,
+    "next_gate": "Rotular a auditoria humana e repetir a comparação em reuniões nunca usadas no desenvolvimento."
+  }
+}

@@ -1,0 +1,8 @@
+# O PyTorch deve vir do runtime do Colab ou do índice CUDA adequado à máquina.
+numpy>=2.0,<3
+scikit-learn==1.9.1
+scipy>=1.16,<2
+transformers==5.17.0
+jupyter>=1.1,<2
+matplotlib>=3.10,<4
+nbconvert>=7,<8

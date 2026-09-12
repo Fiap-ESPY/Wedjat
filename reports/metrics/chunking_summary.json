@@ -1,0 +1,23 @@
+{
+  "checkpoint": "neuralmind/bert-base-portuguese-cased",
+  "transformers_version": "5.17.0",
+  "max_sequence_length": 512,
+  "content_max_tokens": 510,
+  "overlap_tokens_target": 64,
+  "input_meetings": 1126,
+  "output_chunks": 29972,
+  "meetings_without_speaker_marker": 48,
+  "meetings_with_text_before_first_marker": 100,
+  "meeting_tokens_mean": 11715.28,
+  "meeting_tokens_median": 10453.5,
+  "meeting_tokens_p95": 25944,
+  "turn_tokens_mean": 39.39,
+  "turn_tokens_median": 16,
+  "turn_tokens_p95": 121,
+  "turn_tokens_max": 33308,
+  "chunks_per_meeting_mean": 26.62,
+  "chunks_per_meeting_p95": 59,
+  "chunks_per_meeting_max": 130,
+  "chunk_tokens_mean": 500.88,
+  "chunk_tokens_max": 510
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "model": "TF-IDF + LogisticRegression",
+  "target": "oportunidade_comercial_binaria_no_chunk",
+  "evaluation_reference": "pseudo_labels_rule_and_bert_agreement",
+  "warning": "Estas métricas não estimam desempenho real; falta avaliação contra rótulos humanos.",
+  "seed": 42,
+  "threshold": 0.5,
+  "train_chunks": 539,
+  "validation_chunks": 140,
+  "train_meetings": 388,
+  "validation_meetings": 98,
+  "meeting_overlap": 0,
+  "train_label_counts": {
+    "1": 218,
+    "0": 321
+  },
+  "validation_label_counts": {
+    "0": 82,
+    "1": 58
+  },
+  "vectorizer": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.98,
+    "max_features": 50000,
+    "actual_features": 16582,
+    "sublinear_tf": true
+  },
+  "classifier": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "solver": "liblinear",
+    "iterations": 4
+  },
+  "metrics": {
+    "accuracy": 0.9571428571428572,
+    "precision_oportunidade": 0.90625,
+    "recall_oportunidade": 1.0,
+    "f1_oportunidade": 0.9508196721311475,
+    "precision_macro": 0.953125,
+    "recall_macro": 0.9634146341463414,
+    "f1_macro": 0.9564224942934219,
+    "precision_weighted": 0.9611607142857143,
+    "recall_weighted": 0.9571428571428572,
+    "f1_weighted": 0.9573829780926689
+  },
+  "classification_report": {
+    "nao_oportunidade": {
+      "precision": 1.0,
+      "recall": 0.926829268292683,
+      "f1-score": 0.9620253164556962,
+      "support": 82.0
+    },
+    "oportunidade": {
+      "precision": 0.90625,
+      "recall": 1.0,
+      "f1-score": 0.9508196721311475,
+      "support": 58.0
+    },
+    "accuracy": 0.9571428571428572,
+    "macro avg": {
+      "precision": 0.953125,
+      "recall": 0.9634146341463414,
+      "f1-score": 0.9564224942934219,
+      "support": 140.0
+    },
+    "weighted avg": {
+      "precision": 0.9611607142857143,
+      "recall": 0.9571428571428572,
+      "f1-score": 0.9573829780926689,
+      "support": 140.0
+    }
+  },
+  "confusion_matrix_order": [
+    [
+      "TN",
+      "FP"
+    ],
+    [
+      "FN",
+      "TP"
+    ]
+  ],
+  "confusion_matrix": [
+    [
+      76,
+      6
+    ],
+    [
+      0,
+      58
+    ]
+  ],
+  "error_counts": {
+    "false_positive": 6,
+    "false_negative": 0,
+    "total": 6
+  },
+  "primary_metric": {
+    "name": "recall_oportunidade",
+    "value": 1.0,
+    "justification": "Perder uma oportunidade relevante tende a ser mais custoso do que revisar um falso positivo."
+  },
+  "fit_seconds": 0.3826875000004293,
+  "validation_inference_seconds": 0.061309499999879336,
+  "python_version": "3.12.10",
+  "numpy_version": "2.5.3",
+  "scikit_learn_version": "1.9.1"
+}

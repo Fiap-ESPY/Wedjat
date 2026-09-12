@@ -1,0 +1,3918 @@
+[
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-ECOSSISTEMA-001",
+        "title":  "Como a TOTVS organiza o portfólio",
+        "document_type":  "visao_geral",
+        "company":  "TOTVS",
+        "product":  "Ecossistema TOTVS",
+        "category":  "Gestão / Techfin / Business Performance",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "TOTVS",
+                         "Gestão",
+                         "Techfin",
+                         "Business Performance",
+                         "ERP",
+                         "RH",
+                         "CRM",
+                         "Analytics",
+                         "E-commerce"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "A TOTVS organiza seu portfólio em três dimensões principais: Gestão, Techfin e Business Performance. Gestão é a base do ecossistema e inclui ERP, RH, soluções verticais e plataformas de inovação. Techfin reúne crédito, pagamentos e serviços financeiros integrados aos sistemas de gestão. Business Performance concentra soluções voltadas a vendas, relacionamento, CRM, analytics e comércio digital. A companhia declara atender empresas de todos os portes, em cloud ou on-premises, com soluções modulares e configuráveis para diferentes segmentos. Para um RAG comercial, essa divisão deve ser usada como taxonomia de primeiro nível antes de tentar classificar um produto específico.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        },
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/por-que-totvs/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-001",
+        "title":  "TOTVS Backoffice – Linha Protheus",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Backoffice – Linha Protheus",
+        "category":  "ERP / Gestão empresarial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Financeiro",
+                         "Fiscal",
+                         "Contabilidade",
+                         "Compras",
+                         "Estoque",
+                         "Faturamento",
+                         "Projetos",
+                         "Comércio Exterior"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig",
+                                 "TOTVS RH – Linha Protheus",
+                                 "TOTVS WMS – Linha Protheus",
+                                 "TOTVS Manufatura – Linha Protheus",
+                                 "TOTVS Cloud",
+                                 "TOTVS Assinatura Eletrônica"
+                             ],
+        "competitors":  [
+                            "SAP Business One",
+                            "Sankhya ERP",
+                            "Senior ERP",
+                            "Microsoft Dynamics 365",
+                            "Oracle ERP"
+                        ],
+        "content":  "ERP horizontal e altamente modular para processos administrativos e financeiros. A TOTVS o posiciona para empresas de todos os tamanhos e com ampla cobertura de segmentos. O backoffice integra faturamento, compras, estoque e custos, financeiro, ativo fixo, contabilidade gerencial, planejamento e controle orçamentário, livros fiscais, administração de vendas, contratos, projetos, licitações e comércio exterior. A principal dor atacada é a fragmentação de processos e controles manuais entre áreas. É um forte candidato quando a conversa menciona “Protheus”, “Microsiga”, SIGA*, backoffice, fiscal, financeiro, faturamento, compras ou necessidade de forte customização e integração.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-backoffice-linha-protheus/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-002",
+        "title":  "TOTVS Backoffice – Linha RM",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Backoffice – Linha RM",
+        "category":  "ERP / Gestão empresarial",
+        "segments":  [
+                         "Saúde",
+                         "Construção e Projetos",
+                         "Educação",
+                         "Serviços",
+                         "Manufatura",
+                         "Agroindústria",
+                         "Varejo",
+                         "Logística",
+                         "Distribuição",
+                         "Jurídico"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "RM",
+                         "Corpore",
+                         "Financeiro",
+                         "Estoque",
+                         "Compras",
+                         "Faturamento",
+                         "Fiscal",
+                         "Contábil",
+                         "Patrimônio"
+                     ],
+        "related_products":  [
+                                 "TOTVS RH – Linha RM",
+                                 "TOTVS Educacional",
+                                 "TOTVS Construção",
+                                 "TOTVS Saúde",
+                                 "TOTVS Cloud",
+                                 "TOTVS Assinatura Eletrônica"
+                             ],
+        "competitors":  [
+                            "SAP Business One",
+                            "Sankhya ERP",
+                            "Senior ERP",
+                            "Microsoft Dynamics 365"
+                        ],
+        "content":  "ERP completo com alta capacidade de configuração e integração nativa com produtos especialistas da Linha RM. O backoffice cobre gestão de estoque, compras, faturamento, contratos, orçamento, financeiro, fiscal, patrimônio e contabilidade. A ficha técnica destaca controle físico e financeiro de estoques, suprimentos, ressuprimento, gestão financeira e integração contábil. Em reuniões, sinais como “RM”, “Corpore RM”, educação, construção, saúde, folha/ponto da Linha RM ou necessidade de integrar backoffice com soluções verticais da própria linha são fortes indicadores.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-rm/"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-backoffice-linha-rm/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-003",
+        "title":  "TOTVS Backoffice – Linha Datasul",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Backoffice – Linha Datasul",
+        "category":  "ERP / Gestão empresarial",
+        "segments":  [
+                         "Manufatura",
+                         "Logística",
+                         "Saúde",
+                         "Agronegócio"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Datasul",
+                         "Manufatura",
+                         "Materiais",
+                         "Comércio Exterior",
+                         "Controladoria",
+                         "Logística"
+                     ],
+        "related_products":  [
+                                 "TOTVS Manufatura – Linha Datasul",
+                                 "TOTVS WMS – Linha Datasul",
+                                 "TOTVS RH – Linha Datasul",
+                                 "TOTVS Cloud"
+                             ],
+        "competitors":  [
+                            "SAP",
+                            "Senior ERP",
+                            "Oracle ERP",
+                            "Microsoft Dynamics 365"
+                        ],
+        "content":  "ERP de retaguarda com integração a soluções especialistas da Linha Datasul. A página oficial destaca comércio exterior, administração de vendas e de materiais, além de rotinas administrativas, financeiras, comerciais, ativos e controladoria. A TOTVS posiciona a Linha Datasul com forte aderência a manufatura e operações mais complexas; sua página de manufatura explicita foco em indústrias de médio e grande porte. É um candidato relevante quando aparecem “Datasul”, produção industrial, materiais, manufatura, logística, WMS, comércio exterior ou integração de chão de fábrica com backoffice.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-datasul/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/manufatura/totvs-manufatura/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-004",
+        "title":  "TOTVS Backoffice – Linha Logix",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Backoffice – Linha Logix",
+        "category":  "ERP / Gestão empresarial",
+        "segments":  [
+                         "Logística",
+                         "Manufatura",
+                         "Agronegócio",
+                         "Distribuição",
+                         "Serviços"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Logix",
+                         "Financeiro",
+                         "Fiscal",
+                         "Logística",
+                         "Manufatura",
+                         "Agronegócio"
+                     ],
+        "related_products":  [
+                                 "TOTVS WMS – Linha Logix",
+                                 "TOTVS Cloud",
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+                            "Senior ERP",
+                            "SAP",
+                            "Oracle ERP"
+                        ],
+        "content":  "ERP flexível e escalável para retaguarda administrativa e financeira, com oferta em servidores próprios ou cloud. A TOTVS destaca aderência aos setores de logística, manufatura, agronegócio, distribuição e serviços. Entre as áreas citadas estão financeiro e fiscal, com módulos para processos administrativos. No RAG, “Logix” deve ser tratado como produto/família própria, e não como sinônimo de Protheus ou Datasul. Quando a transcrição trouxer operações industriais/logísticas e legado Logix, o sistema deve preservar essa identificação antes de recomendar migração ou cross-sell.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-logix/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-005",
+        "title":  "TOTVS Distribuição e Varejo – Linha WinThor",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Distribuição e Varejo – Linha WinThor",
+        "category":  "ERP / Distribuição e Varejo",
+        "segments":  [
+                         "Atacado e Distribuição",
+                         "Varejo de proximidade",
+                         "Materiais de construção",
+                         "Farma",
+                         "Alimentos e bebidas"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "WinThor",
+                         "Atacado",
+                         "Distribuição",
+                         "WMS",
+                         "Televendas",
+                         "Expedição",
+                         "Compras",
+                         "Vendas"
+                     ],
+        "related_products":  [
+                                 "TOTVS WMS – Linha WinThor",
+                                 "TOTVS Pagamento Digital",
+                                 "TOTVS Integrador de Marketplaces",
+                                 "RD Station"
+                             ],
+        "competitors":  [
+                            "Sankhya ERP",
+                            "Senior ERP",
+                            "SAP Business One"
+                        ],
+        "content":  "ERP especializado no setor atacadista distribuidor e em operações de varejo relacionadas. A TOTVS destaca compras, vendas, televendas, expedição e estoque, WMS e integrações específicas de operação. A ficha técnica cita nichos como mercearia, alimentos, bebidas, food service, atacarejo, higiene e cosméticos, materiais de construção, medicamentos e autopeças. É um produto de alta relevância quando a reunião menciona distribuidor, atacado, força de vendas, roteirização, separação, expedição, televendas, WMS ou WinThor.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/distribuicao/totvs-distribuicao-e-varejo/"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-distribuicao-e-varejo-linha-winthor/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-006",
+        "title":  "TOTVS Varejo Supermercados – Linha Consinco",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Varejo Supermercados – Linha Consinco",
+        "category":  "ERP / Varejo supermercadista",
+        "segments":  [
+                         "Supermercados",
+                         "Atacarejos",
+                         "Atacados",
+                         "Hipermercados"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Consinco",
+                         "Supermercado",
+                         "Atacarejo",
+                         "PDV",
+                         "Abastecimento",
+                         "Precificação",
+                         "Estoque"
+                     ],
+        "related_products":  [
+                                 "TOTVS Pagamento Digital",
+                                 "TOTVS Integrador de Marketplaces",
+                                 "RD Station Marketing"
+                             ],
+        "competitors":  [
+                            "SAP",
+                            "Sankhya ERP",
+                            "Senior Supermercado"
+                        ],
+        "content":  "Sistema especializado para as demandas operacionais e administrativas do varejo supermercadista. Centraliza operação de loja, compras, abastecimento, vendas, precificação e retaguarda. A TOTVS também apresenta recursos móveis e análises gerenciais ligadas a vendas, estoque, compras e concorrência. É um forte candidato quando a conversa traz termos como supermercado, atacarejo, ruptura, abastecimento, precificação, operação de loja, PDV, prevenção de perdas ou “Consinco”.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-varejo-supermercados-linha-consinco/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/varejo/supermercados/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-007",
+        "title":  "TOTVS RH – Linha Protheus",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS RH – Linha Protheus",
+        "category":  "RH / HCM / Folha",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "RH",
+                         "HCM",
+                         "Folha",
+                         "Ponto",
+                         "Recrutamento",
+                         "Desempenho",
+                         "Cargos e Salários"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Protheus",
+                                 "TOTVS Fluig",
+                                 "TOTVS Assinatura Eletrônica"
+                             ],
+        "competitors":  [
+                            "Senior HCM",
+                            "Sólides",
+                            "Gupy",
+                            "SAP SuccessFactors"
+                        ],
+        "content":  "Solução de RH da Linha Protheus que reúne Gestão de Pessoal, Ponto Eletrônico, Recrutamento e Seleção, Portal do Candidato, Treinamento, Avaliação/Pesquisa/Desempenho, Cargos e Salários e Portal GCH. O módulo de Gestão de Pessoal automatiza cálculos de salários, férias, afastamentos, rescisões, admissões, provisões, benefícios e outras rotinas trabalhistas. É relevante em transcrições com folha, ponto, férias, rescisão, cargos e salários, admissão ou necessidade de integrar RH ao Protheus.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-totvs-rh-linha-protheus/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-008",
+        "title":  "TOTVS RH – Linha RM",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS RH – Linha RM",
+        "category":  "RH / HCM / Folha",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "RH",
+                         "RM",
+                         "Folha",
+                         "Ponto",
+                         "Cargos e Salários",
+                         "Gestão de Pessoas"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha RM",
+                                 "TOTVS Assinatura Eletrônica",
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+                            "Senior HCM",
+                            "Sólides",
+                            "Gupy"
+                        ],
+        "content":  "Solução de RH da Linha RM para folha de pagamento, ponto eletrônico, cargos e salários e outros processos de gestão de pessoas. A TOTVS destaca automação, flexibilidade e integração com a Linha RM. É um bom sinal quando a empresa já utiliza RM no backoffice, Educacional, Saúde ou Construção e menciona folha, ponto, gestão de pessoas ou redução de tarefas burocráticas.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-rh-linha-rm/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-009",
+        "title":  "TOTVS RH – Linha Datasul",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS RH – Linha Datasul",
+        "category":  "RH / HCM / Folha",
+        "segments":  [
+                         "Atacado e Distribuição",
+                         "Manufatura",
+                         "Varejo",
+                         "Serviços",
+                         "Saúde",
+                         "Agronegócio",
+                         "Finanças",
+                         "Hotelaria",
+                         "Construção",
+                         "Logística"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "RH",
+                         "Datasul",
+                         "Folha",
+                         "Ponto",
+                         "Benefícios",
+                         "Contábil",
+                         "Financeiro"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Datasul",
+                                 "TOTVS WMS – Linha Datasul",
+                                 "TOTVS Manufatura – Linha Datasul"
+                             ],
+        "competitors":  [
+                            "Senior HCM",
+                            "Sólides",
+                            "Gupy"
+                        ],
+        "content":  "Solução robusta de RH da Linha Datasul, com módulos integrados para automatizar rotinas de gestão de pessoas e atender exigências trabalhistas. A documentação oficial de folha mostra integração com ponto, consolidação de movimentações mensais e integração automática com módulos Contábil e Financeiro do Backoffice Datasul. O RAG deve relacioná-la principalmente a clientes Datasul com dores de folha, ponto, benefícios e integração contábil/financeira.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-rh-linha-datasul/"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/totvs-rh-folha-de-pagamento-linha-datasul/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-010",
+        "title":  "TOTVS WMS – Linha Protheus",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS WMS – Linha Protheus",
+        "category":  "WMS / Logística / Armazenagem",
+        "segments":  [
+                         "Varejo",
+                         "Distribuição",
+                         "Logística",
+                         "Indústria"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "WMS",
+                         "Armazém",
+                         "CD",
+                         "Recebimento",
+                         "Separação",
+                         "Cross Docking",
+                         "Rastreabilidade"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Protheus",
+                                 "TOTVS Fast Analytics"
+                             ],
+        "competitors":  [
+                            "Senior WMS",
+                            "Sankhya/Lincros"
+                        ],
+        "content":  "Sistema de gestão de armazéns integrado à Linha Protheus. A ficha técnica lista recebimento, separação e conferência, cross docking, armazenagem, movimentação, relatórios e Fast Analytics. É indicado como possível relação quando a dor envolve baixa acuracidade de estoque, separação lenta, conferência manual, falta de rastreabilidade, cross docking ou necessidade de coordenar armazém/CD com o Protheus.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-totvs-wms-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/wms/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-011",
+        "title":  "TOTVS WMS – Linha Datasul",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS WMS – Linha Datasul",
+        "category":  "WMS / Logística / Armazenagem",
+        "segments":  [
+                         "Manufatura",
+                         "Atacado e Distribuição",
+                         "Varejo",
+                         "Atacarejo"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "WMS",
+                         "Datasul",
+                         "Indústria",
+                         "Rastreabilidade",
+                         "Armazenagem",
+                         "Matéria-prima"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Datasul",
+                                 "TOTVS Manufatura – Linha Datasul"
+                             ],
+        "competitors":  [
+                            "Senior WMS",
+                            "SAP EWM"
+                        ],
+        "content":  "WMS vocacionado para operações industriais, com controle de entrada e saída de matérias-primas e produtos acabados, rastreabilidade e controle rigoroso de estoque. A TOTVS o descreve como robusto, integrado ao TOTVS Manufatura – Linha Datasul e ao Backoffice Datasul, capaz de atender grandes operações industriais complexas e também médias indústrias. É um forte candidato para armazéns industriais de clientes Datasul.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-wms-linha-datasul/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/wms/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-012",
+        "title":  "TOTVS WMS – Linha Logix",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS WMS – Linha Logix",
+        "category":  "WMS / Logística / Armazenagem",
+        "segments":  [
+                         "Logística",
+                         "Distribuição",
+                         "Manufatura"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "WMS",
+                         "Logix",
+                         "Armazém",
+                         "Centro de Distribuição",
+                         "Estoque",
+                         "Rastreabilidade"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Logix"
+                             ],
+        "competitors":  [
+                            "Senior WMS",
+                            "SAP EWM"
+                        ],
+        "content":  "WMS especialista para controle de armazéns e centros de distribuição, com foco em rastreabilidade, precisão de estoque, velocidade operacional e otimização de recursos. Deve ser relacionado a clientes Logix ou operações que precisem controlar armazenagem complexa. Em detecção semântica, termos como “endereçamento”, “separação”, “conferência”, “CD”, “rastreabilidade” e “estoque divergente” podem apontar para WMS, mas a linha específica deve depender do ERP ou contexto instalado.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-wms-linha-logix/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/wms/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-013",
+        "title":  "TOTVS Manufatura – Linha Protheus",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Manufatura – Linha Protheus",
+        "category":  "Manufatura / PCP / MES",
+        "segments":  [
+                         "Indústrias de diversos portes e segmentos"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Manufatura",
+                         "PCP",
+                         "MRP",
+                         "APS",
+                         "MES",
+                         "Chão de Fábrica",
+                         "Qualidade",
+                         "Manutenção"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Protheus",
+                                 "TOTVS WMS – Linha Protheus",
+                                 "TOTVS Carol"
+                             ],
+        "competitors":  [
+                            "SAP",
+                            "Senior ERP",
+                            "Oracle"
+                        ],
+        "content":  "Solução industrial da Linha Protheus para gerenciar etapas do processo produtivo. A ficha técnica lista Desenvolvedor de Produtos, PCP, Carga Máquina, MRP, Chão de Fábrica, APS, DTA Manufatura com IA, ACD, Manutenção de Ativos, PMS, MES, gestão ambiental e módulos de qualidade. Em reuniões, termos como PCP, MRP, APS, OEE, chão de fábrica, apontamento, ordem de produção, carga máquina, manutenção e qualidade indicam possível aderência.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-manufatura-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/manufatura/totvs-manufatura/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-014",
+        "title":  "TOTVS Manufatura – Linha Datasul",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Manufatura – Linha Datasul",
+        "category":  "Manufatura / PCP / Produção",
+        "segments":  [
+                         "Indústrias de médio e grande porte"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Manufatura",
+                         "Datasul",
+                         "PCP",
+                         "Produção",
+                         "Qualidade",
+                         "Planejamento"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Datasul",
+                                 "TOTVS WMS – Linha Datasul"
+                             ],
+        "competitors":  [
+                            "SAP",
+                            "Senior ERP",
+                            "Oracle"
+                        ],
+        "content":  "Solução industrial da Linha Datasul para controle de ponta a ponta das fases produtivas. A TOTVS destaca planejamento, rapidez no atendimento de pedidos, automação, mobilidade e controle de qualidade desde a entrada de insumos até a saída da linha de produção. A página geral de manufatura posiciona a Linha Datasul para indústrias de médio e grande porte. É relevante quando aparecem ambiente fabril complexo, materiais, produção, qualidade, planejamento industrial e integração com Datasul/WMS.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-manufatura-linha-datasul/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/manufatura/totvs-manufatura/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-015",
+        "title":  "TOTVS Fluig",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Fluig",
+        "category":  "BPM / ECM / Workflow / Colaboração",
+        "segments":  [
+                         "Multissegmento e multidepartamental"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Fluig",
+                         "BPM",
+                         "ECM",
+                         "Workflow",
+                         "Documentos",
+                         "Portal",
+                         "Automação"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice",
+                                 "TOTVS Assinatura Eletrônica",
+                                 "TOTVS Cloud"
+                             ],
+        "competitors":  [
+                            "Microsoft Power Automate",
+                            "ServiceNow",
+                            "Pipefy"
+                        ],
+        "content":  "Plataforma de produtividade e automação de processos. A TOTVS descreve BPM para modelar e automatizar workflows, ECM para gestão de documentos, WCM para portais e rede social colaborativa, além de integração com ERP e recursos de IA. É especialmente aderente a dores como aprovações por e-mail, planilhas, documentos dispersos, processos sem rastreabilidade, tarefas manuais entre áreas e necessidade de centralizar solicitações. Em transcrições, “workflow”, “aprovação”, “processo manual”, “documentos perdidos”, “portal” ou “Fluig” são sinais fortes.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/fluig/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-016",
+        "title":  "TOTVS Carol Plataforma",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Carol Plataforma",
+        "category":  "Dados / Inteligência Artificial / Machine Learning",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Carol",
+                         "IA",
+                         "Machine Learning",
+                         "Data Platform",
+                         "Forecast",
+                         "Recomendação",
+                         "Data Model"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice",
+                                 "TOTVS RH Clock In",
+                                 "TOTVS Analytics"
+                             ],
+        "competitors":  [
+                            "Microsoft Azure AI",
+                            "AWS",
+                            "Google Cloud"
+                        ],
+        "content":  "Plataforma de dados e inteligência artificial da TOTVS. A documentação oficial informa que ela se conecta a diferentes fontes, inclusive ERPs, consolida dados, executa tratamento e processamento, e permite criar aplicações e modelos de machine learning. Entre capacidades citadas estão forecast, previsões, recomendações, pipelines, data models e aplicações inteligentes. No RAG, Carol deve ser associada a necessidades de centralização de dados, modelos preditivos, recomendações e aplicações inteligentes, e não confundida com um BI simples.",
+        "sources":  [
+                        {
+                            "url":  "https://centraldeatendimento.totvs.com/hc/pt-br/articles/4405717042327-TOTVS-CAROL-Carol-Plataforma-Conceitos-b%C3%A1sicos-da-Plataforma-Carol"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/produto/totvs-carol-plataforma/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-017",
+        "title":  "LYNN",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "LYNN",
+        "category":  "Foundation de IA B2B / Agentes de IA",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "LYNN",
+                         "IA",
+                         "Agentes",
+                         "ASI",
+                         "ANI",
+                         "Foundation",
+                         "Task as a Service",
+                         "Governança"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice",
+                                 "RD Station",
+                                 "TOTVS Cloud"
+                             ],
+        "competitors":  [
+                            "Microsoft Copilot",
+                            "Salesforce Agentforce",
+                            "Oracle AI"
+                        ],
+        "content":  "Foundation de inteligência artificial B2B lançado pela TOTVS em 2026. A companhia o posiciona como uma base proprietária de IA especializada para construção, orquestração e governança de agentes de IA em contextos corporativos, com foco em domínio de contexto, segurança, governança, desempenho e controle de custos. O LYNN não deve ser tratado apenas como “chatbot”; ele funciona como infraestrutura para agentes especializados que podem atuar em finanças, RH, fiscal, vendas e outros domínios. Em transcrições, “agente de IA”, “ASI/ANI”, “Task as a Service” e “LYNN” devem gerar entidade própria.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/inteligencia-artificial/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/blog/inovacoes/o-que-e-lynn/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-018",
+        "title":  "TOTVS Cloud",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Cloud",
+        "category":  "Cloud / Infraestrutura gerenciada",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Cloud",
+                         "Nuvem",
+                         "Infraestrutura",
+                         "Disponibilidade",
+                         "Escalabilidade",
+                         "Migração"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice",
+                                 "LYNN",
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+                            "Microsoft Azure",
+                            "AWS",
+                            "Oracle Cloud",
+                            "Google Cloud"
+                        ],
+        "content":  "Oferta de nuvem da TOTVS para hospedar e operar sistemas empresariais com foco em disponibilidade, segurança, escalabilidade e suporte especializado. A página atual também relaciona a nuvem à estratégia de IA da companhia. É uma oportunidade de cross-sell quando o cliente menciona infraestrutura local, servidor antigo, indisponibilidade, dificuldade de atualização, equipe interna sobrecarregada ou desejo de migrar ERP para cloud. A recomendação deve respeitar requisitos técnicos e contratuais específicos do ambiente.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/cloud/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-019",
+        "title":  "TOTVS Assinatura Eletrônica",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Assinatura Eletrônica",
+        "category":  "Assinatura eletrônica / Documentos",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Assinatura Eletrônica",
+                         "Contrato",
+                         "Documento",
+                         "ICP-Brasil",
+                         "WhatsApp",
+                         "API"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig",
+                                 "TOTVS Backoffice",
+                                 "TOTVS RH"
+                             ],
+        "competitors":  [
+                            "DocuSign",
+                            "Clicksign",
+                            "Adobe Acrobat Sign"
+                        ],
+        "content":  "Plataforma SaaS centralizada para gestão e execução de assinaturas eletrônicas, com validade jurídica, gestão de documentos e pendências, envio para assinatura/validação/testemunho e integração nativa com soluções TOTVS, além de API REST para terceiros. A página oficial menciona assinatura via e-mail, WhatsApp ou SMS e uso de certificado ICP-Brasil quando solicitado. É uma possível relação quando a dor envolve contratos em papel, demora de assinatura, aprovações externas, documentos espalhados ou necessidade de digitalizar fluxos documentais.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/assinatura-eletronica/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-020",
+        "title":  "TOTVS CRM Gestão de Clientes",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS CRM Gestão de Clientes",
+        "category":  "CRM / Vendas",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "CRM",
+                         "Funil",
+                         "Pipeline",
+                         "Leads",
+                         "Clientes",
+                         "Vendas",
+                         "Agenda"
+                     ],
+        "related_products":  [
+                                 "RD Station Marketing",
+                                 "RD Station Conversas",
+                                 "TOTVS Backoffice"
+                             ],
+        "competitors":  [
+                            "Salesforce Agentforce Sales",
+                            "HubSpot Sales Hub",
+                            "Pipedrive"
+                        ],
+        "content":  "CRM da TOTVS para organizar contatos, oferecer visão 360 do relacionamento, acompanhar funil de vendas e apoiar conversão. A página oficial também cita integração de agendas do Google Workspace e Microsoft 365. É indicado quando a empresa relata planilhas de clientes, histórico comercial disperso, falta de acompanhamento de oportunidades, baixa previsibilidade de pipeline ou necessidade de centralizar atividades de vendas.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/crm/gestao-de-clientes/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-021",
+        "title":  "RD Station Marketing",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "RD Station Marketing",
+        "category":  "Marketing Automation",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "RD Station Marketing",
+                         "Marketing",
+                         "Automação",
+                         "Leads",
+                         "Landing Page",
+                         "Jornada",
+                         "Campanha"
+                     ],
+        "related_products":  [
+                                 "RD Station CRM",
+                                 "RD Station Conversas",
+                                 "Exact Spotter",
+                                 "RD Station Mentor IA"
+                             ],
+        "competitors":  [
+                            "HubSpot Marketing Hub",
+                            "Salesforce Marketing Cloud"
+                        ],
+        "content":  "Solução da unidade RD Station para automação de marketing, captação de contatos, jornadas multicanais, segmentação e integração entre Marketing e Vendas. A TOTVS destaca uso de IA em recursos de conteúdo e priorização/engajamento. É aderente quando aparecem geração de demanda, nutrição de leads, landing pages, campanhas, automação de e-mail/WhatsApp, lead scoring ou necessidade de aumentar conversão entre marketing e vendas.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/inteligencia-artificial/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-022",
+        "title":  "RD Station CRM",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "RD Station CRM",
+        "category":  "CRM / Vendas",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "RD Station CRM",
+                         "CRM",
+                         "Pipeline",
+                         "Vendas",
+                         "WhatsApp",
+                         "Leads"
+                     ],
+        "related_products":  [
+                                 "RD Station Marketing",
+                                 "RD Station Conversas",
+                                 "Exact Spotter"
+                             ],
+        "competitors":  [
+                            "Salesforce Agentforce Sales",
+                            "HubSpot Sales Hub",
+                            "Pipedrive"
+                        ],
+        "content":  "CRM da unidade RD Station voltado à gestão comercial. No portfólio atual, aparece integrado às soluções de Marketing e Conversas e conta com recursos de IA; a TOTVS cita inclusive interação com o CRM via WhatsApp em sua página de inteligência artificial. Em reuniões, RD Station CRM é candidato quando há pipeline comercial, oportunidades, atividades de vendedores e integração com automação de marketing, especialmente em empresas que já usam o ecossistema RD Station.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/inteligencia-artificial/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-023",
+        "title":  "RD Station Conversas",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "RD Station Conversas",
+        "category":  "Atendimento / Conversational / WhatsApp",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "RD Station Conversas",
+                         "WhatsApp",
+                         "Atendimento",
+                         "Conversacional",
+                         "Relacionamento"
+                     ],
+        "related_products":  [
+                                 "RD Station Marketing",
+                                 "RD Station CRM",
+                                 "RD Station Mentor IA"
+                             ],
+        "competitors":  [
+                            "HubSpot",
+                            "Salesforce"
+                        ],
+        "content":  "Solução da unidade RD Station voltada a conversas e relacionamento multicanal, aparecendo no portfólio junto de Marketing, CRM e Mentor IA. A página atual da TOTVS posiciona a solução em jornadas de conversão e relacionamento por WhatsApp. Deve ser considerada quando o cliente relata atendimento fragmentado, alto volume de contatos por WhatsApp, necessidade de automação de conversas ou integração de mensagens com marketing e vendas.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-024",
+        "title":  "Exact Spotter",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "Exact Spotter",
+        "category":  "Pré-vendas / Prospecção / Sales Engagement",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Exact Spotter",
+                         "Pré-vendas",
+                         "SDR",
+                         "Prospecção",
+                         "Lead Qualification",
+                         "IA"
+                     ],
+        "related_products":  [
+                                 "RD Station CRM",
+                                 "RD Station Marketing"
+                             ],
+        "competitors":  [
+                            "HubSpot Sales Hub",
+                            "Salesforce"
+                        ],
+        "content":  "Solução de pré-vendas do ecossistema RD Station. A TOTVS descreve automação de tarefas repetitivas, padronização de fluxos e qualificação de leads para o time comercial; a página de IA cita geração de listas de potenciais clientes com Big Data e IA, SDR de IA e transcrição de reuniões. É uma possível relação quando a dor envolve prospecção manual, SDRs sobrecarregados, baixa qualidade de leads ou dificuldade de padronizar pré-vendas.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/inteligencia-artificial/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-025",
+        "title":  "RD Station Mentor IA",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "RD Station Mentor IA",
+        "category":  "IA para Marketing e Vendas",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "VALIDAÇÃO RECOMENDADA",
+        "keywords":  [
+                         "RD Station Mentor IA",
+                         "IA",
+                         "Marketing",
+                         "Vendas",
+                         "Relacionamento"
+                     ],
+        "related_products":  [
+                                 "RD Station Marketing",
+                                 "RD Station CRM",
+                                 "RD Station Conversas"
+                             ],
+        "competitors":  [
+                            "HubSpot AI",
+                            "Salesforce Einstein/Agentforce"
+                        ],
+        "content":  "Produto do portfólio atual da RD Station citado pela TOTVS em jornadas de marketing e relacionamento. Deve ser classificado como solução de IA da unidade RD Station, relacionada a apoio à comunicação, relacionamento e uso de dados em Marketing e Vendas. Como a página pública consultada traz menos detalhe funcional que os demais produtos, recomenda-se validar escopo exato em documentação comercial antes de gerar recomendações prescritivas.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-026",
+        "title":  "TOTVS Integrador de Marketplaces",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Integrador de Marketplaces",
+        "category":  "Digital Commerce / Hub de marketplaces",
+        "segments":  [
+                         "Varejo",
+                         "Distribuição",
+                         "Manufatura"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Marketplace",
+                         "E-commerce",
+                         "Omnichannel",
+                         "Catálogo",
+                         "Pedidos",
+                         "Estoque",
+                         "Expedição"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice",
+                                 "Shopify",
+                                 "RD Station",
+                                 "TOTVS Pagamento Digital"
+                             ],
+        "competitors":  [
+                            "Bling Hub",
+                            "Magis5",
+                            "Olist"
+                        ],
+        "content":  "Hub 100% online para centralizar operações de múltiplos CNPJs, marketplaces e e-commerces. A TOTVS destaca gestão de integrações, catálogo, anúncios, pedidos, estoque, emissão de notas, expedição e precificação, com integração ao ERP e a grandes marketplaces e plataformas de e-commerce. É aderente quando a empresa vende em vários canais e sofre com estoque divergente, pedidos dispersos, emissão manual de NF, expedição lenta ou necessidade de escalar marketplace sem aumentar equipe.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/integrador-de-marketplaces/"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/lexos-integrador-marketplaces/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/digital-commerce/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-027",
+        "title":  "Techfin ERP Finance",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "Techfin ERP Finance",
+        "category":  "Techfin / Serviços financeiros integrados",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Techfin",
+                         "ERP Finance",
+                         "Crédito",
+                         "Pagamentos",
+                         "Serviços Financeiros",
+                         "Pix"
+                     ],
+        "related_products":  [
+                                 "TOTVS Pagamento Digital",
+                                 "TOTVS Pagamento Instantâneo",
+                                 "TOTVS Conta Digital",
+                                 "+Vendas Techfin"
+                             ],
+        "competitors":  [
+                            "Bancos",
+                            "Fintechs",
+                            "Adquirentes"
+                        ],
+        "content":  "Unidade/portfólio de serviços financeiros integrados aos sistemas de gestão, com foco em crédito, pagamentos e serviços baseados em dados. A página atual informa que o que antes era TOTVS Techfin e Supplier passou a ser Techfin ERP Finance, com portfólio unificado. Em reuniões, menções a crédito para clientes/fornecedores, recebimento integrado, antecipação, conta digital, Pix e conciliação devem ser classificadas primeiro em Techfin e depois no produto específico.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/techfin-erp-finance/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-028",
+        "title":  "TOTVS Pagamento Digital",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Pagamento Digital",
+        "category":  "Pagamentos / Pix / Techfin",
+        "segments":  [
+                         "Varejo",
+                         "Distribuição",
+                         "Empresas com ERPs/PDVs TOTVS habilitados"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Pagamento Digital",
+                         "TPD",
+                         "Pix",
+                         "QR Code",
+                         "PDV",
+                         "ERP"
+                     ],
+        "related_products":  [
+                                 "TOTVS Pagamento Instantâneo",
+                                 "TOTVS Conta Digital",
+                                 "Techfin ERP Finance"
+                             ],
+        "competitors":  [
+                            "Bancos",
+                            "Mercado Pago",
+                            "PagSeguro",
+                            "PicPay"
+                        ],
+        "content":  "Solução que permite receber pagamentos via Pix integrada ao ERP ou PDV, com liquidação na conta de preferência do cliente. A documentação oficial lista integração com várias linhas TOTVS e descreve geração de QR Code no fluxo de venda. É uma possível relação quando o cliente deseja integrar Pix ao ERP/PDV, reduzir digitação manual e conectar pagamento à venda. A documentação consultada também diferencia TPD de TPI em conciliação, conta transitória e cobrança de tarifa.",
+        "sources":  [
+                        {
+                            "url":  "https://centraldeatendimento.totvs.com/hc/pt-br/articles/26631707606935-TPD-TOTVS-TECHFIN-O-que-%C3%A9-o-TOTVS-Pagamento-Digital"
+                        },
+                        {
+                            "url":  "https://centraldeatendimento.totvs.com/hc/pt-br/articles/26461496658455-TPI-TOTVS-TECHFIN-Qual-a-diferen%C3%A7a-entre-o-TOTVS-Pagamento-Instant%C3%A2neo-TPI-e-o-TOTVS-Pagamento-Digital-TPD"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-029",
+        "title":  "TOTVS Pagamento Instantâneo",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Pagamento Instantâneo",
+        "category":  "Pagamentos / Pix / Techfin",
+        "segments":  [
+                         "Empresas com ERPs TOTVS compatíveis"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "Pagamento Instantâneo",
+                         "TPI",
+                         "Pix",
+                         "Conciliação",
+                         "ERP"
+                     ],
+        "related_products":  [
+                                 "TOTVS Pagamento Digital",
+                                 "Techfin ERP Finance"
+                             ],
+        "competitors":  [
+                            "Bancos",
+                            "Fintechs"
+                        ],
+        "content":  "Solução de recebimento via Pix integrada ao ERP. Na comparação oficial com TPD, o TPI possui conciliação automática integrada ao ERP, usa conta transitória para repasses em lote e desconta a tarifa na transação antes do repasse líquido. Deve ser diferenciado de TPD sempre que a transcrição mencionar conciliação automática, conta transitória ou “TPI”.",
+        "sources":  [
+                        {
+                            "url":  "https://centraldeatendimento.totvs.com/hc/pt-br/articles/26461496658455-TPI-TOTVS-TECHFIN-Qual-a-diferen%C3%A7a-entre-o-TOTVS-Pagamento-Instant%C3%A2neo-TPI-e-o-TOTVS-Pagamento-Digital-TPD"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-030",
+        "title":  "TOTVS Conta Digital",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Conta Digital",
+        "category":  "Conta digital / Techfin",
+        "segments":  [
+                         "Empresas clientes"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO / VALIDAÇÃO COMERCIAL",
+        "keywords":  [
+                         "Conta Digital",
+                         "Pix",
+                         "Boleto",
+                         "Tesouraria",
+                         "Pagamentos",
+                         "Conta PJ"
+                     ],
+        "related_products":  [
+                                 "Techfin ERP Finance",
+                                 "TOTVS Pagamento Digital",
+                                 "TOTVS Pagamento Instantâneo"
+                             ],
+        "competitors":  [
+                            "Bancos digitais",
+                            "Fintechs"
+                        ],
+        "content":  "Conta digital do ecossistema Techfin com recursos documentados para Pix, pagamentos de boletos, histórico e comprovantes de transações, limites e gestão de acessos. Em reuniões, pode aparecer em temas de tesouraria, pagamentos, conta PJ, Pix, comprovantes, autorização e centralização financeira. O escopo comercial e elegibilidade devem ser validados no momento da oferta, pois podem variar por contrato e parceiros financeiros.",
+        "sources":  [
+                        {
+                            "url":  "https://centraldeatendimento.totvs.com/hc/pt-br/sections/1500000596741-TOTVS-Conta-Digital"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PROD-031",
+        "title":  "+Vendas Techfin (TOTVS Mais Negócios)",
+        "document_type":  "produto",
+        "company":  "TOTVS",
+        "product":  "+Vendas Techfin (TOTVS Mais Negócios)",
+        "category":  "Crédito B2B / Techfin",
+        "segments":  [
+                         "Agronegócio",
+                         "Manufatura",
+                         "Distribuição",
+                         "Construção",
+                         "Logística",
+                         "Saúde",
+                         "Serviços",
+                         "Educação",
+                         "médias e grandes empresas"
+                     ],
+        "evidence_level":  "FATO DOCUMENTADO",
+        "keywords":  [
+                         "+Vendas Techfin",
+                         "TOTVS Mais Negócios",
+                         "Crédito B2B",
+                         "Financiamento",
+                         "Inadimplência",
+                         "Fluxo de Caixa"
+                     ],
+        "related_products":  [
+                                 "Techfin ERP Finance",
+                                 "TOTVS Backoffice"
+                             ],
+        "competitors":  [
+                            "Bancos",
+                            "Fintechs de crédito B2B"
+                        ],
+        "content":  "Linha adicional de crédito B2B que a empresa pode oferecer a clientes para estimular vendas. A página oficial explica que clientes pré-aprovados recebem limite, a empresa vendedora pode receber antecipadamente e a Techfin ERP Finance assume o risco de crédito da operação. O produto pode operar integrado a ERPs TOTVS como Protheus, Datasul e RM ou por plataforma. É uma possível relação quando a empresa menciona limite de crédito insuficiente para clientes, inadimplência, necessidade de aumentar vendas B2B ou melhorar fluxo de caixa.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-mais-negocios/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-COMP-ERP-001",
+        "title":  "Protheus x RM",
+        "document_type":  "comparacao_erp",
+        "company":  "TOTVS",
+        "product":  "Protheus x RM",
+        "category":  "ERP",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "Protheus",
+                         "RM",
+                         "ERP",
+                         "comparação"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "FATO: ambos são ERPs completos e atendem empresas de vários portes. Protheus é explicitamente posicionado como horizontal, amplo e presente em muitos segmentos; RM destaca integração nativa com produtos especialistas da própria Linha RM e aparece com forte presença em educação, saúde, construção e serviços. INFERÊNCIA COMERCIAL: se o cliente já possui uma vertical RM, manter a coerência de linha pode reduzir complexidade de integração; se busca um ERP horizontal amplamente customizável para backoffice multissetorial, Protheus tende a aparecer com mais frequência. Não trate essa inferência como regra rígida.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-rm/"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-backoffice-linha-rm/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-COMP-ERP-002",
+        "title":  "Protheus x Datasul",
+        "document_type":  "comparacao_erp",
+        "company":  "TOTVS",
+        "product":  "Protheus x Datasul",
+        "category":  "ERP",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "Protheus",
+                         "Datasul",
+                         "ERP",
+                         "Manufatura"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "FATO: Protheus é posicionado para empresas de todos os tamanhos e múltiplos segmentos; Datasul possui forte integração com soluções de Manufatura, Logística, Saúde e Agronegócio, e a página de manufatura posiciona a Linha Datasul para indústrias de médio e grande porte. INFERÊNCIA COMERCIAL: em ambiente industrial complexo e já padronizado em Datasul, Datasul tende a ser a referência natural; para gestão horizontal multissetorial, Protheus pode aparecer com mais aderência. A escolha real depende de legado, módulos, integrações, customizações e estratégia de produto.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-datasul/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/manufatura/totvs-manufatura/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-COMP-ERP-003",
+        "title":  "Datasul x Logix",
+        "document_type":  "comparacao_erp",
+        "company":  "TOTVS",
+        "product":  "Datasul x Logix",
+        "category":  "ERP",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "Datasul",
+                         "Logix",
+                         "ERP",
+                         "Logística",
+                         "Manufatura"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "FATO: ambos aparecem com aderência a manufatura e logística. Datasul tem documentação pública destacando integração com soluções especialistas e forte posicionamento industrial; Logix é descrito como ERP de alta capacidade aderente a logística, manufatura, agronegócio, distribuição e serviços. INFERÊNCIA: a decisão não deve ser feita apenas pelo segmento; o RAG deve capturar o ERP instalado, nível de customização, módulos especialistas e roadmap antes de recomendar troca.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-datasul/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-logix/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-COMP-ERP-004",
+        "title":  "WinThor x Protheus",
+        "document_type":  "comparacao_erp",
+        "company":  "TOTVS",
+        "product":  "WinThor x Protheus",
+        "category":  "ERP",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "WinThor",
+                         "Protheus",
+                         "Atacado",
+                         "Distribuição"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "FATO: WinThor é especializado em atacado, distribuição e varejo, enquanto Protheus é um ERP horizontal de ampla cobertura. INFERÊNCIA COMERCIAL: para uma distribuidora com dores profundamente ligadas a televendas, expedição, armazenagem e particularidades do atacado, WinThor pode ser mais aderente; para organizações com processos corporativos diversos fora desse núcleo, Protheus pode ser considerado. A existência de um ERP já implantado e integrações deve pesar mais que uma regra genérica.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/distribuicao/totvs-distribuicao-e-varejo/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-protheus/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-001",
+        "title":  "TOTVS Protheus x SAP Business One",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS Protheus x SAP Business One",
+        "category":  "ERP",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "Protheus",
+                         "SAP Business One",
+                         "ERP"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "Protheus",
+                            "SAP Business One"
+                        ],
+        "content":  "SAP Business One é descrito pela SAP como ERP para pequenas empresas e subsidiárias, cobrindo contabilidade, finanças, compras, estoque, vendas, CRM, relatórios e analytics. Protheus é posicionado pela TOTVS para empresas de todos os tamanhos, com forte cobertura fiscal, administrativa e múltiplos segmentos no Brasil. POSSÍVEL DIFERENÇA: Protheus tende a se destacar por aderência local e ecossistema TOTVS; SAP Business One pode ser atraente em empresas alinhadas ao ecossistema SAP. A adequação deve ser validada por porte, internacionalização, integrações e processos.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://www.sap.com/brazil/products/erp/business-one.html"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-002",
+        "title":  "TOTVS Protheus x Sankhya ERP",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS Protheus x Sankhya ERP",
+        "category":  "ERP",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "Protheus",
+                         "Sankhya",
+                         "ERP",
+                         "Brasil"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "Protheus",
+                            "Sankhya"
+                        ],
+        "content":  "Sankhya oferece ERP 100% web/mobile com financeiro, fiscal, estoque, logística, RH, produção e BI integrados. Protheus também cobre processos empresariais amplos e múltiplos segmentos. A competição ocorre sobretudo em empresas brasileiras buscando ERP integrado de médio porte para cima. POSSÍVEL DIFERENÇA: Sankhya enfatiza experiência web/mobile e BI nativo; Protheus possui ecossistema TOTVS amplo, várias linhas especialistas e forte capilaridade no mercado brasileiro. Validar requisitos e stack do cliente.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://www.sankhya.com.br/software-de-gestao-erp/erp-para-gestao-empresarial/produtos/sankhya/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-003",
+        "title":  "TOTVS ERP x Senior ERP",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS ERP x Senior ERP",
+        "category":  "ERP / Gestão empresarial",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "TOTVS ERP",
+                         "Senior ERP",
+                         "Senior X",
+                         "ERP XT",
+                         "Mega"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "TOTVS ERP",
+                            "Senior ERP",
+                            "Senior X",
+                            "ERP XT",
+                            "Mega"
+                        ],
+        "content":  "A Senior mantém produtos de Gestão Empresarial como ERP Senior X, ERP XT e outras linhas. Há sobreposição com TOTVS em backoffice, indústria, finanças, suprimentos e gestão empresarial. A competição deve ser inferida por produto e segmento, não apenas pela marca “Senior”. Em transcrições, “Senior”, “Senior X”, “ERP XT”, “Mega” ou “GO UP” devem ser entidades de concorrente e produto concorrente distintas.",
+        "sources":  [
+                        {
+                            "url":  "https://documentacao.senior.com.br/gestaoempresarialerp/7.0.0/home.htm"
+                        },
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/por-que-totvs/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-004",
+        "title":  "TOTVS CRM / RD Station CRM x Salesforce Agentforce Sales",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS CRM / RD Station CRM x Salesforce Agentforce Sales",
+        "category":  "CRM / Vendas",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "CRM",
+                         "Salesforce",
+                         "Agentforce Sales",
+                         "RD Station CRM"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "Salesforce",
+                            "Agentforce Sales",
+                            "RD Station CRM"
+                        ],
+        "content":  "A Salesforce posiciona o atual Agentforce Sales (antigo Sales Cloud) como plataforma de automação da força de vendas com gestão de atividades, leads, contas, oportunidades, IA e analytics. TOTVS CRM Gestão de Clientes e RD Station CRM também cobrem relacionamento, pipeline e gestão comercial. A competição é direta em CRM, mas o contexto importa: Salesforce costuma aparecer em ecossistemas corporativos globais; TOTVS/RD Station podem ganhar relevância pela integração com o ecossistema TOTVS e marketing da RD Station.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/crm/gestao-de-clientes/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        },
+                        {
+                            "url":  "https://www.salesforce.com/br/products/sales-cloud/features/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-005",
+        "title":  "RD Station CRM x HubSpot Sales Hub",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "RD Station CRM x HubSpot Sales Hub",
+        "category":  "CRM / Vendas",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "RD Station CRM",
+                         "HubSpot Sales Hub",
+                         "CRM"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "RD Station CRM",
+                            "HubSpot Sales Hub"
+                        ],
+        "content":  "HubSpot Sales Hub oferece ferramentas de vendas com IA, gestão de leads, prospecção, pipeline e fechamento. RD Station CRM integra-se ao ecossistema de Marketing, Conversas e Exact Spotter. A competição ocorre especialmente em empresas que buscam CRM SaaS com forte integração entre marketing e vendas. POSSÍVEL DIFERENÇA: HubSpot reúne uma plataforma global ampla de hubs; RD Station tem forte presença e contexto latino-americano e integração com o ecossistema TOTVS.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        },
+                        {
+                            "url":  "https://br.hubspot.com/products/sales"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-006",
+        "title":  "TOTVS RH x Gupy",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS RH x Gupy",
+        "category":  "RH / Talent Acquisition",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "TOTVS RH",
+                         "Gupy",
+                         "Recrutamento",
+                         "Admissão",
+                         "Performance"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "TOTVS RH",
+                            "Gupy"
+                        ],
+        "content":  "Gupy se posiciona como plataforma de IA para jornada de pessoas, com recrutamento e seleção, admissão, treinamento, engajamento e performance. TOTVS RH, além de talentos, inclui folha, ponto e rotinas de departamento pessoal nas linhas Protheus, RM e Datasul. Portanto, a concorrência é PARCIAL: é mais direta em recrutamento, admissão, treinamento e desempenho; em folha/ponto, o escopo TOTVS é mais amplo segundo as fontes consultadas.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-totvs-rh-linha-protheus/"
+                        },
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-rh-linha-rm/"
+                        },
+                        {
+                            "url":  "https://www.gupy.io/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-007",
+        "title":  "TOTVS RH x Sólides",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS RH x Sólides",
+        "category":  "RH / HCM / DP",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "TOTVS RH",
+                         "Sólides",
+                         "Folha",
+                         "RH",
+                         "DP"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "TOTVS RH",
+                            "Sólides"
+                        ],
+        "content":  "Sólides oferece plataforma integrada de RH e Departamento Pessoal, incluindo recrutamento, folha, benefícios e gestão de pessoas. Isso gera sobreposição mais ampla com TOTVS RH, especialmente em pequenas e médias empresas. A escolha deve considerar integração com ERP, complexidade trabalhista, módulos necessários, experiência do usuário, porte e ecossistema já instalado.",
+        "sources":  [
+                        {
+                            "url":  "https://produtos.totvs.com/ficha-tecnica/tudo-sobre-o-totvs-rh-linha-rm/"
+                        },
+                        {
+                            "url":  "https://solides.com.br/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-008",
+        "title":  "RD Station Marketing x HubSpot Marketing Hub",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "RD Station Marketing x HubSpot Marketing Hub",
+        "category":  "Marketing Automation",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "RD Station Marketing",
+                         "HubSpot Marketing Hub",
+                         "Automação de Marketing"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "RD Station Marketing",
+                            "HubSpot Marketing Hub"
+                        ],
+        "content":  "RD Station Marketing e HubSpot Marketing Hub competem em automação de marketing, geração/nutrição de leads, campanhas e integração com vendas. HubSpot apresenta uma suíte global com Marketing, Sales, Service, Content, Data e Revenue Hubs; RD Station se conecta ao ecossistema TOTVS e à suíte RD Station. A comparação deve considerar maturidade de marketing, integrações, operação regional e estratégia de CRM.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/rd-station/"
+                        },
+                        {
+                            "url":  "https://www.hubspot.com/products/get-started"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-009",
+        "title":  "TOTVS Integrador de Marketplaces x Bling Hub",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS Integrador de Marketplaces x Bling Hub",
+        "category":  "Digital Commerce / Marketplace",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "TOTVS Integrador de Marketplaces",
+                         "Bling",
+                         "Marketplace",
+                         "Hub"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "TOTVS Integrador de Marketplaces",
+                            "Bling"
+                        ],
+        "content":  "O TOTVS Integrador de Marketplaces centraliza catálogo, pedidos, estoque, anúncios, expedição e integração com ERPs e marketplaces. O Bling combina ERP com hub multicanal e mais de 250 integrações. A competição ocorre principalmente em PMEs e varejistas que precisam centralizar canais de venda. POSSÍVEL DIFERENÇA: o Integrador TOTVS pode fazer mais sentido quando o ERP corporativo já é TOTVS; Bling pode competir como solução ERP+hub em negócios menores e digitais.",
+        "sources":  [
+                        {
+                            "url":  "https://www.totvs.com/integrador-de-marketplaces/"
+                        },
+                        {
+                            "url":  "https://www.bling.com.br/vendas-multicanal"
+                        },
+                        {
+                            "url":  "https://www.bling.com.br/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-CONC-010",
+        "title":  "TOTVS ERP x Omie / Conta Azul / Bling",
+        "document_type":  "comparacao_concorrente",
+        "company":  "TOTVS",
+        "product":  "TOTVS ERP x Omie / Conta Azul / Bling",
+        "category":  "ERP para PMEs",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "FATO + INFERÊNCIA EXPLÍCITA",
+        "keywords":  [
+                         "Omie",
+                         "Conta Azul",
+                         "Bling",
+                         "PME",
+                         "ERP"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "Omie",
+                            "Conta Azul",
+                            "Bling"
+                        ],
+        "content":  "Omie, Conta Azul e Bling competem no mercado de gestão para pequenas e médias empresas, com foco em financeiro, notas fiscais, vendas, estoque e integrações. Eles não são equivalentes a todas as linhas TOTVS nem adequados a todos os cenários empresariais. No RAG, a presença desses nomes deve indicar concorrência principalmente no SMB e em operações de menor complexidade, enquanto linhas TOTVS como Protheus e produtos especialistas podem atender cenários mais amplos ou complexos.",
+        "sources":  [
+                        {
+                            "url":  "https://www.omie.com.br/funcionalidades/"
+                        },
+                        {
+                            "url":  "https://contaazul.com/sistema-erp/"
+                        },
+                        {
+                            "url":  "https://www.bling.com.br/"
+                        },
+                        {
+                            "url":  "https://www.totvs.com/sistema-de-gestao/totvs-backoffice-linha-protheus/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-001",
+        "title":  "Glossário: ERP",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "ERP",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "ERP"
+                     ],
+        "related_products":  [
+                                 "Protheus",
+                                 "RM",
+                                 "Datasul",
+                                 "Logix",
+                                 "WinThor"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: ERP\nSIGNIFICADO: Enterprise Resource Planning: sistema integrado de gestão que conecta processos e dados de áreas como financeiro, compras, estoque, vendas, fiscal e contabilidade.\nCONTEXTO COMERCIAL: Em reunião, costuma aparecer em discussões sobre sistema principal da empresa, integração, migração e troca de legado.\nPRODUTOS TOTVS RELACIONADOS: Protheus; RM; Datasul; Logix; WinThor",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/por-que-totvs/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-002",
+        "title":  "Glossário: CRM",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "CRM",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "CRM"
+                     ],
+        "related_products":  [
+                                 "TOTVS CRM Gestão de Clientes",
+                                 "RD Station CRM"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: CRM\nSIGNIFICADO: Customer Relationship Management: gestão de relacionamento com clientes, leads, oportunidades e pipeline.\nCONTEXTO COMERCIAL: Sinaliza dores de vendas, histórico de clientes, funil, forecast e acompanhamento comercial.\nPRODUTOS TOTVS RELACIONADOS: TOTVS CRM Gestão de Clientes; RD Station CRM",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-003",
+        "title":  "Glossário: HCM",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "HCM",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "HCM"
+                     ],
+        "related_products":  [
+                                 "TOTVS RH – Linhas Protheus",
+                                 "RM e Datasul"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: HCM\nSIGNIFICADO: Human Capital Management: gestão de pessoas e capital humano.\nCONTEXTO COMERCIAL: Pode envolver folha, ponto, recrutamento, desempenho, treinamento e carreira.\nPRODUTOS TOTVS RELACIONADOS: TOTVS RH – Linhas Protheus, RM e Datasul",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-004",
+        "title":  "Glossário: SaaS",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "SaaS",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "SaaS"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig",
+                                 "TOTVS Assinatura Eletrônica",
+                                 "RD Station",
+                                 "Integrador de Marketplaces"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: SaaS\nSIGNIFICADO: Software as a Service: software consumido como serviço, normalmente por assinatura e hospedado em nuvem.\nCONTEXTO COMERCIAL: Aparece em discussões de contratação, atualização, escalabilidade e redução de infraestrutura local.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Fluig; TOTVS Assinatura Eletrônica; RD Station; Integrador de Marketplaces",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-005",
+        "title":  "Glossário: Cloud",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Cloud",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Cloud"
+                     ],
+        "related_products":  [
+                                 "TOTVS Cloud"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Cloud\nSIGNIFICADO: Uso de infraestrutura e serviços computacionais em nuvem.\nCONTEXTO COMERCIAL: Pode indicar migração de servidores locais, disponibilidade, escalabilidade e modernização de ambiente.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Cloud",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/por-que-totvs/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-006",
+        "title":  "Glossário: On-premise",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "On-premise",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "On-premise"
+                     ],
+        "related_products":  [
+                                 "ERPs TOTVS com opção on-premises"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: On-premise\nSIGNIFICADO: Software executado em infraestrutura própria ou controlada pelo cliente.\nCONTEXTO COMERCIAL: Frequentemente aparece em comparações com cloud, custos de infraestrutura e ciclo de atualização.\nPRODUTOS TOTVS RELACIONADOS: ERPs TOTVS com opção on-premises",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/por-que-totvs/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-007",
+        "title":  "Glossário: Backoffice",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Backoffice",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Backoffice"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Protheus",
+                                 "RM",
+                                 "Datasul",
+                                 "Logix"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Backoffice\nSIGNIFICADO: Conjunto de processos administrativos e de retaguarda: financeiro, fiscal, contábil, compras, estoque, faturamento e afins.\nCONTEXTO COMERCIAL: Termo-chave para identificar necessidade de ERP administrativo.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Backoffice – Protheus, RM, Datasul, Logix",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-008",
+        "title":  "Glossário: Folha",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Folha",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Folha"
+                     ],
+        "related_products":  [
+                                 "TOTVS RH"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Folha\nSIGNIFICADO: Folha de pagamento e rotinas de cálculo de remuneração, férias, rescisões e encargos.\nCONTEXTO COMERCIAL: Sinaliza dor de Departamento Pessoal e conformidade trabalhista.\nPRODUTOS TOTVS RELACIONADOS: TOTVS RH",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-009",
+        "title":  "Glossário: Fiscal",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Fiscal",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Fiscal"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice",
+                                 "TOTVS Processos Fiscais",
+                                 "Inteligência Tributária"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Fiscal\nSIGNIFICADO: Processos de apuração, documentos fiscais, impostos e obrigações acessórias.\nCONTEXTO COMERCIAL: Sinaliza compliance tributário, reforma tributária, emissão/apuração e redução de risco fiscal.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Backoffice; TOTVS Processos Fiscais; Inteligência Tributária",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-010",
+        "title":  "Glossário: Contábil",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Contábil",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Contábil"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Contábil\nSIGNIFICADO: Processos de contabilidade, lançamentos, livros, demonstrações e integração de fatos geradores.\nCONTEXTO COMERCIAL: Aparece em fechamento, conciliação, integração entre módulos e auditoria.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Backoffice",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-011",
+        "title":  "Glossário: Workflow",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Workflow",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Workflow"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Workflow\nSIGNIFICADO: Fluxo estruturado de tarefas, regras, aprovações e responsabilidades.\nCONTEXTO COMERCIAL: Sinaliza automação de processos entre áreas, aprovações e rastreabilidade.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Fluig",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-012",
+        "title":  "Glossário: BPM",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "BPM",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "BPM"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: BPM\nSIGNIFICADO: Business Process Management: disciplina e tecnologia para modelar, executar e melhorar processos.\nCONTEXTO COMERCIAL: Aparece quando cliente quer desenhar, automatizar e medir processos.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Fluig",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-013",
+        "title":  "Glossário: ECM",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "ECM",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "ECM"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: ECM\nSIGNIFICADO: Enterprise Content Management: gestão corporativa de documentos e conteúdo.\nCONTEXTO COMERCIAL: Sinaliza documentos espalhados, versionamento, acesso, ciclo de vida e compliance documental.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Fluig",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-014",
+        "title":  "Glossário: BI",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "BI",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "BI"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fast Analytics",
+                                 "soluções de analytics"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: BI\nSIGNIFICADO: Business Intelligence: transformação de dados em relatórios, indicadores e análises para decisão.\nCONTEXTO COMERCIAL: Aparece em dashboards, indicadores, visão gerencial e consolidação de dados.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Fast Analytics; soluções de analytics",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-015",
+        "title":  "Glossário: Analytics",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Analytics",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Analytics"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fast Analytics",
+                                 "TOTVS Carol"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Analytics\nSIGNIFICADO: Análise de dados para entender desempenho, padrões, tendências e apoiar decisões.\nCONTEXTO COMERCIAL: Pode envolver dashboards, indicadores, exploração e modelos analíticos.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Fast Analytics; TOTVS Carol",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-016",
+        "title":  "Glossário: API",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "API",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "API"
+                     ],
+        "related_products":  [
+                                 "ERPs TOTVS",
+                                 "TOTVS Fluig",
+                                 "Assinatura Eletrônica",
+                                 "Integrador de Marketplaces"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: API\nSIGNIFICADO: Interface de programação que permite integração entre sistemas.\nCONTEXTO COMERCIAL: Quando cliente diz que sistemas “não conversam”, APIs podem ser parte da solução técnica.\nPRODUTOS TOTVS RELACIONADOS: ERPs TOTVS; TOTVS Fluig; Assinatura Eletrônica; Integrador de Marketplaces",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-017",
+        "title":  "Glossário: Integração",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Integração",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Integração"
+                     ],
+        "related_products":  [
+                                 "Todo o ecossistema TOTVS"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Integração\nSIGNIFICADO: Conexão e troca de dados entre aplicações, módulos ou parceiros.\nCONTEXTO COMERCIAL: Termo central para identificar dores de duplicidade, retrabalho e dados inconsistentes.\nPRODUTOS TOTVS RELACIONADOS: Todo o ecossistema TOTVS",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-018",
+        "title":  "Glossário: Legado",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Legado",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Legado"
+                     ],
+        "related_products":  [
+                                 "ERPs TOTVS",
+                                 "TOTVS Cloud",
+                                 "Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Legado\nSIGNIFICADO: Sistema antigo ou existente que continua sendo usado e pode limitar integração/evolução.\nCONTEXTO COMERCIAL: Sinaliza oportunidade de modernização, migração, integração ou coexistência.\nPRODUTOS TOTVS RELACIONADOS: ERPs TOTVS; TOTVS Cloud; Fluig",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-019",
+        "title":  "Glossário: Migração",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Migração",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Migração"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice",
+                                 "TOTVS Cloud"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Migração\nSIGNIFICADO: Processo de mover dados, processos ou usuários de uma solução para outra.\nCONTEXTO COMERCIAL: Pode indicar troca de ERP, ida para cloud ou substituição de concorrente.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Backoffice; TOTVS Cloud",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-020",
+        "title":  "Glossário: Customização",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Customização",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Customização"
+                     ],
+        "related_products":  [
+                                 "Protheus",
+                                 "RM",
+                                 "Datasul",
+                                 "Logix"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Customização\nSIGNIFICADO: Adaptação do sistema a regras ou processos específicos do cliente.\nCONTEXTO COMERCIAL: Sinaliza necessidade de avaliar aderência padrão, extensões, manutenção e impacto de upgrades.\nPRODUTOS TOTVS RELACIONADOS: Protheus; RM; Datasul; Logix",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-021",
+        "title":  "Glossário: Protheus",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Protheus",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Protheus"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Protheus"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Protheus\nSIGNIFICADO: Família/linha ERP da TOTVS, originada do ecossistema Microsiga, com amplo backoffice e soluções especialistas.\nCONTEXTO COMERCIAL: Nome de produto e entidade essencial; pode aparecer com nomes de módulos SIGA*.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Backoffice – Linha Protheus",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-022",
+        "title":  "Glossário: RM",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "RM",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "RM"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha RM",
+                                 "TOTVS RH – Linha RM"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: RM\nSIGNIFICADO: Linha de produtos TOTVS com ERP Backoffice e soluções especialistas, forte presença em segmentos como educação, saúde e construção.\nCONTEXTO COMERCIAL: Pode aparecer como RM, Corpore ou nomes de módulos da linha.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Backoffice – Linha RM; TOTVS RH – Linha RM",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-023",
+        "title":  "Glossário: Datasul",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Datasul",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Datasul"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Datasul"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Datasul\nSIGNIFICADO: Linha de produtos TOTVS com forte aderência a manufatura, logística e operações empresariais complexas.\nCONTEXTO COMERCIAL: Nome de produto/linha; pode indicar ERP instalado e orientar cross-sell para WMS/RH/Manufatura da mesma linha.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Backoffice – Linha Datasul",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-024",
+        "title":  "Glossário: Fluig",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Fluig",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Fluig"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Fluig\nSIGNIFICADO: Plataforma TOTVS para BPM, ECM, portais, colaboração e integração de processos.\nCONTEXTO COMERCIAL: Sinaliza workflows, documentos, aprovações e automação entre áreas.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Fluig",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-025",
+        "title":  "Glossário: WMS",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "WMS",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "WMS"
+                     ],
+        "related_products":  [
+                                 "TOTVS WMS – Protheus",
+                                 "Datasul",
+                                 "Logix",
+                                 "WinThor"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: WMS\nSIGNIFICADO: Warehouse Management System: sistema de gestão de armazéns.\nCONTEXTO COMERCIAL: Sinaliza recebimento, endereçamento, separação, conferência, cross docking e rastreabilidade.\nPRODUTOS TOTVS RELACIONADOS: TOTVS WMS – Protheus, Datasul, Logix, WinThor",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-026",
+        "title":  "Glossário: PCP",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "PCP",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "PCP"
+                     ],
+        "related_products":  [
+                                 "TOTVS Manufatura"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: PCP\nSIGNIFICADO: Planejamento e Controle da Produção.\nCONTEXTO COMERCIAL: Sinaliza programação de produção, ordens, capacidade, materiais e acompanhamento fabril.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Manufatura",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-027",
+        "title":  "Glossário: MRP",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "MRP",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "MRP"
+                     ],
+        "related_products":  [
+                                 "TOTVS Manufatura"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: MRP\nSIGNIFICADO: Material Requirements Planning: planejamento das necessidades de materiais.\nCONTEXTO COMERCIAL: Aparece em cálculo de materiais, estoque de insumos e ordens de compra/produção.\nPRODUTOS TOTVS RELACIONADOS: TOTVS Manufatura",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-028",
+        "title":  "Glossário: Techfin",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Techfin",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Techfin"
+                     ],
+        "related_products":  [
+                                 "Techfin ERP Finance"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Techfin\nSIGNIFICADO: Dimensão do ecossistema TOTVS para crédito, pagamentos e serviços financeiros integrados.\nCONTEXTO COMERCIAL: Sinaliza Pix, crédito B2B, conta digital, conciliação e serviços financeiros embutidos no ERP.\nPRODUTOS TOTVS RELACIONADOS: Techfin ERP Finance",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/por-que-totvs/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-029",
+        "title":  "Glossário: Cross-sell",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Cross-sell",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Cross-sell"
+                     ],
+        "related_products":  [
+                                 "Ecossistema TOTVS"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Cross-sell\nSIGNIFICADO: Venda de produto complementar ao que o cliente já utiliza.\nCONTEXTO COMERCIAL: Exemplo: cliente Protheus com processos manuais de aprovação pode gerar oportunidade de Fluig.\nPRODUTOS TOTVS RELACIONADOS: Ecossistema TOTVS",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-GLOSS-030",
+        "title":  "Glossário: Upsell",
+        "document_type":  "glossario",
+        "company":  "TOTVS",
+        "product":  "Upsell",
+        "category":  "Vocabulário comercial",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO CONCEITUAL + CONTEXTO COMERCIAL",
+        "keywords":  [
+                         "Upsell"
+                     ],
+        "related_products":  [
+                                 "Ecossistema TOTVS"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "TERMO: Upsell\nSIGNIFICADO: Expansão de escopo, capacidade, plano ou módulos de uma solução já utilizada.\nCONTEXTO COMERCIAL: Exemplo: adicionar módulos especialistas ou ampliar uso em novas áreas/filiais.\nPRODUTOS TOTVS RELACIONADOS: Ecossistema TOTVS",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-001",
+        "title":  "Dor → produto: estoque_filiais",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Backoffice – Linha Protheus, TOTVS Backoffice – Linha RM, TOTVS WMS",
+        "category":  "Estoque / Supply Chain",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Não",
+                         "conseguimos",
+                         "controlar",
+                         "o",
+                         "estoque",
+                         "entre",
+                         "várias",
+                         "filiais"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Linha Protheus",
+                                 "TOTVS Backoffice – Linha RM",
+                                 "TOTVS WMS"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Não conseguimos controlar o estoque entre várias filiais.\"\nCATEGORIA: Estoque / Supply Chain\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Backoffice – Linha Protheus; TOTVS Backoffice – Linha RM; TOTVS WMS\nJUSTIFICATIVA: Controle integrado de estoque, movimentações e, quando necessário, processos de armazenagem.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-002",
+        "title":  "Dor → produto: excel_financeiro",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Backoffice – Protheus/RM/Datasul/Logix",
+        "category":  "Financeiro / ERP",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Nosso",
+                         "financeiro",
+                         "ainda",
+                         "é",
+                         "controlado",
+                         "em",
+                         "várias",
+                         "planilhas"
+                     ],
+        "related_products":  [
+                                 "TOTVS Backoffice – Protheus/RM/Datasul/Logix"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Nosso financeiro ainda é controlado em várias planilhas.\"\nCATEGORIA: Financeiro / ERP\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Backoffice – Protheus/RM/Datasul/Logix\nJUSTIFICATIVA: ERPs TOTVS possuem módulos financeiros para contas a pagar/receber, fluxo de caixa e integração com demais áreas.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-003",
+        "title":  "Dor → produto: folha_manual",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS RH – Linha Protheus, TOTVS RH – Linha RM, TOTVS RH – Linha Datasul",
+        "category":  "RH / Folha",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "A",
+                         "folha",
+                         "e",
+                         "os",
+                         "cálculos",
+                         "de",
+                         "férias",
+                         "dão"
+                     ],
+        "related_products":  [
+                                 "TOTVS RH – Linha Protheus",
+                                 "TOTVS RH – Linha RM",
+                                 "TOTVS RH – Linha Datasul"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"A folha e os cálculos de férias dão muito retrabalho.\"\nCATEGORIA: RH / Folha\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS RH – Linha Protheus; TOTVS RH – Linha RM; TOTVS RH – Linha Datasul\nJUSTIFICATIVA: As linhas TOTVS RH automatizam rotinas de folha e gestão de pessoal.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-004",
+        "title":  "Dor → produto: ponto",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS RH Ponto Eletrônico",
+        "category":  "RH / Ponto",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Temos",
+                         "muitos",
+                         "ajustes",
+                         "manuais",
+                         "de",
+                         "ponto",
+                         "e",
+                         "banco"
+                     ],
+        "related_products":  [
+                                 "TOTVS RH Ponto Eletrônico"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Temos muitos ajustes manuais de ponto e banco de horas.\"\nCATEGORIA: RH / Ponto\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS RH Ponto Eletrônico\nJUSTIFICATIVA: Soluções de ponto automatizam batidas, jornadas, banco de horas e regras trabalhistas.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-005",
+        "title":  "Dor → produto: crm_planilha",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS CRM Gestão de Clientes, RD Station CRM",
+        "category":  "CRM / Vendas",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Cada",
+                         "vendedor",
+                         "controla",
+                         "seus",
+                         "clientes",
+                         "em",
+                         "uma",
+                         "planilha"
+                     ],
+        "related_products":  [
+                                 "TOTVS CRM Gestão de Clientes",
+                                 "RD Station CRM"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Cada vendedor controla seus clientes em uma planilha diferente.\"\nCATEGORIA: CRM / Vendas\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS CRM Gestão de Clientes; RD Station CRM\nJUSTIFICATIVA: CRM centraliza contatos, histórico, oportunidades e pipeline.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-006",
+        "title":  "Dor → produto: marketing_leads",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "RD Station Marketing, RD Station CRM",
+        "category":  "Marketing Automation",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Geramos",
+                         "leads",
+                         "mas",
+                         "não",
+                         "conseguimos",
+                         "nutrir",
+                         "nem",
+                         "saber"
+                     ],
+        "related_products":  [
+                                 "RD Station Marketing",
+                                 "RD Station CRM"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Geramos leads, mas não conseguimos nutrir nem saber quando mandar para vendas.\"\nCATEGORIA: Marketing Automation\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: RD Station Marketing; RD Station CRM\nJUSTIFICATIVA: Automação e segmentação apoiam nutrição e passagem de leads para vendas.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-007",
+        "title":  "Dor → produto: whatsapp",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "RD Station Conversas, RD Station CRM",
+        "category":  "Conversational / CRM",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Nosso",
+                         "atendimento",
+                         "comercial",
+                         "no",
+                         "WhatsApp",
+                         "está",
+                         "espalhado",
+                         "em"
+                     ],
+        "related_products":  [
+                                 "RD Station Conversas",
+                                 "RD Station CRM"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Nosso atendimento comercial no WhatsApp está espalhado em celulares.\"\nCATEGORIA: Conversational / CRM\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: RD Station Conversas; RD Station CRM\nJUSTIFICATIVA: Centralização de conversas e integração com processo comercial pode reduzir perda de contexto.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-008",
+        "title":  "Dor → produto: aprovacao_email",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Fluig",
+        "category":  "BPM / Workflow",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "As",
+                         "aprovações",
+                         "ficam",
+                         "indo",
+                         "e",
+                         "voltando",
+                         "por",
+                         "e-mail"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"As aprovações ficam indo e voltando por e-mail.\"\nCATEGORIA: BPM / Workflow\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Fluig\nJUSTIFICATIVA: Fluig modela e automatiza workflows e centraliza tarefas/aprovações.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-009",
+        "title":  "Dor → produto: contratos_papel",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Assinatura Eletrônica, TOTVS Fluig",
+        "category":  "Documentos / Assinatura",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Levamos",
+                         "dias",
+                         "para",
+                         "coletar",
+                         "assinaturas",
+                         "em",
+                         "contratos"
+                     ],
+        "related_products":  [
+                                 "TOTVS Assinatura Eletrônica",
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Levamos dias para coletar assinaturas em contratos.\"\nCATEGORIA: Documentos / Assinatura\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Assinatura Eletrônica; TOTVS Fluig\nJUSTIFICATIVA: Assinatura eletrônica reduz ciclo documental; Fluig pode orquestrar o workflow.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-010",
+        "title":  "Dor → produto: armazem",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS WMS – linha compatível com o ERP",
+        "category":  "WMS / Logística",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "A",
+                         "separação",
+                         "do",
+                         "CD",
+                         "é",
+                         "lenta",
+                         "e",
+                         "temos"
+                     ],
+        "related_products":  [
+                                 "TOTVS WMS – linha compatível com o ERP"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"A separação do CD é lenta e temos divergência de estoque.\"\nCATEGORIA: WMS / Logística\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS WMS – linha compatível com o ERP\nJUSTIFICATIVA: WMS cobre recebimento, armazenagem, separação, conferência e rastreabilidade.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-011",
+        "title":  "Dor → produto: pcp",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Manufatura – Protheus ou Datasul",
+        "category":  "Manufatura / PCP",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Planejamos",
+                         "produção",
+                         "no",
+                         "Excel",
+                         "e",
+                         "sempre",
+                         "faltam",
+                         "materiais"
+                     ],
+        "related_products":  [
+                                 "TOTVS Manufatura – Protheus ou Datasul"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Planejamos produção no Excel e sempre faltam materiais.\"\nCATEGORIA: Manufatura / PCP\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Manufatura – Protheus ou Datasul\nJUSTIFICATIVA: PCP/MRP ajudam a planejar capacidade, materiais e ordens de produção.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-012",
+        "title":  "Dor → produto: indicadores",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Fast Analytics, TOTVS Carol",
+        "category":  "Analytics / Dados",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Não",
+                         "conseguimos",
+                         "acompanhar",
+                         "indicadores",
+                         "em",
+                         "tempo",
+                         "hábil"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fast Analytics",
+                                 "TOTVS Carol"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Não conseguimos acompanhar indicadores em tempo hábil.\"\nCATEGORIA: Analytics / Dados\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Fast Analytics; TOTVS Carol\nJUSTIFICATIVA: Analytics pode consolidar indicadores; Carol é mais adequada quando há integração de múltiplas fontes e modelos de IA/predição.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-013",
+        "title":  "Dor → produto: sistemas_nao_conversam",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Fluig, APIs dos produtos TOTVS, TOTVS Carol",
+        "category":  "Integração / Automação",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Nosso",
+                         "sistema",
+                         "atual",
+                         "não",
+                         "conversa",
+                         "com",
+                         "o",
+                         "ERP"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig",
+                                 "APIs dos produtos TOTVS",
+                                 "TOTVS Carol"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Nosso sistema atual não conversa com o ERP.\"\nCATEGORIA: Integração / Automação\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Fluig; APIs dos produtos TOTVS; TOTVS Carol\nJUSTIFICATIVA: A solução depende do tipo de integração: workflow, API, dados ou automação. Não presumir um único produto sem arquitetura.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-014",
+        "title":  "Dor → produto: marketplaces",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Integrador de Marketplaces",
+        "category":  "Digital Commerce",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Vendemos",
+                         "em",
+                         "vários",
+                         "marketplaces",
+                         "e",
+                         "o",
+                         "estoque",
+                         "vive"
+                     ],
+        "related_products":  [
+                                 "TOTVS Integrador de Marketplaces"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Vendemos em vários marketplaces e o estoque vive desatualizado.\"\nCATEGORIA: Digital Commerce\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Integrador de Marketplaces\nJUSTIFICATIVA: O hub centraliza pedidos, catálogo e estoque em múltiplos canais e integra com ERP.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-015",
+        "title":  "Dor → produto: pix_erp",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Pagamento Instantâneo, TOTVS Pagamento Digital",
+        "category":  "Pagamentos / Techfin",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Recebemos",
+                         "Pix",
+                         "mas",
+                         "a",
+                         "baixa",
+                         "no",
+                         "ERP",
+                         "é"
+                     ],
+        "related_products":  [
+                                 "TOTVS Pagamento Instantâneo",
+                                 "TOTVS Pagamento Digital"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Recebemos Pix, mas a baixa no ERP é manual.\"\nCATEGORIA: Pagamentos / Techfin\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Pagamento Instantâneo; TOTVS Pagamento Digital\nJUSTIFICATIVA: TPI e TPD integram Pix ao ERP, com diferenças de conciliação e liquidação.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-016",
+        "title":  "Dor → produto: credito_b2b",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "+Vendas Techfin",
+        "category":  "Crédito / Techfin",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Perdemos",
+                         "vendas",
+                         "porque",
+                         "nossos",
+                         "clientes",
+                         "pedem",
+                         "mais",
+                         "prazo"
+                     ],
+        "related_products":  [
+                                 "+Vendas Techfin"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Perdemos vendas porque nossos clientes pedem mais prazo e limite.\"\nCATEGORIA: Crédito / Techfin\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: +Vendas Techfin\nJUSTIFICATIVA: A linha B2B pode ampliar crédito a clientes e antecipar recebimento ao vendedor, sujeita a análise e contratação.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-017",
+        "title":  "Dor → produto: infra",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "TOTVS Cloud",
+        "category":  "Cloud / Infraestrutura",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Nosso",
+                         "ERP",
+                         "cai",
+                         "e",
+                         "manter",
+                         "servidor",
+                         "está",
+                         "cada"
+                     ],
+        "related_products":  [
+                                 "TOTVS Cloud"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Nosso ERP cai e manter servidor está cada vez mais caro.\"\nCATEGORIA: Cloud / Infraestrutura\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: TOTVS Cloud\nJUSTIFICATIVA: Migração para cloud pode reduzir gestão local de infraestrutura e melhorar escalabilidade/disponibilidade, após avaliação técnica.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-PAIN-018",
+        "title":  "Dor → produto: ia_dados",
+        "document_type":  "dor_para_produto",
+        "company":  "TOTVS",
+        "product":  "LYNN, TOTVS Carol",
+        "category":  "IA / Agentes",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Queremos",
+                         "agentes",
+                         "de",
+                         "IA",
+                         "usando",
+                         "dados",
+                         "do",
+                         "nosso"
+                     ],
+        "related_products":  [
+                                 "LYNN",
+                                 "TOTVS Carol"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PROBLEMA: \"Queremos agentes de IA usando dados do nosso ERP com governança.\"\nCATEGORIA: IA / Agentes\nPRODUTOS TOTVS POSSIVELMENTE RELACIONADOS: LYNN; TOTVS Carol\nJUSTIFICATIVA: LYNN é a base para agentes especializados; Carol é plataforma de dados/ML. A arquitetura exata deve ser validada.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-001",
+        "title":  "Sinal comercial 1",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "Fluig ou ERP/Analytics conforme processo",
+        "category":  "ERP / BPM / Analytics",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Estamos fazendo isso pelo Excel.",
+                         "ERP / BPM / Analytics",
+                         "Cross-sell / Modernização"
+                     ],
+        "related_products":  [
+                                 "Fluig ou ERP/Analytics conforme processo"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Estamos fazendo isso pelo Excel.\"\nPOSSÍVEL DOR: Processo manual / dados dispersos\nCATEGORIA: ERP / BPM / Analytics\nPRODUTO TOTVS RELACIONADO: Fluig ou ERP/Analytics conforme processo\nTIPO DE OPORTUNIDADE: Cross-sell / Modernização",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-002",
+        "title":  "Sinal comercial 2",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "Fluig, APIs, Carol ou integração específica",
+        "category":  "Integração / BPM / Dados",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Nosso sistema atual não conversa com o ERP.",
+                         "Integração / BPM / Dados",
+                         "Integração"
+                     ],
+        "related_products":  [
+                                 "Fluig",
+                                 "APIs",
+                                 "Carol ou integração específica"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Nosso sistema atual não conversa com o ERP.\"\nPOSSÍVEL DOR: Integração deficiente\nCATEGORIA: Integração / BPM / Dados\nPRODUTO TOTVS RELACIONADO: Fluig, APIs, Carol ou integração específica\nTIPO DE OPORTUNIDADE: Integração",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-003",
+        "title":  "Sinal comercial 3",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "Fluig, ERP especialista ou agente de IA",
+        "category":  "Automação",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Precisamos contratar mais pessoas para fazer esse processo.",
+                         "Automação",
+                         "Cross-sell / Automação"
+                     ],
+        "related_products":  [
+                                 "Fluig",
+                                 "ERP especialista ou agente de IA"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Precisamos contratar mais pessoas para fazer esse processo.\"\nPOSSÍVEL DOR: Baixa automação / escala operacional\nCATEGORIA: Automação\nPRODUTO TOTVS RELACIONADO: Fluig, ERP especialista ou agente de IA\nTIPO DE OPORTUNIDADE: Cross-sell / Automação",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-004",
+        "title":  "Sinal comercial 4",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "Fast Analytics ou Carol",
+        "category":  "Analytics / Dados",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Não conseguimos acompanhar os indicadores.",
+                         "Analytics / Dados",
+                         "Cross-sell"
+                     ],
+        "related_products":  [
+                                 "Fast Analytics ou Carol"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Não conseguimos acompanhar os indicadores.\"\nPOSSÍVEL DOR: Baixa visibilidade gerencial\nCATEGORIA: Analytics / Dados\nPRODUTO TOTVS RELACIONADO: Fast Analytics ou Carol\nTIPO DE OPORTUNIDADE: Cross-sell",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-005",
+        "title":  "Sinal comercial 5",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "Linha TOTVS aderente ao segmento",
+        "category":  "ERP / Migração",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Estamos pensando em trocar nosso sistema.",
+                         "ERP / Migração",
+                         "Migração / Novo cliente"
+                     ],
+        "related_products":  [
+                                 "Linha TOTVS aderente ao segmento"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Estamos pensando em trocar nosso sistema.\"\nPOSSÍVEL DOR: Insatisfação com legado\nCATEGORIA: ERP / Migração\nPRODUTO TOTVS RELACIONADO: Linha TOTVS aderente ao segmento\nTIPO DE OPORTUNIDADE: Migração / Novo cliente",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-006",
+        "title":  "Sinal comercial 6",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "Protheus/RM/Datasul/linha aderente",
+        "category":  "ERP",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Usamos SAP hoje.",
+                         "ERP",
+                         "Migração / Competição"
+                     ],
+        "related_products":  [
+                                 "Protheus/RM/Datasul/linha aderente"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Usamos SAP hoje.\"\nPOSSÍVEL DOR: Concorrente instalado\nCATEGORIA: ERP\nPRODUTO TOTVS RELACIONADO: Protheus/RM/Datasul/linha aderente\nTIPO DE OPORTUNIDADE: Migração / Competição",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-007",
+        "title":  "Sinal comercial 7",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "WMS ou módulo de estoque",
+        "category":  "Estoque / WMS",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "O estoque do sistema nunca bate com o físico.",
+                         "Estoque / WMS",
+                         "Cross-sell / Otimização"
+                     ],
+        "related_products":  [
+                                 "WMS ou módulo de estoque"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"O estoque do sistema nunca bate com o físico.\"\nPOSSÍVEL DOR: Acuracidade e rastreabilidade\nCATEGORIA: Estoque / WMS\nPRODUTO TOTVS RELACIONADO: WMS ou módulo de estoque\nTIPO DE OPORTUNIDADE: Cross-sell / Otimização",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-008",
+        "title":  "Sinal comercial 8",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "TOTVS Fluig",
+        "category":  "BPM",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "As aprovações dependem de e-mail e WhatsApp.",
+                         "BPM",
+                         "Cross-sell / Automação"
+                     ],
+        "related_products":  [
+                                 "TOTVS Fluig"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"As aprovações dependem de e-mail e WhatsApp.\"\nPOSSÍVEL DOR: Workflow informal\nCATEGORIA: BPM\nPRODUTO TOTVS RELACIONADO: TOTVS Fluig\nTIPO DE OPORTUNIDADE: Cross-sell / Automação",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-009",
+        "title":  "Sinal comercial 9",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "TOTVS Integrador de Marketplaces",
+        "category":  "Digital Commerce",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Vendemos em Mercado Livre",
+                         "Amazon e Shopee e cada canal é separado.",
+                         "Digital Commerce",
+                         "Cross-sell / Expansão"
+                     ],
+        "related_products":  [
+                                 "TOTVS Integrador de Marketplaces"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Vendemos em Mercado Livre, Amazon e Shopee e cada canal é separado.\"\nPOSSÍVEL DOR: Operação multicanal fragmentada\nCATEGORIA: Digital Commerce\nPRODUTO TOTVS RELACIONADO: TOTVS Integrador de Marketplaces\nTIPO DE OPORTUNIDADE: Cross-sell / Expansão",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-SIGNAL-010",
+        "title":  "Sinal comercial 10",
+        "document_type":  "sinal_oportunidade",
+        "company":  "TOTVS",
+        "product":  "RD Station CRM / Exact Spotter / recursos de IA",
+        "category":  "CRM / IA",
+        "segments":  [
+                         "Variável"
+                     ],
+        "evidence_level":  "HIPÓTESE COMERCIAL EXPLÍCITA",
+        "keywords":  [
+                         "Nossa equipe perde muito tempo atualizando o CRM depois das reuniões.",
+                         "CRM / IA",
+                         "Upsell / Automação"
+                     ],
+        "related_products":  [
+                                 "RD Station CRM",
+                                 "Exact Spotter",
+                                 "recursos de IA"
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "SINAL: \"Nossa equipe perde muito tempo atualizando o CRM depois das reuniões.\"\nPOSSÍVEL DOR: Baixa produtividade comercial\nCATEGORIA: CRM / IA\nPRODUTO TOTVS RELACIONADO: RD Station CRM / Exact Spotter / recursos de IA\nTIPO DE OPORTUNIDADE: Upsell / Automação",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-TAX-001",
+        "title":  "Taxonomia de entidades para transcrições",
+        "document_type":  "taxonomia",
+        "company":  "TOTVS",
+        "product":  "Taxonomia de entidades",
+        "category":  "NLP / Extração de entidades",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "RECOMENDAÇÃO DE MODELAGEM",
+        "keywords":  [
+                         "PRODUTO_TOTVS",
+                         "MODULO_TOTVS",
+                         "CONCORRENTE",
+                         "PRODUTO_CONCORRENTE",
+                         "SEGMENTO",
+                         "DOR_CLIENTE",
+                         "NECESSIDADE",
+                         "OPORTUNIDADE",
+                         "INTEGRACAO",
+                         "TECNOLOGIA",
+                         "PROCESSO_EMPRESARIAL",
+                         "AREA_EMPRESA",
+                         "OBJETIVO_NEGOCIO",
+                         "RISCO",
+                         "OBJECAO_CLIENTE",
+                         "INTENCAO_COMPRA"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "PRODUTO_TOTVS: Nome de produto ou plataforma TOTVS, ex.: Protheus, Fluig, RD Station Marketing.\nMODULO_TOTVS: Módulo de um produto, ex.: Financeiro, PCP, Ponto Eletrônico, WMS.\nCONCORRENTE: Empresa concorrente, ex.: SAP, Sankhya, Senior, Salesforce, HubSpot, Gupy, Sólides.\nPRODUTO_CONCORRENTE: Produto específico concorrente, ex.: SAP Business One, Agentforce Sales, HubSpot Sales Hub.\nSEGMENTO: Setor econômico, ex.: manufatura, varejo, saúde, educação, distribuição.\nDOR_CLIENTE: Problema operacional explícito, ex.: estoque divergente, processo manual, falta de indicadores.\nNECESSIDADE: Capacidade desejada, ex.: integrar sistemas, automatizar aprovação, acompanhar pipeline.\nOPORTUNIDADE: Possível movimento comercial: cross-sell, upsell, migração, novo cliente, integração, expansão.\nINTEGRACAO: Integração existente, desejada ou problemática entre sistemas.\nTECNOLOGIA: Tecnologia citada: cloud, API, IA, machine learning, OCR, Pix.\nPROCESSO_EMPRESARIAL: Processo: faturamento, compras, estoque, folha, recrutamento, produção, expedição.\nAREA_EMPRESA: Área organizacional: financeiro, fiscal, RH, vendas, marketing, TI, logística.\nOBJETIVO_NEGOCIO: Meta: reduzir custo, aumentar vendas, melhorar produtividade, reduzir prazo.\nRISCO: Risco operacional, fiscal, financeiro, de integração ou continuidade.\nOBJECAO_CLIENTE: Resistência ou impedimento: preço, prazo, integração, segurança, migração, mudança cultural.\nINTENCAO_COMPRA: Sinal de compra: orçamento, prazo de decisão, avaliação de fornecedor, troca de sistema.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-COMP-KW-001",
+        "title":  "Palavras que indicam concorrentes",
+        "document_type":  "dicionario_concorrentes",
+        "company":  "TOTVS",
+        "product":  "Detecção de concorrentes",
+        "category":  "Concorrência",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "FATO NOMINAL + RECOMENDAÇÃO DE NER",
+        "keywords":  [
+                         "SAP",
+                         "SAP Business One",
+                         "S/4HANA",
+                         "Sankhya",
+                         "Sankhya Om",
+                         "Senior",
+                         "Senior X",
+                         "ERP XT",
+                         "Mega",
+                         "GO UP",
+                         "Salesforce",
+                         "Sales Cloud",
+                         "Agentforce Sales",
+                         "HubSpot",
+                         "Sales Hub",
+                         "Marketing Hub",
+                         "Gupy",
+                         "Sólides",
+                         "Omie",
+                         "Conta Azul",
+                         "Bling",
+                         "Microsoft Dynamics",
+                         "Dynamics 365",
+                         "Oracle",
+                         "NetSuite",
+                         "Fusion Cloud ERP"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+                            "SAP",
+                            "Sankhya",
+                            "Senior Sistemas",
+                            "Salesforce",
+                            "HubSpot",
+                            "Gupy",
+                            "Sólides",
+                            "Omie",
+                            "Conta Azul",
+                            "Bling",
+                            "Microsoft",
+                            "Oracle"
+                        ],
+        "content":  "SAP: SAP, SAP Business One, S/4HANA\nSankhya: Sankhya, Sankhya Om\nSenior Sistemas: Senior, Senior X, ERP XT, Mega, GO UP\nSalesforce: Salesforce, Sales Cloud, Agentforce Sales\nHubSpot: HubSpot, Sales Hub, Marketing Hub\nGupy: Gupy\nSólides: Sólides\nOmie: Omie\nConta Azul: Conta Azul\nBling: Bling\nMicrosoft: Microsoft Dynamics, Dynamics 365\nOracle: Oracle, NetSuite, Fusion Cloud ERP",
+        "sources":  [
+                        {
+                            "url":  "https://www.sap.com/brazil/products/erp/business-one.html"
+                        },
+                        {
+                            "url":  "https://www.sankhya.com.br/software-de-gestao-erp/erp-para-gestao-empresarial/produtos/sankhya/"
+                        },
+                        {
+                            "url":  "https://documentacao.senior.com.br/gestaoempresarialerp/7.0.0/home.htm"
+                        },
+                        {
+                            "url":  "https://www.salesforce.com/br/products/sales-cloud/features/"
+                        },
+                        {
+                            "url":  "https://br.hubspot.com/products/sales"
+                        },
+                        {
+                            "url":  "https://www.gupy.io/"
+                        },
+                        {
+                            "url":  "https://solides.com.br/"
+                        },
+                        {
+                            "url":  "https://www.omie.com.br/funcionalidades/"
+                        },
+                        {
+                            "url":  "https://contaazul.com/sistema-erp/"
+                        },
+                        {
+                            "url":  "https://www.bling.com.br/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    },
+    {
+        "schema_version":  "1.0",
+        "id":  "TOTVS-RAG-001",
+        "title":  "Como usar esta base no RAG",
+        "document_type":  "arquitetura_rag",
+        "company":  "TOTVS",
+        "product":  "Estratégia de chunking",
+        "category":  "RAG / Embeddings",
+        "segments":  [
+                         "Multissegmento"
+                     ],
+        "evidence_level":  "RECOMENDAÇÃO DE ARQUITETURA",
+        "keywords":  [
+                         "RAG",
+                         "embeddings",
+                         "chunking",
+                         "reranking",
+                         "metadata",
+                         "evidence"
+                     ],
+        "related_products":  [
+
+                             ],
+        "competitors":  [
+
+                        ],
+        "content":  "Use cada registro JSONL como unidade de recuperação independente. Recomendações: (1) mantenha chunks de produto separados dos chunks de comparação e dos chunks de dor→produto; (2) gere embeddings principalmente sobre TITULO + CONTEUDO + PALAVRAS_CHAVE; (3) armazene categoria, segmento, produto, concorrente e nível de evidência como metadados filtráveis; (4) no reranking, dê preferência a FATO DOCUMENTADO para perguntas factuais e a HIPÓTESE COMERCIAL apenas quando a pergunta pedir recomendação; (5) nunca converta automaticamente uma POSSÍVEL RELAÇÃO em recomendação final; (6) extraia entidades da transcrição antes da busca e use-as para filtros; (7) para reuniões longas, faça chunking semântico por tópico/turno e preserve meeting_id, speaker, timestamp e janela de contexto; (8) mantenha fontes e data de consulta no retorno para auditabilidade.",
+        "sources":  [
+                        {
+                            "url":  "https://ri.totvs.com/a-companhia/segmentos-e-produtos/"
+                        }
+                    ],
+        "compiled_at":  "2026-09-09"
+    }
+]

@@ -1,0 +1,45 @@
+{
+  "seed": 42,
+  "model_name": "neuralmind/bert-base-portuguese-cased",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 3050",
+  "torch_version": "2.14.0+cu130",
+  "cuda_build": "13.0",
+  "batch_size": 8,
+  "max_length": 512,
+  "sample_chunks": 3000,
+  "sample_meetings": 1126,
+  "rule_label_counts": {
+    "1": 814,
+    "0": 1272,
+    "-1": 914
+  },
+  "bert_label_counts": {
+    "1": 900,
+    "-1": 1200,
+    "0": 900
+  },
+  "bert_margin_p30": -0.0008803546428680427,
+  "bert_margin_p70": 0.019753021001815793,
+  "pseudo_label_counts_before_audit_reserve": {
+    "1": 376,
+    "0": 530
+  },
+  "pseudo_label_count_before_audit_reserve": 906,
+  "pseudo_label_coverage": 0.302,
+  "development_pseudo_label_counts": {
+    "1": 276,
+    "0": 403
+  },
+  "development_pseudo_label_count": 679,
+  "agreement_among_co_labeled": 0.7006960556844548,
+  "train_meetings": 388,
+  "validation_meetings": 98,
+  "split_leakage_meetings": 0,
+  "audit_queue_size": 150,
+  "audit_meetings": 150,
+  "audit_development_leakage_meetings": 0,
+  "prototype_embedding_seconds": 0.4858021000000008,
+  "chunk_embedding_seconds": 33.132287699999324,
+  "metric_warning": "Agreement and coverage are not precision. Final metrics require human ground truth."
+}
