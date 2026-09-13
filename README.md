@@ -111,9 +111,13 @@ está em [O_QUE_FIZEMOS_NO_PROJETO.md](O_QUE_FIZEMOS_NO_PROJETO.md).
 
 ### Google Colab
 
-Use o arquivo `Wedjat_Entrega_Colab.zip` e siga as instruções de
-[COLAB_README.md](COLAB_README.md). Ative um runtime com GPU e execute os
-notebooks de 01 a 11 na ordem numérica.
+Para executar tudo em uma única aba, use
+`notebooks/Wedjat_Projeto_Completo_Colab.ipynb`. Ele reúne as 11 etapas, preserva
+as explicações e libera a memória da GPU entre os modelos.
+
+O pacote `Wedjat_Entrega_Colab_Notebook_Unico.zip` contém somente esse notebook,
+os dados e os arquivos auxiliares necessários. Siga as instruções de
+[COLAB_README.md](COLAB_README.md) e ative um runtime com GPU.
 
 ### Ambiente local
 

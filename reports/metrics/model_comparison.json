@@ -84,7 +84,7 @@
     "bertimbau": {
       "roc_auc": 0.9995794785534062,
       "average_precision": 0.9994252873563219,
-      "brier_score": 0.01587229530947863
+      "brier_score": 0.015867453902472083
     }
   },
   "full_recall_threshold_diagnostic": {
@@ -98,7 +98,7 @@
       "warning": "Diagnóstico na validação; não usar como limiar final."
     },
     "bertimbau": {
-      "threshold": 0.10167862,
+      "threshold": 0.09938277,
       "precision_oportunidade": 0.9666666666666667,
       "recall_oportunidade": 1.0,
       "f1_oportunidade": 0.9830508474576272,
@@ -113,8 +113,8 @@
     "interpretation": "BERTimbau tem menor custo se FN custar menos de 4 revisões; baseline tem menor custo se custar mais de 4."
   },
   "resource_tradeoff": {
-    "baseline_fit_seconds": 0.3826875000004293,
-    "bertimbau_training_seconds": 103.75482229999943,
+    "baseline_fit_seconds": 0.38901389999955427,
+    "bertimbau_training_seconds": 93.66048490000139,
     "baseline_model_size_mb": 0.6909379959106445,
     "bertimbau_model_size_mb": 415.53709411621094
   },

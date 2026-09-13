@@ -26,7 +26,19 @@ Se o ZIP estiver no Google Drive, monte o Drive e ajuste o caminho do `%cd`.
 O PyTorch é fornecido pelo runtime do Colab e, por isso, não é fixado no
 `requirements.txt`.
 
-## Ordem de execução
+## Execução recomendada: notebook único
+
+Abra `notebooks/Wedjat_Projeto_Completo_Colab.ipynb` e use **Runtime > Run all**.
+Ele reúne todo o conteúdo dos notebooks 01 a 11, explica cada etapa e libera
+objetos grandes entre os modelos para controlar o uso de memória da GPU.
+
+Na primeira célula de configuração, o caminho padrão é
+`/content/Wedjat-Colab`. Se você descompactar o pacote em outro lugar, ajuste a
+variável `PROJECT_DIR`.
+
+## Ordem original das etapas
+
+O notebook único executa internamente a seguinte ordem:
 
 Execute os notebooks integralmente nesta ordem:
 

@@ -105,8 +105,8 @@
     "value": 1.0,
     "justification": "Perder uma oportunidade relevante tende a ser mais custoso do que revisar um falso positivo."
   },
-  "fit_seconds": 0.3826875000004293,
-  "validation_inference_seconds": 0.061309499999879336,
+  "fit_seconds": 0.38901389999955427,
+  "validation_inference_seconds": 0.06868949999989127,
   "python_version": "3.12.10",
   "numpy_version": "2.5.3",
   "scikit_learn_version": "1.9.1"

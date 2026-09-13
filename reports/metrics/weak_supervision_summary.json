@@ -39,7 +39,7 @@
   "audit_queue_size": 150,
   "audit_meetings": 150,
   "audit_development_leakage_meetings": 0,
-  "prototype_embedding_seconds": 0.4858021000000008,
-  "chunk_embedding_seconds": 33.132287699999324,
+  "prototype_embedding_seconds": 0.43860070000118867,
+  "chunk_embedding_seconds": 28.421388299999307,
   "metric_warning": "Agreement and coverage are not precision. Final metrics require human ground truth."
 }

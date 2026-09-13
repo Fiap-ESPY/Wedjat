@@ -28,6 +28,6 @@
     "sources_required_for_factual_claims": true,
     "hypotheses_never_marked_as_facts": true
   },
-  "classification_seconds": 392.5833582999985,
+  "classification_seconds": 269.4434089999995,
   "warning": "Thresholds are operational heuristics. End-to-end metrics and production selection require human meeting labels."
 }
