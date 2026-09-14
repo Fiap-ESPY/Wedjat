@@ -184,6 +184,6 @@ O acompanhamento detalhado das tarefas está em [TODO.md](TODO.md).
  
 - Gabriel Augusto - RM564126
  
-- Gustavo Moura - RM566190
+- Davi Duarte - RM566316
  
-- Pedro Henrique - RM563281
+- Raphaela Tatto - RM572059
