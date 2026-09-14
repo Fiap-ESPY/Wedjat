@@ -174,3 +174,16 @@ As próximas evoluções planejadas são:
 12. adicionar monitoramento de qualidade, drift e feedback humano.
 
 O acompanhamento detalhado das tarefas está em [TODO.md](TODO.md).
+
+---
+
+## 👥 Integrantes
+- Beatriz Cortez - RM561431
+ 
+- Bruno Alves - RM563986
+ 
+- Gabriel Augusto - RM564126
+ 
+- Gustavo Moura - RM566190
+ 
+- Pedro Henrique - RM563281
