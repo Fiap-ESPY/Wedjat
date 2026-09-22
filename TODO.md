@@ -230,3 +230,114 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 - Os notebooks detectarão automaticamente RTX local, GPU do Colab ou CPU.
 - A base TOTVS pronta para consumo fica em
   `data/knowledge_base/totvs_rag_kb_v1.json`.
+
+## Sprint 4 — Solução integrada de inteligência comercial
+
+Status: `ready-for-agent`
+
+### Problem Statement
+
+A área comercial precisa transformar uma nova transcrição em indicadores úteis sem executar manualmente os notebooks, interpretar scores técnicos ou combinar resultados de modelos diferentes. A solução atual comprova os experimentos, mas ainda não oferece um ponto de entrada reutilizável que preserve a transcrição e devolva, em um único contrato, produto, sentimento, churn, oportunidade, termos e próxima ação.
+
+### Solution
+
+Entregar uma biblioteca Python e uma CLI, sem interface web, que processem uma transcrição por vez. A solução preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e devolve um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
+
+### User Stories
+
+1. Como pessoa da área comercial, quero analisar uma transcrição diretamente em Python, para integrar a análise a outros fluxos.
+2. Como pessoa da área comercial, quero analisar uma transcrição pela linha de comando, para executar a solução sem abrir notebooks.
+3. Como operadora da CLI, quero informar o texto diretamente, para testar reuniões curtas rapidamente.
+4. Como operadora da CLI, quero ler uma transcrição de arquivo texto, para analisar registros já salvos.
+5. Como operadora da CLI, quero ler uma transcrição de JSON, para integrar exportações estruturadas.
+6. Como operadora da CLI, quero enviar a transcrição por entrada padrão, para compor a ferramenta com outros comandos.
+7. Como revisora comercial, quero que a transcrição original permaneça inalterada no resultado, para conferir as labels contra a fonte.
+8. Como revisora comercial, quero receber um produto principal, para identificar rapidamente a solução TOTVS mais compatível.
+9. Como revisora comercial, quero receber até três produtos candidatos ranqueados, para avaliar alternativas de cross-sell ou upsell.
+10. Como revisora comercial, quero visualizar scores, termos correspondentes, documentos e fontes dos produtos, para validar o fundamento do ranking.
+11. Como revisora comercial, quero uma label de sentimento positiva, neutra, negativa ou mista, para entender o tom geral da reunião.
+12. Como revisora comercial, quero que sinais positivos e negativos relevantes resultem em sentimento misto, para não esconder divergências entre trechos.
+13. Como gestora comercial, quero risco de churn baixo, médio ou alto, para priorizar contas que exigem atenção.
+14. Como gestora comercial, quero que churn seja tratado como sinal sujeito a revisão, para não confundi-lo com cancelamento confirmado.
+15. Como pessoa de pré-vendas, quero saber se uma oportunidade comercial foi detectada, para decidir se devo qualificá-la.
+16. Como pessoa de pré-vendas, quero até dez termos principais, priorizando produtos, dores, concorrentes e vocabulário comercial, para compreender o contexto sem depender de uma nuvem de palavras.
+17. Como pessoa da área comercial, quero uma recomendação de ação padronizada, para saber o próximo passo sugerido.
+18. Como revisora comercial, quero que churn alto priorize retenção, para tratar primeiro o risco de perda.
+19. Como revisora comercial, quero que sinais mistos ou de baixa confiança exijam revisão manual, para evitar ação baseada em evidência fraca.
+20. Como revisora comercial, quero que oportunidade e produto confiáveis sugiram demonstração, para avançar o fluxo comercial.
+21. Como revisora comercial, quero que oportunidade sem produto confiável sugira qualificação, para coletar contexto antes de ofertar.
+22. Como revisora comercial, quero que todos os resultados indiquem revisão humana obrigatória, para impedir automação indevida sobre clientes.
+23. Como responsável técnico, quero saber qual modelo e modo produziram cada indicador, para distinguir inferência de fallback.
+24. Como responsável técnico, quero distinguir probabilidade de modelo de score heurístico, para não apresentar medidas diferentes como equivalentes.
+25. Como responsável técnico, quero que a ausência de checkpoints ou dependências pesadas acione fallbacks transparentes, para manter a solução executável.
+26. Como responsável técnico, quero carregar modelos apenas quando necessários, para manter a inicialização leve.
+27. Como responsável técnico, quero usar artefatos locais e cache offline quando configurados, para não depender de downloads em toda execução.
+28. Como operadora da CLI, quero gravar o JSON somente quando indicar um arquivo de saída, para controlar a persistência.
+29. Como operadora da CLI, quero erros claros para entrada vazia, JSON inválido ou campos ausentes, para corrigir o uso sem investigar o código.
+30. Como equipe do Challenge, quero testes determinísticos do contrato completo, para evoluir modelos sem quebrar a integração.
+
+### Implementation Decisions
+
+- A fronteira pública principal recebe uma transcrição e devolve uma análise comercial estruturada.
+- A CLI é um adaptador fino da fronteira pública e oferece entrada por texto, arquivo texto, JSON ou entrada padrão.
+- Uma execução aceita exatamente uma transcrição.
+- O resultado inclui a transcrição original, sem normalização destrutiva.
+- O processamento pode usar uma cópia normalizada internamente.
+- A análise de sentimento usa Pysentimiento no modo completo e agrega chunks para produzir `positivo`, `neutro`, `negativo` ou `misto`.
+- A análise de churn usa MiniLM multilíngue com NLI zero-shot no modo completo e produz `baixo`, `medio` ou `alto`.
+- O classificador BERTimbau de oportunidade é usado quando o checkpoint ajustado estiver disponível.
+- O retriever E5 é usado quando modelo e índice compatíveis estiverem disponíveis; BM25 com aliases é o fallback de produtos.
+- Componentes de modelo são carregados sob demanda e implementam interfaces substituíveis.
+- Fallbacks lexicais auditáveis mantêm a execução funcional e são declarados como heurísticos.
+- O produto principal é o primeiro de até três candidatos ranqueados.
+- Candidatos carregam score, tipo de score, termos correspondentes, documentos e URLs das fontes.
+- Sentimento, churn e oportunidade carregam label, score, tipo de score, mecanismo e modelo utilizado.
+- Scores zero-shot ou heurísticos não são descritos como probabilidades calibradas de negócio.
+- A recomendação segue a prioridade: retenção; revisão manual; demonstração; qualificação; acompanhamento.
+- O resultado sempre sinaliza que revisão humana é obrigatória.
+- A serialização JSON usa labels estáveis em português sem acentos para facilitar integração.
+- Falhas de configuração de um modelo provocam fallback apenas no modo automático; o resultado registra a causa sem incluir conteúdo sensível adicional.
+
+### Testing Decisions
+
+- O principal teste de comportamento atravessa a fronteira pública completa, recebendo uma transcrição e validando o resultado estruturado.
+- Testes observam comportamento externo, não detalhes internos de tokenização, pesos ou bibliotecas.
+- Adaptadores de modelos externos são substituídos por dublês determinísticos nos testes unitários.
+- O contrato completo cobre preservação da entrada, todas as labels, ranking de produtos, termos, recomendação, revisão humana e metadados.
+- Casos de borda cobrem entrada vazia, sinais mistos, churn prioritário, ausência de produto, indisponibilidade de modelo e fontes ausentes.
+- A CLI é testada como adaptador da mesma fronteira, incluindo as quatro formas de entrada e a escrita opcional.
+- Smoke tests de modelos reais são opcionais e executados somente quando dependências e checkpoints estiverem instalados.
+- O projeto não possui testes de integração anteriores; esta Sprint estabelece a fronteira pública como seam principal.
+
+### Out of Scope
+
+- Interface web ou aplicativo gráfico.
+- Transcrição de áudio ou captura de reuniões em tempo real.
+- Dashboard de pipeline, alertas e notificações.
+- Sincronização ou escrita no CRM.
+- Preenchimento completo dos campos SPICED.
+- Envio automático de mensagens, propostas ou descontos.
+- Treinamento de novos modelos ou apresentação de métricas como validadas sem rótulos humanos.
+- Processamento em lote de várias transcrições numa única execução.
+
+### Further Notes
+
+- O Pysentimiento foi treinado em textos de redes sociais; a adequação a reuniões comerciais precisa de avaliação humana.
+- O MiniLM NLI não foi treinado para churn; sua saída é um sinal zero-shot para revisão.
+- Os artefatos BERTimbau e E5 existentes permanecem opcionais porque não estão versionados.
+- A base TOTVS versionada é a fonte de grounding para identificação de produtos.
+- A solução é apoio à inteligência comercial e não substitui o CRM nem a decisão humana.
+
+### Progresso de implementação
+
+- [~] Definir o contrato da análise comercial e a fronteira pública.
+- [ ] Implementar carregamento e validação de uma transcrição por execução.
+- [ ] Implementar identificação e ranking de produtos com fontes.
+- [ ] Integrar Pysentimiento e fallback de sentimento.
+- [ ] Integrar MiniLM zero-shot e fallback de churn.
+- [ ] Integrar BERTimbau e fallback de oportunidade.
+- [ ] Extrair até dez termos principais.
+- [ ] Implementar recomendação de ação e revisão humana obrigatória.
+- [ ] Implementar CLI para texto, arquivo, JSON e entrada padrão.
+- [ ] Documentar instalação, modelos opcionais e exemplos de uso.
+- [ ] Executar testes, revisão de código e validação ponta a ponta.
