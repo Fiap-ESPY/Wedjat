@@ -337,7 +337,7 @@ Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou inte
 - [ ] Implementar carregamento e validação de uma transcrição por execução.
 - [x] Implementar identificação e ranking de produtos com fontes.
 - [x] Integrar Pysentimiento e fallback de sentimento.
-- [ ] Integrar MiniLM zero-shot e fallback de churn.
+- [x] Integrar MiniLM zero-shot e fallback de churn.
 - [ ] Integrar BERTimbau e fallback de oportunidade.
 - [ ] Extrair até dez termos principais.
 - [ ] Implementar recomendação de ação e revisão humana obrigatória.

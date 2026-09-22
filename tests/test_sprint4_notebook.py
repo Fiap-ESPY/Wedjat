@@ -117,6 +117,53 @@ class Sprint4NotebookTest(unittest.TestCase):
         self.assertEqual(result["sentimento"]["engine"], "lexical_sentiment")
         self.assertIsNone(result["sentimento"]["model"])
 
+    def test_notebook_uses_minilm_zero_shot_for_churn_when_available(self):
+        _, namespace = load_notebook_namespace()
+
+        class HighChurnClassifier:
+            @staticmethod
+            def __call__(_text, candidate_labels, **_kwargs):
+                descriptions = namespace["CHURN_HYPOTHESES"]
+                return {
+                    "labels": [
+                        descriptions["alto"],
+                        descriptions["medio"],
+                        descriptions["baixo"],
+                    ],
+                    "scores": [0.82, 0.12, 0.06],
+                }
+
+        namespace["_CHURN_CLASSIFIER"] = HighChurnClassifier()
+
+        result = namespace["analisar_transcricao"](
+            "Estamos avaliando encerrar o contrato no próximo trimestre.", modo="auto"
+        )
+
+        self.assertEqual(result["risco_churn"]["label"], "alto")
+        self.assertEqual(result["risco_churn"]["score"], 0.82)
+        self.assertEqual(result["risco_churn"]["score_type"], "model_probability")
+        self.assertEqual(result["risco_churn"]["engine"], "zero_shot_nli")
+        self.assertEqual(
+            result["risco_churn"]["model"],
+            "MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli",
+        )
+        self.assertEqual(result["analysis_mode"]["components"]["churn"], "model")
+
+    def test_notebook_churn_fallback_detects_explicit_cancellation_risk(self):
+        _, namespace = load_notebook_namespace()
+
+        result = namespace["analisar_transcricao"](
+            "Não vamos renovar o contrato. Se o problema continuar, vamos cancelar "
+            "e migrar para um concorrente.",
+            modo="fallback",
+        )
+
+        self.assertEqual(result["risco_churn"]["label"], "alto")
+        self.assertGreater(result["risco_churn"]["score"], 0.5)
+        self.assertEqual(result["risco_churn"]["score_type"], "heuristic")
+        self.assertEqual(result["risco_churn"]["engine"], "lexical_churn")
+        self.assertIsNone(result["risco_churn"]["model"])
+
 
 if __name__ == "__main__":
     unittest.main()
