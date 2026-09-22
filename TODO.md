@@ -333,7 +333,7 @@ Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou inte
 
 ### Progresso de implementação
 
-- [~] Definir o contrato da análise comercial e a fronteira pública no notebook.
+- [x] Definir o contrato da análise comercial e a fronteira pública no notebook.
 - [ ] Implementar carregamento e validação de uma transcrição por execução.
 - [ ] Implementar identificação e ranking de produtos com fontes.
 - [ ] Integrar Pysentimiento e fallback de sentimento.
