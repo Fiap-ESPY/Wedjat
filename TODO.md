@@ -241,11 +241,11 @@ A área comercial precisa transformar uma nova transcrição em indicadores úte
 
 ### Solution
 
-Entregar uma biblioteca Python e um notebook documentado, sem interface web, que processem uma transcrição por vez. O notebook segue o padrão das etapas atuais do projeto, preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e exibe um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
+Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou interface web, que processe uma transcrição por vez. O notebook segue o padrão das etapas atuais do projeto, preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e exibe um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
 
 ### User Stories
 
-1. Como pessoa da área comercial, quero analisar uma transcrição diretamente em Python, para integrar a análise a outros fluxos.
+1. Como pessoa da área comercial, quero analisar uma transcrição diretamente no notebook, para seguir o fluxo atual do Challenge.
 2. Como pessoa da área comercial, quero executar a solução em um notebook numerado e explicado, para seguir o mesmo fluxo das etapas anteriores do Challenge.
 3. Como pessoa usuária do notebook, quero informar o texto em uma célula de configuração, para analisar uma nova reunião sem alterar o pipeline.
 4. Como pessoa usuária do notebook, quero carregar uma transcrição de arquivo texto, para analisar registros já salvos.
@@ -278,8 +278,8 @@ Entregar uma biblioteca Python e um notebook documentado, sem interface web, que
 
 ### Implementation Decisions
 
-- A fronteira pública principal recebe uma transcrição e devolve uma análise comercial estruturada.
-- O notebook é a entrega executável principal e usa a fronteira pública para manter a lógica testável fora das células.
+- A fronteira principal é a função `analisar_transcricao` definida no próprio notebook; ela recebe uma transcrição e devolve uma análise comercial estruturada.
+- Toda a implementação da Sprint 4 fica em células do notebook, sem criar uma biblioteca ou CLI paralela.
 - O notebook contém células explicativas, configuração de entrada, seleção do modo, execução, visualização das labels e persistência opcional do JSON.
 - Uma execução aceita exatamente uma transcrição.
 - O resultado inclui a transcrição original, sem normalização destrutiva.
@@ -301,12 +301,12 @@ Entregar uma biblioteca Python e um notebook documentado, sem interface web, que
 
 ### Testing Decisions
 
-- O principal teste de comportamento atravessa a fronteira pública completa, recebendo uma transcrição e validando o resultado estruturado.
+- O principal teste de comportamento executa as células testáveis do notebook e atravessa a função `analisar_transcricao`, recebendo uma transcrição e validando o resultado estruturado.
 - Testes observam comportamento externo, não detalhes internos de tokenização, pesos ou bibliotecas.
 - Adaptadores de modelos externos são substituídos por dublês determinísticos nos testes unitários.
 - O contrato completo cobre preservação da entrada, todas as labels, ranking de produtos, termos, recomendação, revisão humana e metadados.
 - Casos de borda cobrem entrada vazia, sinais mistos, churn prioritário, ausência de produto, indisponibilidade de modelo e fontes ausentes.
-- O notebook é validado estruturalmente e suas funções de entrada reutilizam a mesma fronteira coberta pelos testes automatizados.
+- O notebook é validado estruturalmente e suas células testáveis são executadas diretamente pelos testes automatizados.
 - Smoke tests de modelos reais são opcionais e executados somente quando dependências e checkpoints estiverem instalados.
 - O projeto não possui testes de integração anteriores; esta Sprint estabelece a fronteira pública como seam principal.
 
@@ -314,6 +314,7 @@ Entregar uma biblioteca Python e um notebook documentado, sem interface web, que
 
 - Interface web ou aplicativo gráfico.
 - Interface de linha de comando como entrega da Sprint 4.
+- Nova biblioteca ou pacote de aplicação em `src/`.
 - Transcrição de áudio ou captura de reuniões em tempo real.
 - Dashboard de pipeline, alertas e notificações.
 - Sincronização ou escrita no CRM.
@@ -332,7 +333,7 @@ Entregar uma biblioteca Python e um notebook documentado, sem interface web, que
 
 ### Progresso de implementação
 
-- [x] Definir o contrato da análise comercial e a fronteira pública.
+- [~] Definir o contrato da análise comercial e a fronteira pública no notebook.
 - [ ] Implementar carregamento e validação de uma transcrição por execução.
 - [ ] Implementar identificação e ranking de produtos com fontes.
 - [ ] Integrar Pysentimiento e fallback de sentimento.
