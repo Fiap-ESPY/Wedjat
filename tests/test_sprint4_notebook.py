@@ -56,6 +56,27 @@ class Sprint4NotebookTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "transcrição não pode estar vazia"):
             namespace["analisar_transcricao"]("  \n\t", modo="fallback")
 
+    def test_notebook_ranks_grounded_totvs_products(self):
+        _, namespace = load_notebook_namespace()
+        transcript = (
+            "Usamos Protheus no financeiro, mas precisamos melhorar estoque, "
+            "compras e faturamento."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertIn("Protheus", result["produto_identificado"])
+        self.assertGreaterEqual(len(result["produtos_candidatos"]), 1)
+        self.assertLessEqual(len(result["produtos_candidatos"]), 3)
+        top_candidate = result["produtos_candidatos"][0]
+        self.assertEqual(top_candidate["product"], result["produto_identificado"])
+        self.assertEqual(top_candidate["score_type"], "heuristic")
+        self.assertEqual(top_candidate["engine"], "bm25_aliases")
+        self.assertIn("protheus", top_candidate["matched_terms"])
+        self.assertTrue(top_candidate["document_ids"])
+        self.assertTrue(top_candidate["sources"])
+        self.assertNotIn("content", top_candidate)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -335,7 +335,7 @@ Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou inte
 
 - [x] Definir o contrato da análise comercial e a fronteira pública no notebook.
 - [ ] Implementar carregamento e validação de uma transcrição por execução.
-- [ ] Implementar identificação e ranking de produtos com fontes.
+- [x] Implementar identificação e ranking de produtos com fontes.
 - [ ] Integrar Pysentimiento e fallback de sentimento.
 - [ ] Integrar MiniLM zero-shot e fallback de churn.
 - [ ] Integrar BERTimbau e fallback de oportunidade.
