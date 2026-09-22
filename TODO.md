@@ -330,7 +330,7 @@ Entregar uma biblioteca Python e uma CLI, sem interface web, que processem uma t
 
 ### Progresso de implementação
 
-- [~] Definir o contrato da análise comercial e a fronteira pública.
+- [x] Definir o contrato da análise comercial e a fronteira pública.
 - [ ] Implementar carregamento e validação de uma transcrição por execução.
 - [ ] Implementar identificação e ranking de produtos com fontes.
 - [ ] Integrar Pysentimiento e fallback de sentimento.
