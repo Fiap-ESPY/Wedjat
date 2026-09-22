@@ -241,16 +241,16 @@ A área comercial precisa transformar uma nova transcrição em indicadores úte
 
 ### Solution
 
-Entregar uma biblioteca Python e uma CLI, sem interface web, que processem uma transcrição por vez. A solução preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e devolve um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
+Entregar uma biblioteca Python e um notebook documentado, sem interface web, que processem uma transcrição por vez. O notebook segue o padrão das etapas atuais do projeto, preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e exibe um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
 
 ### User Stories
 
 1. Como pessoa da área comercial, quero analisar uma transcrição diretamente em Python, para integrar a análise a outros fluxos.
-2. Como pessoa da área comercial, quero analisar uma transcrição pela linha de comando, para executar a solução sem abrir notebooks.
-3. Como operadora da CLI, quero informar o texto diretamente, para testar reuniões curtas rapidamente.
-4. Como operadora da CLI, quero ler uma transcrição de arquivo texto, para analisar registros já salvos.
-5. Como operadora da CLI, quero ler uma transcrição de JSON, para integrar exportações estruturadas.
-6. Como operadora da CLI, quero enviar a transcrição por entrada padrão, para compor a ferramenta com outros comandos.
+2. Como pessoa da área comercial, quero executar a solução em um notebook numerado e explicado, para seguir o mesmo fluxo das etapas anteriores do Challenge.
+3. Como pessoa usuária do notebook, quero informar o texto em uma célula de configuração, para analisar uma nova reunião sem alterar o pipeline.
+4. Como pessoa usuária do notebook, quero carregar uma transcrição de arquivo texto, para analisar registros já salvos.
+5. Como pessoa usuária do notebook, quero carregar uma transcrição de JSON, para integrar exportações estruturadas.
+6. Como pessoa usuária do notebook, quero visualizar as labels e o JSON em células de resultado, para revisar a análise dentro do ambiente atual do projeto.
 7. Como revisora comercial, quero que a transcrição original permaneça inalterada no resultado, para conferir as labels contra a fonte.
 8. Como revisora comercial, quero receber um produto principal, para identificar rapidamente a solução TOTVS mais compatível.
 9. Como revisora comercial, quero receber até três produtos candidatos ranqueados, para avaliar alternativas de cross-sell ou upsell.
@@ -272,14 +272,15 @@ Entregar uma biblioteca Python e uma CLI, sem interface web, que processem uma t
 25. Como responsável técnico, quero que a ausência de checkpoints ou dependências pesadas acione fallbacks transparentes, para manter a solução executável.
 26. Como responsável técnico, quero carregar modelos apenas quando necessários, para manter a inicialização leve.
 27. Como responsável técnico, quero usar artefatos locais e cache offline quando configurados, para não depender de downloads em toda execução.
-28. Como operadora da CLI, quero gravar o JSON somente quando indicar um arquivo de saída, para controlar a persistência.
-29. Como operadora da CLI, quero erros claros para entrada vazia, JSON inválido ou campos ausentes, para corrigir o uso sem investigar o código.
+28. Como pessoa usuária do notebook, quero gravar o JSON somente quando configurar um arquivo de saída, para controlar a persistência.
+29. Como pessoa usuária do notebook, quero erros claros para entrada vazia, JSON inválido ou campos ausentes, para corrigir o uso sem investigar o código.
 30. Como equipe do Challenge, quero testes determinísticos do contrato completo, para evoluir modelos sem quebrar a integração.
 
 ### Implementation Decisions
 
 - A fronteira pública principal recebe uma transcrição e devolve uma análise comercial estruturada.
-- A CLI é um adaptador fino da fronteira pública e oferece entrada por texto, arquivo texto, JSON ou entrada padrão.
+- O notebook é a entrega executável principal e usa a fronteira pública para manter a lógica testável fora das células.
+- O notebook contém células explicativas, configuração de entrada, seleção do modo, execução, visualização das labels e persistência opcional do JSON.
 - Uma execução aceita exatamente uma transcrição.
 - O resultado inclui a transcrição original, sem normalização destrutiva.
 - O processamento pode usar uma cópia normalizada internamente.
@@ -305,13 +306,14 @@ Entregar uma biblioteca Python e uma CLI, sem interface web, que processem uma t
 - Adaptadores de modelos externos são substituídos por dublês determinísticos nos testes unitários.
 - O contrato completo cobre preservação da entrada, todas as labels, ranking de produtos, termos, recomendação, revisão humana e metadados.
 - Casos de borda cobrem entrada vazia, sinais mistos, churn prioritário, ausência de produto, indisponibilidade de modelo e fontes ausentes.
-- A CLI é testada como adaptador da mesma fronteira, incluindo as quatro formas de entrada e a escrita opcional.
+- O notebook é validado estruturalmente e suas funções de entrada reutilizam a mesma fronteira coberta pelos testes automatizados.
 - Smoke tests de modelos reais são opcionais e executados somente quando dependências e checkpoints estiverem instalados.
 - O projeto não possui testes de integração anteriores; esta Sprint estabelece a fronteira pública como seam principal.
 
 ### Out of Scope
 
 - Interface web ou aplicativo gráfico.
+- Interface de linha de comando como entrega da Sprint 4.
 - Transcrição de áudio ou captura de reuniões em tempo real.
 - Dashboard de pipeline, alertas e notificações.
 - Sincronização ou escrita no CRM.
@@ -338,6 +340,6 @@ Entregar uma biblioteca Python e uma CLI, sem interface web, que processem uma t
 - [ ] Integrar BERTimbau e fallback de oportunidade.
 - [ ] Extrair até dez termos principais.
 - [ ] Implementar recomendação de ação e revisão humana obrigatória.
-- [ ] Implementar CLI para texto, arquivo, JSON e entrada padrão.
+- [ ] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [ ] Documentar instalação, modelos opcionais e exemplos de uso.
 - [ ] Executar testes, revisão de código e validação ponta a ponta.
