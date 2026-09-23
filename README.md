@@ -144,6 +144,10 @@ carrega os notebooks 12 a 17 no mesmo kernel e apresenta somente a configuraçã
 da nova transcrição e o resultado integrado. Cada funcionalidade permanece em
 um notebook menor, explicado e testado separadamente.
 
+O guia [docs/sprint4_notebooks.md](docs/sprint4_notebooks.md) descreve os modos
+de análise, os três formatos de entrada, os modelos opcionais, cache offline,
+persistência do JSON e exemplos de configuração.
+
 ## Principais artefatos
 
 - `reports/metrics/model_comparison.json`: comparação dos classificadores;
