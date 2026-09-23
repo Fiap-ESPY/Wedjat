@@ -334,7 +334,7 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 ### Progresso de implementação
 
 - [x] Definir o contrato da análise comercial e a fronteira pública no notebook.
-- [ ] Implementar carregamento e validação de uma transcrição por execução.
+- [x] Implementar carregamento e validação de uma transcrição por execução.
 - [x] Implementar identificação e ranking de produtos com fontes.
 - [x] Integrar Pysentimiento e fallback de sentimento.
 - [x] Integrar MiniLM zero-shot e fallback de churn.
@@ -342,6 +342,6 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - [x] Extrair até dez termos principais.
 - [x] Implementar recomendação de ação e revisão humana obrigatória.
 - [x] Modularizar a Sprint 4 nos notebooks 12 a 18 e separar os testes por funcionalidade.
-- [ ] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
+- [x] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [ ] Documentar instalação, modelos opcionais e exemplos de uso.
 - [ ] Executar testes, revisão de código e validação ponta a ponta.
