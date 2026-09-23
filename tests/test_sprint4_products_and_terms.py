@@ -8,6 +8,25 @@ from tests.sprint4_notebook_support import load_sprint4_namespace
 
 
 class Sprint4ProductsAndTermsTest(unittest.TestCase):
+    def test_rejects_truncated_or_dimensionally_incompatible_e5_indexes(self):
+        _, namespace = load_sprint4_namespace()
+
+        class EmbeddingMatrix:
+            ndim = 2
+
+            def __init__(self, rows, dimension):
+                self.shape = (rows, dimension)
+
+        validate = namespace["_validate_e5_embeddings"]
+        validate(EmbeddingMatrix(107, 384), 107, 384)
+        with self.assertRaisesRegex(ValueError, "quantidade de embeddings"):
+            validate(EmbeddingMatrix(106, 384), 107, 384)
+        with self.assertRaisesRegex(ValueError, "dimensão do índice"):
+            validate(EmbeddingMatrix(107, 128), 107, 384)
+
+        reason = namespace["_fallback_reason"](ValueError("índice incompatível"))
+        self.assertEqual(reason["code"], "incompatible_artifact")
+
     def test_uses_e5_ranking_when_local_artifacts_are_available(self):
         _, namespace = load_sprint4_namespace()
 

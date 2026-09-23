@@ -346,5 +346,5 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - [x] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [x] Documentar instalação, modelos opcionais e exemplos de uso.
 - [x] Executar testes, revisão de código e validação ponta a ponta.
-  Resultado: 29 testes determinísticos aprovados, incluindo persistência do JSON,
+  Resultado: 31 testes determinísticos aprovados, incluindo persistência do JSON,
   documentos sem fonte, fallbacks transparentes e erros de inferência não ocultados.

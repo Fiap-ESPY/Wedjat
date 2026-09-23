@@ -34,6 +34,27 @@ class Sprint4SentimentTest(unittest.TestCase):
         )
         self.assertEqual(result["analysis_mode"]["components"]["sentiment"], "model")
 
+    def test_marks_mixed_model_signal_as_a_derived_heuristic(self):
+        _, namespace = load_sprint4_namespace()
+
+        class MixedSentimentAnalyzer:
+            @staticmethod
+            def predict(text):
+                if "negativo" in text:
+                    probabilities = {"POS": 0.10, "NEG": 0.80, "NEU": 0.10}
+                else:
+                    probabilities = {"POS": 0.80, "NEG": 0.10, "NEU": 0.10}
+                return SimpleNamespace(probas=probabilities)
+
+        namespace["_SENTIMENT_ANALYZER"] = MixedSentimentAnalyzer()
+        transcript = " ".join(["positivo"] * 80 + ["negativo"])
+
+        result = namespace["analisar_transcricao"](transcript, modo="auto")
+
+        self.assertEqual(result["sentimento"]["label"], "misto")
+        self.assertEqual(result["sentimento"]["score_type"], "heuristic")
+        self.assertEqual(result["sentimento"]["score"], 0.90)
+
     def test_fallback_preserves_mixed_signals(self):
         _, namespace = load_sprint4_namespace()
 
