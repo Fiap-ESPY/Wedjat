@@ -65,6 +65,47 @@ class Sprint4RecommendationTest(unittest.TestCase):
         )
         self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
 
+    def test_requires_manual_review_for_any_low_model_confidence(self):
+        _, namespace = load_sprint4_namespace()
+        sentiment = {
+            "label": "neutro",
+            "score": 0.40,
+            "score_type": "model_probability",
+        }
+        churn = {
+            "label": "baixo",
+            "score": 0.90,
+            "score_type": "model_probability",
+        }
+        opportunity = {
+            "label": "nao_detectada",
+            "score": 0.90,
+            "score_type": "model_probability",
+        }
+
+        recommendation = namespace["_recommend_action"](
+            [], sentiment, churn, opportunity
+        )
+
+        self.assertEqual(recommendation["label"], "revisar_manualmente")
+
+    def test_requires_manual_review_for_low_product_confidence(self):
+        _, namespace = load_sprint4_namespace()
+        products = [{"score": 0.60}]
+        sentiment = {"label": "neutro", "score": 0.0, "score_type": "heuristic"}
+        churn = {"label": "baixo", "score": 0.0, "score_type": "heuristic"}
+        opportunity = {
+            "label": "detectada",
+            "score": 0.90,
+            "score_type": "model_probability",
+        }
+
+        recommendation = namespace["_recommend_action"](
+            products, sentiment, churn, opportunity
+        )
+
+        self.assertEqual(recommendation["label"], "revisar_manualmente")
+
 
 if __name__ == "__main__":
     unittest.main()

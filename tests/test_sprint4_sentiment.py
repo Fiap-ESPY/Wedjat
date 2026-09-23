@@ -48,6 +48,19 @@ class Sprint4SentimentTest(unittest.TestCase):
         self.assertEqual(result["sentimento"]["engine"], "lexical_sentiment")
         self.assertIsNone(result["sentimento"]["model"])
 
+    def test_does_not_hide_sentiment_inference_errors(self):
+        _, namespace = load_sprint4_namespace()
+
+        class BrokenSentimentAnalyzer:
+            @staticmethod
+            def predict(_text):
+                raise RuntimeError("falha simulada de inferência")
+
+        namespace["_SENTIMENT_ANALYZER"] = BrokenSentimentAnalyzer()
+
+        with self.assertRaisesRegex(RuntimeError, "falha simulada"):
+            namespace["analisar_transcricao"]("Atendimento normal.", modo="auto")
+
 
 if __name__ == "__main__":
     unittest.main()

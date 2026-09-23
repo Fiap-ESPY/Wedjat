@@ -233,7 +233,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 
 ## Sprint 4 — Solução integrada de inteligência comercial
 
-Status: `ready-for-agent`
+Status: `ready-for-human`
 
 ### Problem Statement
 
@@ -345,4 +345,6 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - [x] Modularizar a Sprint 4 nos notebooks 12 a 18 e separar os testes por funcionalidade.
 - [x] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [x] Documentar instalação, modelos opcionais e exemplos de uso.
-- [ ] Executar testes, revisão de código e validação ponta a ponta.
+- [x] Executar testes, revisão de código e validação ponta a ponta.
+  Resultado: 29 testes determinísticos aprovados, incluindo persistência do JSON,
+  documentos sem fonte, fallbacks transparentes e erros de inferência não ocultados.

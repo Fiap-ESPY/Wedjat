@@ -84,6 +84,24 @@ class Sprint4InputOutputTest(unittest.TestCase):
                 json.loads(output_path.read_text(encoding="utf-8")), result
             )
 
+    def test_runs_the_complete_single_transcript_flow(self):
+        _, namespace = load_sprint4_namespace()
+        transcript = "Usamos Protheus e precisamos avaliar uma proposta para o estoque."
+
+        with tempfile.TemporaryDirectory() as directory:
+            output_path = Path(directory) / "analise.json"
+            loaded = namespace["carregar_transcricao"](texto=transcript)
+            result = namespace["analisar_transcricao"](loaded, modo="fallback")
+            saved = namespace["salvar_resultado"](result, output_path)
+            persisted = json.loads(output_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(saved, output_path)
+        self.assertEqual(persisted, result)
+        self.assertEqual(result["transcricao_original"], transcript)
+        self.assertIn("Protheus", result["produto_identificado"])
+        self.assertEqual(result["oportunidade_comercial"]["label"], "detectada")
+        self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
+
 
 if __name__ == "__main__":
     unittest.main()

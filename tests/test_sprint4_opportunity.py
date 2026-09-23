@@ -58,6 +58,36 @@ class Sprint4OpportunityTest(unittest.TestCase):
         self.assertIsNone(detected["oportunidade_comercial"]["model"])
         self.assertEqual(absent["oportunidade_comercial"]["label"], "nao_detectada")
 
+    def test_reports_confidence_for_the_selected_negative_label(self):
+        _, namespace = load_sprint4_namespace()
+
+        class NoOpportunityClassifier:
+            @staticmethod
+            def __call__(_text, **_kwargs):
+                return [
+                    {"label": "nao_oportunidade", "score": 0.90},
+                    {"label": "oportunidade", "score": 0.10},
+                ]
+
+        namespace["_OPPORTUNITY_CLASSIFIER"] = NoOpportunityClassifier()
+        result = namespace["analisar_transcricao"]("Reunião de rotina.", modo="auto")
+
+        self.assertEqual(result["oportunidade_comercial"]["label"], "nao_detectada")
+        self.assertEqual(result["oportunidade_comercial"]["score"], 0.90)
+
+    def test_does_not_hide_opportunity_inference_errors(self):
+        _, namespace = load_sprint4_namespace()
+
+        class BrokenOpportunityClassifier:
+            @staticmethod
+            def __call__(_text, **_kwargs):
+                raise RuntimeError("falha simulada de inferência")
+
+        namespace["_OPPORTUNITY_CLASSIFIER"] = BrokenOpportunityClassifier()
+
+        with self.assertRaisesRegex(RuntimeError, "falha simulada"):
+            namespace["analisar_transcricao"]("Reunião de rotina.", modo="auto")
+
 
 if __name__ == "__main__":
     unittest.main()

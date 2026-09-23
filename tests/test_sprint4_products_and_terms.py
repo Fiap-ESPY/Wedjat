@@ -60,8 +60,42 @@ class Sprint4ProductsAndTermsTest(unittest.TestCase):
         self.assertTrue(top_candidate["explicit_match"])
         self.assertIn("protheus", top_candidate["matched_terms"])
         self.assertTrue(top_candidate["document_ids"])
+        self.assertTrue(top_candidate["documents"])
+        self.assertEqual(
+            top_candidate["documents"][0]["id"], top_candidate["document_ids"][0]
+        )
+        self.assertTrue(top_candidate["documents"][0]["title"])
+        self.assertTrue(top_candidate["documents"][0]["document_type"])
         self.assertTrue(top_candidate["sources"])
         self.assertNotIn("content", top_candidate)
+
+    def test_discards_product_documents_without_sources(self):
+        _, namespace = load_sprint4_namespace()
+        document_without_sources = {
+            "id": "produto_sem_fonte",
+            "title": "TOTVS Protheus sem fonte",
+            "document_type": "produto",
+            "product": "TOTVS Protheus",
+            "category": "ERP",
+            "segments": [],
+            "keywords": ["protheus", "estoque"],
+            "related_products": [],
+            "competitors": [],
+            "content": "Gestão de estoque com Protheus.",
+            "sources": [],
+        }
+        aliases = [{"canonical": "TOTVS Protheus", "aliases": ["Protheus"]}]
+        namespace["_load_catalog"] = lambda: ([document_without_sources], aliases)
+
+        result = namespace["analisar_transcricao"](
+            "Usamos Protheus para controlar o estoque.", modo="fallback"
+        )
+
+        self.assertIsNone(result["produto_identificado"])
+        self.assertEqual(result["produtos_candidatos"], [])
+        self.assertEqual(
+            result["produto_metadados"]["status"], "no_grounded_candidate"
+        )
 
     def test_extracts_prioritized_terms_without_personal_data(self):
         _, namespace = load_sprint4_namespace()

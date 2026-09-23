@@ -36,6 +36,11 @@ class Sprint4ContractTest(unittest.TestCase):
         self.assertEqual(result["transcricao_original"], transcript)
         self.assertIsNone(result["produto_identificado"])
         self.assertEqual(result["produtos_candidatos"], [])
+        self.assertEqual(result["produto_metadados"]["engine"], "bm25_aliases")
+        self.assertEqual(result["produto_metadados"]["score_type"], "heuristic")
+        self.assertEqual(
+            result["produto_metadados"]["status"], "no_grounded_candidate"
+        )
         self.assertEqual(result["sentimento"]["label"], "neutro")
         self.assertEqual(result["risco_churn"]["label"], "baixo")
         self.assertEqual(result["oportunidade_comercial"]["label"], "nao_detectada")
@@ -43,7 +48,22 @@ class Sprint4ContractTest(unittest.TestCase):
         self.assertLessEqual(len(result["principais_termos"]), 10)
         self.assertEqual(result["recomendacao_acao"]["label"], "acompanhar_conta")
         self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
+        self.assertIn("model_probability", result["score_legend"])
+        self.assertIn("heuristic", result["score_legend"])
+        self.assertIn("normalized_cosine_similarity", result["score_legend"])
         self.assertEqual(result["analysis_mode"]["requested"], "fallback")
+
+    def test_auto_mode_reports_safe_structured_fallback_reasons(self):
+        _, namespace = load_sprint4_namespace()
+
+        result = namespace["analisar_transcricao"](
+            "Cliente pediu acompanhamento.", modo="auto"
+        )
+
+        reasons = result["analysis_mode"]["fallback_reasons"]
+        self.assertEqual(reasons["products"]["code"], "model_load_failed")
+        self.assertEqual(reasons["products"]["error_type"], "RuntimeError")
+        self.assertNotIn("message", reasons["products"])
 
     def test_integrated_notebook_rejects_an_empty_transcript(self):
         _, namespace = load_sprint4_namespace()

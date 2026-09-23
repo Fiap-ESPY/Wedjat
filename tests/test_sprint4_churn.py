@@ -55,6 +55,19 @@ class Sprint4ChurnTest(unittest.TestCase):
         self.assertEqual(result["risco_churn"]["engine"], "lexical_churn")
         self.assertIsNone(result["risco_churn"]["model"])
 
+    def test_does_not_hide_churn_inference_errors(self):
+        _, namespace = load_sprint4_namespace()
+
+        class BrokenChurnClassifier:
+            @staticmethod
+            def __call__(_text, **_kwargs):
+                raise RuntimeError("falha simulada de inferência")
+
+        namespace["_CHURN_CLASSIFIER"] = BrokenChurnClassifier()
+
+        with self.assertRaisesRegex(RuntimeError, "falha simulada"):
+            namespace["analisar_transcricao"]("Atendimento normal.", modo="auto")
+
 
 if __name__ == "__main__":
     unittest.main()

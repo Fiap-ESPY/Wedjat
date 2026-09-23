@@ -46,9 +46,10 @@ e [modelo português](https://huggingface.co/pysentimiento/bertweet-pt-sentiment
 | `full` | Exige os modelos de sentimento, churn e oportunidade; falha com mensagem clara se algum não puder ser carregado. |
 | `fallback` | Não carrega modelos pesados e usa somente mecanismos lexicais auditáveis. |
 
-O resultado registra o modo solicitado, o mecanismo usado por indicador e o
-tipo do score. `model_probability` e `heuristic` não são tratados como medidas
-equivalentes.
+O resultado registra o modo solicitado, o mecanismo usado por indicador e uma
+causa segura quando o carregamento de um modelo aciona fallback.
+`model_probability`, `heuristic` e `normalized_cosine_similarity` recebem uma
+legenda própria no JSON e não são tratados como medidas equivalentes.
 
 ## Modelos e artefatos
 
@@ -116,9 +117,11 @@ campo ausente e configuração simultânea de texto e arquivo.
 
 ## Saída e persistência
 
-O JSON contém a transcrição original, labels, scores, tipo de score, mecanismos,
-produto principal, até três candidatos com fontes, até dez termos e a
-recomendação. `revisao_humana` é sempre `true`.
+O JSON contém a transcrição original, labels, scores, legenda dos scores,
+mecanismos, produto principal, até três candidatos com documentos e fontes,
+até dez termos e a recomendação. Os metadados da busca permanecem presentes
+mesmo quando nenhum produto fundamentado é encontrado. `revisao_humana` é
+sempre `true`.
 
 Por padrão, nada é gravado:
 
@@ -129,7 +132,7 @@ ARQUIVO_SAIDA = None
 Para persistir explicitamente:
 
 ```python
-ARQUIVO_SAIDA = Path("reports/minha_analise.json")
+ARQUIVO_SAIDA = Path("data/processed/minha_analise.json")
 ```
 
 O arquivo inclui a transcrição original e deve ser tratado como dado sensível.
