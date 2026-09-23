@@ -339,7 +339,7 @@ Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou inte
 - [x] Integrar Pysentimiento e fallback de sentimento.
 - [x] Integrar MiniLM zero-shot e fallback de churn.
 - [x] Integrar BERTimbau e fallback de oportunidade.
-- [ ] Extrair até dez termos principais.
+- [x] Extrair até dez termos principais.
 - [ ] Implementar recomendação de ação e revisão humana obrigatória.
 - [ ] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [ ] Documentar instalação, modelos opcionais e exemplos de uso.

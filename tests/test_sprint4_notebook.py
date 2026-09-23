@@ -46,7 +46,8 @@ class Sprint4NotebookTest(unittest.TestCase):
         self.assertEqual(result["sentimento"]["label"], "neutro")
         self.assertEqual(result["risco_churn"]["label"], "baixo")
         self.assertEqual(result["oportunidade_comercial"]["label"], "nao_detectada")
-        self.assertEqual(result["principais_termos"], [])
+        self.assertIsInstance(result["principais_termos"], list)
+        self.assertLessEqual(len(result["principais_termos"]), 10)
         self.assertEqual(result["recomendacao_acao"]["label"], "acompanhar_conta")
         self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
         self.assertEqual(result["analysis_mode"]["requested"], "fallback")
@@ -213,6 +214,27 @@ class Sprint4NotebookTest(unittest.TestCase):
         )
         self.assertIsNone(detected["oportunidade_comercial"]["model"])
         self.assertEqual(absent["oportunidade_comercial"]["label"], "nao_detectada")
+
+    def test_notebook_extracts_prioritized_key_terms_without_personal_data(self):
+        _, namespace = load_notebook_namespace()
+        transcript = (
+            "Usamos Protheus, mas as planilhas geram retrabalho manual. "
+            "Estamos avaliando Oracle e precisamos de uma proposta de integração. "
+            "Contato: maria.silva@example.com, telefone (11) 99876-5432."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+        terms = result["principais_termos"]
+        normalized_terms = [namespace["_normalize"](term) for term in terms]
+
+        self.assertLessEqual(len(terms), 10)
+        self.assertEqual(len(terms), len(set(normalized_terms)))
+        self.assertTrue(any("protheus" in term for term in normalized_terms))
+        self.assertIn("retrabalho", normalized_terms)
+        self.assertIn("oracle", normalized_terms)
+        self.assertIn("proposta", normalized_terms)
+        self.assertNotIn("maria", normalized_terms)
+        self.assertFalse(any("99876" in term for term in normalized_terms))
 
 
 if __name__ == "__main__":
