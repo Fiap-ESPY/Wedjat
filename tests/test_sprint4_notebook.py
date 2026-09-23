@@ -74,6 +74,7 @@ class Sprint4NotebookTest(unittest.TestCase):
         self.assertEqual(top_candidate["product"], result["produto_identificado"])
         self.assertEqual(top_candidate["score_type"], "heuristic")
         self.assertEqual(top_candidate["engine"], "bm25_aliases")
+        self.assertTrue(top_candidate["explicit_match"])
         self.assertIn("protheus", top_candidate["matched_terms"])
         self.assertTrue(top_candidate["document_ids"])
         self.assertTrue(top_candidate["sources"])
@@ -235,6 +236,63 @@ class Sprint4NotebookTest(unittest.TestCase):
         self.assertIn("proposta", normalized_terms)
         self.assertNotIn("maria", normalized_terms)
         self.assertFalse(any("99876" in term for term in normalized_terms))
+
+    def test_recommendation_prioritizes_retention_for_high_churn(self):
+        _, namespace = load_notebook_namespace()
+        transcript = (
+            "Usamos Protheus, mas não vamos renovar e vamos cancelar. "
+            "Precisamos avaliar uma proposta antes da decisão final."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["risco_churn"]["label"], "alto")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "acionar_retencao"
+        )
+        self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
+
+    def test_recommendation_requires_manual_review_for_mixed_signals(self):
+        _, namespace = load_notebook_namespace()
+        transcript = (
+            "Gostei da solução, mas estou insatisfeito com o problema. "
+            "Precisamos avaliar uma proposta para o Protheus."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["sentimento"]["label"], "misto")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "revisar_manualmente"
+        )
+
+    def test_recommendation_schedules_demo_for_opportunity_with_explicit_product(self):
+        _, namespace = load_notebook_namespace()
+        transcript = (
+            "Usamos Protheus e precisamos avaliar uma proposta para implantar um ERP."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["oportunidade_comercial"]["label"], "detectada")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "agendar_demonstracao"
+        )
+
+    def test_recommendation_qualifies_opportunity_without_explicit_product(self):
+        _, namespace = load_notebook_namespace()
+        transcript = (
+            "Temos retrabalho manual e precisamos avaliar uma proposta para "
+            "implantar um software."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["oportunidade_comercial"]["label"], "detectada")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "qualificar_oportunidade"
+        )
+        self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
 
 
 if __name__ == "__main__":
