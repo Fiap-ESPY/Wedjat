@@ -8,6 +8,39 @@ from tests.sprint4_notebook_support import load_sprint4_namespace
 
 
 class Sprint4ProductsAndTermsTest(unittest.TestCase):
+    def test_uses_e5_ranking_when_local_artifacts_are_available(self):
+        _, namespace = load_sprint4_namespace()
+
+        class E5Retriever:
+            @staticmethod
+            def __call__(_text, top_k=3):
+                self.assertEqual(top_k, 3)
+                return [
+                    {
+                        "product": "TOTVS Protheus",
+                        "score": 0.88,
+                        "score_type": "normalized_cosine_similarity",
+                        "engine": "multilingual_e5_small",
+                        "model": "intfloat/multilingual-e5-small",
+                        "explicit_match": True,
+                        "matched_terms": ["protheus", "estoque"],
+                        "document_ids": ["produto_protheus"],
+                        "sources": ["https://www.totvs.com/protheus/"],
+                    }
+                ]
+
+        namespace["_E5_RETRIEVER"] = E5Retriever()
+
+        result = namespace["analisar_transcricao"](
+            "Usamos Protheus e precisamos integrar o estoque.", modo="auto"
+        )
+
+        candidate = result["produtos_candidatos"][0]
+        self.assertEqual(candidate["engine"], "multilingual_e5_small")
+        self.assertEqual(candidate["score_type"], "normalized_cosine_similarity")
+        self.assertEqual(candidate["score"], 0.88)
+        self.assertEqual(result["analysis_mode"]["components"]["products"], "model")
+
     def test_ranks_grounded_totvs_products(self):
         _, namespace = load_sprint4_namespace()
         transcript = (

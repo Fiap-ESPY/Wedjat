@@ -54,15 +54,17 @@ equivalentes.
 
 | Indicador | Caminho preferencial | Fallback e limitação |
 | --- | --- | --- |
-| Produto | Base TOTVS com BM25 e aliases. | O score é relativo ao melhor candidato, não probabilidade de compra. |
+| Produto | `intfloat/multilingual-e5-small` com o índice produzido pelo notebook 10. | BM25 com aliases; similaridade e score heurístico não são probabilidade de compra. |
 | Sentimento | `pysentimiento/bertweet-pt-sentiment`. | Regras lexicais; o modelo foi treinado em redes sociais, não em reuniões. |
 | Risco de churn | `MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli`. | Regras lexicais; o modelo NLI não foi treinado para prever churn. |
 | Oportunidade | `data/processed/bertimbau_opportunity_best`. | Regras de intenção, compra, dor e produto; o checkpoint usa pseudo-rótulos. |
 
 O checkpoint de oportunidade é produzido pelo notebook 07 e fica fora do Git.
-Sem essa pasta, o modo `auto` continua com fallback; o modo `full` interrompe a
-execução. Os modelos do Hugging Face são carregados sob demanda e ficam no cache
-local após o primeiro download.
+O índice E5 é produzido pelo notebook 10 em
+`data/processed/rag_multilingual_e5_small_embeddings.npz` e também fica fora do
+Git. Sem esses artefatos, o modo `auto` continua com fallback; o modo `full`
+interrompe a execução. Os modelos do Hugging Face são carregados sob demanda e
+ficam no cache local após o primeiro download.
 
 Para escolher outro cache, configure `HF_HOME` antes de iniciar o Jupyter. Para
 impedir acesso de rede e usar somente arquivos já armazenados, configure

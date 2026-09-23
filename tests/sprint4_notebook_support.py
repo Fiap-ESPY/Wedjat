@@ -42,4 +42,12 @@ def load_sprint4_namespace() -> tuple[list[dict], dict]:
         "PROJECT_ROOT": ROOT,
     }
     exec("\n\n".join(tagged_sources), namespace)
+    offline_error = RuntimeError("Modelos externos desabilitados nos testes determinísticos.")
+    for variable in (
+        "_E5_LOAD_ERROR",
+        "_SENTIMENT_LOAD_ERROR",
+        "_CHURN_LOAD_ERROR",
+        "_OPPORTUNITY_LOAD_ERROR",
+    ):
+        namespace[variable] = offline_error
     return notebooks, namespace

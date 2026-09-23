@@ -336,6 +336,7 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - [x] Definir o contrato da análise comercial e a fronteira pública no notebook.
 - [x] Implementar carregamento e validação de uma transcrição por execução.
 - [x] Implementar identificação e ranking de produtos com fontes.
+- [x] Integrar E5 local e fallback BM25 com aliases para produtos.
 - [x] Integrar Pysentimiento e fallback de sentimento.
 - [x] Integrar MiniLM zero-shot e fallback de churn.
 - [x] Integrar BERTimbau e fallback de oportunidade.
