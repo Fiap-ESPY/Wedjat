@@ -241,7 +241,7 @@ A área comercial precisa transformar uma nova transcrição em indicadores úte
 
 ### Solution
 
-Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou interface web, que processe uma transcrição por vez. O notebook segue o padrão das etapas atuais do projeto, preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e exibe um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
+Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI ou interface web, que processe uma transcrição por vez. Os notebooks 12 a 17 isolam fundamentos e funcionalidades; o notebook 18 é o ponto de entrada integrado, preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e exibe um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
 
 ### User Stories
 
@@ -278,9 +278,9 @@ Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou inte
 
 ### Implementation Decisions
 
-- A fronteira principal é a função `analisar_transcricao` definida no próprio notebook; ela recebe uma transcrição e devolve uma análise comercial estruturada.
-- Toda a implementação da Sprint 4 fica em células do notebook, sem criar uma biblioteca ou CLI paralela.
-- O notebook contém células explicativas, configuração de entrada, seleção do modo, execução, visualização das labels e persistência opcional do JSON.
+- A fronteira principal é a função `analisar_transcricao` definida no notebook integrado; ela recebe uma transcrição e devolve uma análise comercial estruturada.
+- Toda a implementação da Sprint 4 fica distribuída nos notebooks 12 a 18, sem criar uma biblioteca ou CLI paralela.
+- Cada funcionalidade possui um notebook com células pequenas e explicações; o notebook 18 contém configuração de entrada, seleção do modo, execução, visualização das labels e persistência opcional do JSON.
 - Uma execução aceita exatamente uma transcrição.
 - O resultado inclui a transcrição original, sem normalização destrutiva.
 - O processamento pode usar uma cópia normalizada internamente.
@@ -301,12 +301,12 @@ Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou inte
 
 ### Testing Decisions
 
-- O principal teste de comportamento executa as células testáveis do notebook e atravessa a função `analisar_transcricao`, recebendo uma transcrição e validando o resultado estruturado.
+- Os testes são separados por funcionalidade, executam as células testáveis dos notebooks na ordem e atravessam a função `analisar_transcricao`, recebendo uma transcrição e validando o resultado estruturado.
 - Testes observam comportamento externo, não detalhes internos de tokenização, pesos ou bibliotecas.
 - Adaptadores de modelos externos são substituídos por dublês determinísticos nos testes unitários.
 - O contrato completo cobre preservação da entrada, todas as labels, ranking de produtos, termos, recomendação, revisão humana e metadados.
 - Casos de borda cobrem entrada vazia, sinais mistos, churn prioritário, ausência de produto, indisponibilidade de modelo e fontes ausentes.
-- O notebook é validado estruturalmente e suas células testáveis são executadas diretamente pelos testes automatizados.
+- Os notebooks são validados estruturalmente, limitam células de código extensas e têm suas células testáveis executadas diretamente pelos testes automatizados.
 - Smoke tests de modelos reais são opcionais e executados somente quando dependências e checkpoints estiverem instalados.
 - O projeto não possui testes de integração anteriores; esta Sprint estabelece a fronteira pública como seam principal.
 
@@ -341,6 +341,7 @@ Entregar um notebook autocontido e documentado, sem biblioteca nova, CLI ou inte
 - [x] Integrar BERTimbau e fallback de oportunidade.
 - [x] Extrair até dez termos principais.
 - [x] Implementar recomendação de ação e revisão humana obrigatória.
+- [x] Modularizar a Sprint 4 nos notebooks 12 a 18 e separar os testes por funcionalidade.
 - [ ] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [ ] Documentar instalação, modelos opcionais e exemplos de uso.
 - [ ] Executar testes, revisão de código e validação ponta a ponta.

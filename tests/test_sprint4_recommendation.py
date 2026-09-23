@@ -1,0 +1,70 @@
+"""Prioridade das recomendações sujeitas à revisão humana."""
+
+from __future__ import annotations
+
+import unittest
+
+from tests.sprint4_notebook_support import load_sprint4_namespace
+
+
+class Sprint4RecommendationTest(unittest.TestCase):
+    def test_prioritizes_retention_for_high_churn(self):
+        _, namespace = load_sprint4_namespace()
+        transcript = (
+            "Usamos Protheus, mas não vamos renovar e vamos cancelar. "
+            "Precisamos avaliar uma proposta antes da decisão final."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["risco_churn"]["label"], "alto")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "acionar_retencao"
+        )
+        self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
+
+    def test_requires_manual_review_for_mixed_signals(self):
+        _, namespace = load_sprint4_namespace()
+        transcript = (
+            "Gostei da solução, mas estou insatisfeito com o problema. "
+            "Precisamos avaliar uma proposta para o Protheus."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["sentimento"]["label"], "misto")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "revisar_manualmente"
+        )
+
+    def test_schedules_demo_for_opportunity_with_explicit_product(self):
+        _, namespace = load_sprint4_namespace()
+        transcript = (
+            "Usamos Protheus e precisamos avaliar uma proposta para implantar um ERP."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["oportunidade_comercial"]["label"], "detectada")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "agendar_demonstracao"
+        )
+
+    def test_qualifies_opportunity_without_explicit_product(self):
+        _, namespace = load_sprint4_namespace()
+        transcript = (
+            "Temos retrabalho manual e precisamos avaliar uma proposta para "
+            "implantar um software."
+        )
+
+        result = namespace["analisar_transcricao"](transcript, modo="fallback")
+
+        self.assertEqual(result["oportunidade_comercial"]["label"], "detectada")
+        self.assertEqual(
+            result["recomendacao_acao"]["label"], "qualificar_oportunidade"
+        )
+        self.assertTrue(result["recomendacao_acao"]["revisao_humana"])
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -22,7 +22,8 @@ A versão atual consegue:
 - devolver nível de evidência, política de uso e URLs das fontes;
 - impedir que documentos sem fonte sustentem afirmações factuais;
 - manter hipóteses explicitamente separadas de fatos;
-- produzir relatórios sem salvar o texto das transcrições nas previsões finais.
+- analisar uma nova transcrição com produto, sentimento, risco de churn,
+  oportunidade, termos e recomendação sujeita a revisão humana.
 
 ## Como funciona
 
@@ -94,7 +95,7 @@ Wedjat/
 │   ├── raw/                 # transcrições anonimizadas
 │   ├── knowledge_base/      # base TOTVS, aliases e consultas de avaliação
 │   └── processed/           # artefatos gerados localmente
-├── notebooks/               # pipeline completo, numerado de 01 a 11
+├── notebooks/               # pipeline e solução modular, numerados de 01 a 18
 ├── reports/
 │   ├── figures/             # gráficos e matrizes de confusão
 │   └── metrics/             # métricas agregadas dos experimentos
@@ -138,6 +139,11 @@ jupyter notebook
 O PyTorch não é fixado no `requirements.txt`, porque a distribuição correta
 depende da versão de CUDA ou do runtime do Colab.
 
+Para a Sprint 4, abra `notebooks/18_sprint4_commercial_analysis.ipynb`. Ele
+carrega os notebooks 12 a 17 no mesmo kernel e apresenta somente a configuração
+da nova transcrição e o resultado integrado. Cada funcionalidade permanece em
+um notebook menor, explicado e testado separadamente.
+
 ## Principais artefatos
 
 - `reports/metrics/model_comparison.json`: comparação dos classificadores;
@@ -169,7 +175,7 @@ As próximas evoluções planejadas são:
 7. separar fatos e inferências dentro de documentos mistos da base;
 8. registrar data de verificação e validade das fontes;
 9. avaliar o pipeline ponta a ponta com reuniões anotadas;
-10. adicionar uma interface para consulta e revisão dos insights;
+10. aprimorar as células de consulta e revisão humana nos notebooks;
 11. gerar respostas narrativas com citações verificáveis;
 12. adicionar monitoramento de qualidade, drift e feedback humano.
 
