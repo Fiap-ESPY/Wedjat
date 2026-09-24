@@ -50,9 +50,11 @@ Para a classificação de oportunidade foram comparados:
 - TF-IDF + Regressão Logística;
 - BERTimbau com fine-tuning.
 
-O BERTimbau foi selecionado como modelo provisório por apresentar melhor
-desempenho equilibrado na pseudo-validação. O baseline lexical continua sendo
-uma referência barata e obteve o maior recall nesse experimento.
+O BERTimbau foi escolhido para o caminho com modelos do protótipo por apresentar
+melhor desempenho equilibrado na pseudo-validação. O baseline lexical continua
+sendo uma referência barata e obteve o maior recall nesse experimento. A escolha
+não é validação para produção; o critério, os custos e os limites estão em
+[reports/sprint4_conclusao.md](reports/sprint4_conclusao.md).
 
 Para a recuperação da base foram comparados:
 
@@ -151,6 +153,9 @@ carrega os notebooks 12 a 17 no mesmo kernel. A execução está separada em
 células para configurar, carregar, analisar, revisar labels e JSON, e salvar
 somente quando houver um caminho de saída. Cada funcionalidade permanece em
 um notebook menor, explicado e testado separadamente.
+
+A geração dos artefatos e a conferência da execução `full` em um PC com GPU
+estão descritas em [docs/sprint4_execucao_full_gpu.md](docs/sprint4_execucao_full_gpu.md).
 
 O guia [docs/sprint4_notebooks.md](docs/sprint4_notebooks.md) descreve os modos
 de análise, os três formatos de entrada, os modelos opcionais, cache offline,

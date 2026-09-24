@@ -347,7 +347,7 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - [x] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [x] Documentar instalação, modelos opcionais e exemplos de uso.
 - [x] Executar testes, revisão de código e validação ponta a ponta.
-  Resultado: 31 testes determinísticos aprovados, incluindo persistência do JSON,
+  Resultado atual: 34 testes determinísticos aprovados, incluindo persistência do JSON,
   documentos sem fonte, fallbacks transparentes e erros de inferência não ocultados.
 - [x] Reorganizar as células dos notebooks 12 a 18 em etapas menores e ampliar
   as explicações Markdown de entradas, scores, fontes, fallbacks e revisão humana.
@@ -368,11 +368,11 @@ do conjunto; ele não será tratado como teste inédito. Não há rótulos human
 | Entrega da rubrica | Situação atual | Evidência ou lacuna |
 | --- | --- | --- |
 | Pipeline completo de processamento | Parcial | Notebook 18 integra entrada, indicadores e saída; falta demonstrar uma execução `full` reproduzível com os artefatos reais. |
-| Modelo final selecionado e justificativa | Pendente | BERTimbau é provisório na pseudo-validação; `model_comparison.json` registra `final_model_selected: null`. É possível selecionar um modelo para o protótipo com ressalva explícita, mas não validar sua qualidade real sem rótulos. |
+| Modelo final selecionado e justificativa | Atende para o protótipo | BERTimbau e E5 foram escolhidos para a demonstração em `reports/sprint4_conclusao.md`; a seleção para produção segue pendente de avaliação humana. |
 | Sistema de scoring/indicadores | Parcial | Labels, scores, tipos e mecanismos estão no JSON; limiares e adequação ao domínio ainda não foram avaliados em dados humanos. |
-| Protótipo funcional | Atende no modo `fallback` | Notebook 18, 31 testes determinísticos e smoke test em 20 reuniões reais existentes passaram pelo contrato. |
+| Protótipo funcional | Atende no modo `fallback` | Notebook 18 executado com transcrição sintética, 34 testes determinísticos e smoke test em 20 reuniões da base histórica passaram pelo contrato. |
 | Validação com novas transcrições | Pendente | Os agregados coincidem com os da base histórica e não há prova de independência. O smoke test mede execução, não acurácia nem generalização. |
-| Recomendações de negócio | Parcial | A prioridade das ações e a revisão humana estão implementadas; falta explicitar o motivo da sugestão e avaliar sua utilidade. |
+| Recomendações de negócio | Parcial | A prioridade, critérios rastreáveis, motivo e revisão humana estão implementados; falta avaliar utilidade com pessoas da área comercial. |
 | Limitações e próximos passos | Atende | README, guia da Sprint 4 e este TODO documentam modelos opcionais, pseudo-rótulos e revisão humana. |
 
 O smoke test agregado está em `reports/metrics/sprint4_existing_data_smoke.json`:
@@ -388,29 +388,33 @@ métricas de qualidade**.
      notebook 01 e confirmar o relatório de preparação.
    - [x] Executar smoke test sem rótulos no notebook integrado e registrar
      apenas métricas agregadas, sem texto nem IDs de reuniões.
-   - [!] `needs-info`: disponibilizar ambiente com PyTorch, Transformers,
-     Pysentimiento e acesso aos modelos/cache. Neste ambiente, esses pacotes
-     e os artefatos BERTimbau/E5 não estão instalados.
-   - [ ] Regenerar chunks, pseudo-rótulos, checkpoint BERTimbau e índice
-     E5 com os notebooks 03, 05, 07 e 10, ou restaurar artefatos locais
-     compatíveis; executar notebook 18 em `full` e registrar mecanismo,
-     versão e tempo sem incluir texto de transcrições no relatório.
+   - [!] `ready-for-human`: reproduzir em PC com GPU, conforme
+     `docs/sprint4_execucao_full_gpu.md`. Neste ambiente CPU há cerca de
+     2,5 GB livres, sem CUDA e sem os artefatos BERTimbau/E5; a instalação
+     parcial foi removida para liberar espaço.
+   - [!] `ready-for-human`: regenerar chunks, pseudo-rótulos, checkpoint
+     BERTimbau e índice E5 com os notebooks 03, 05, 07 e 10, ou restaurar
+     artefatos locais compatíveis; executar notebook 18 em `full` no PC com GPU
+     e registrar mecanismo, versão e tempo sem texto de transcrições.
 2. **Escolher o modelo do protótipo com justificativa honesta.**
-   - [ ] Definir critério de escolha entre recall de oportunidade, erros,
+   - [x] Definir critério de escolha entre recall de oportunidade, erros,
      recursos e custo de revisão; registrar o classificador e o retriever
      escolhidos para a entrega do Challenge. Usar os resultados existentes de
      pseudo-validação somente como evidência experimental, sem chamá-los de
      acurácia em produção ou de seleção validada por humanos.
-   - [ ] Consolidar em um relatório a comparação do notebook 08, a escolha do
+   - [x] Consolidar em um relatório a comparação do notebook 08, a escolha do
      E5 do notebook 10 e as limitações dos modelos de sentimento e churn.
 3. **Finalizar a apresentação da solução.**
-   - [ ] Exibir no notebook 18 o fluxo
+   - [x] Exibir no notebook 18 o fluxo
      Transcrição → Processamento → Modelo → Indicadores → Recomendação, com
      tabela de labels, tipo de score, mecanismo e fontes; adicionar motivo
      curto e rastreável à recomendação de ação.
-   - [ ] Incluir uma seção final de conclusões que diferencie: contrato
+   - [x] Incluir uma seção final de conclusões que diferencie: contrato
      funcional verificado; métricas em pseudo-rótulos; teste sem rótulos nesta
      base histórica; avaliação humana e generalização ainda não medidas.
+   - [x] Executar os 34 testes determinísticos, validar os 19 notebooks e
+     executar o notebook 18 de ponta a ponta com transcrição sintética em
+     `fallback` (15 células de código, sem erros).
 4. **Validação de qualidade futura, dependente de pessoas.**
    - [!] `ready-for-human`: obter rótulos para a fila reservada de 150 chunks
      e um conjunto separado de reuniões inéditas, dividido por reunião entre

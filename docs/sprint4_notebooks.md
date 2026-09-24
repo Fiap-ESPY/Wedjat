@@ -25,8 +25,15 @@ o que entra, o que sai e como interpretar seus limites.
 
 No notebook 18, configure a fonte e o modo em uma célula; depois execute,
 em ordem, as células de carregamento, análise, revisão das labels e JSON, e
-persistência opcional. Revise `analysis_mode`, `score_legend` e as fontes dos
-produtos candidatos antes de usar a recomendação de ação.
+persistência opcional. A recomendação inclui `criterios` e `motivo`, que explicam
+a regra aplicada. Revise `analysis_mode`, `score_legend`, as fontes dos
+produtos candidatos e o motivo antes de usar a sugestão. A seção final do
+notebook distingue testes de contrato, pseudo-validação e limites sem rótulos.
+A decisão do protótipo e os próximos passos estão em
+[`reports/sprint4_conclusao.md`](../reports/sprint4_conclusao.md).
+
+Para reproduzir o caminho com modelos em um PC com GPU, siga
+[`sprint4_execucao_full_gpu.md`](sprint4_execucao_full_gpu.md).
 
 ## Instalação
 
