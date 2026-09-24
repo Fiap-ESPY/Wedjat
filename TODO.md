@@ -12,6 +12,8 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 
 ## Concluído
 
+- [x] Instalar as skills de `mattpocock/skills` e criar uma skill agregadora
+  para roteamento entre elas.
 - [x] Organizar a estrutura inicial do repositório.
 - [x] Adicionar as transcrições anonimizadas em `data/raw/`.
 - [x] Confirmar que a entrada é NDJSON com 1.174 registros.
