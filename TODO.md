@@ -21,18 +21,19 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 - [x] Remover 48 duplicatas exatas.
 - [x] Gerar 1.126 reuniões únicas em `data/processed/meetings.jsonl`.
 - [x] Gerar o relatório agregado de preparação dos dados.
-- [x] Manter transcrições brutas e processadas fora do Git.
+- [x] Versionar `data/raw/ANON_transcricao.json` e
+  `data/processed/meetings.jsonl`; manter os demais artefatos ignorados.
 - [x] Analisar a base de conhecimento comercial TOTVS.
 - [x] Converter a base do RAG para JSON.
 - [x] Validar 107 chunks, 107 IDs únicos e 52 URLs de fontes.
-- [x] Criar `notebooks/01_data_understanding.ipynb` com explicações e código.
-- [x] Criar `notebooks/02_rag_knowledge_base.ipynb` com auditoria e busca lexical.
+- [x] Criar `notebooks/01_preparacao_dados.ipynb` com explicações e código.
+- [x] Criar `notebooks/02_base_conhecimento_rag.ipynb` com auditoria e busca lexical.
 - [x] Executar integralmente os notebooks 01 e 02.
 - [x] Atualizar o `README.md` para o fluxo notebook-first.
 
 ## Próximo passo
 
-- [x] Criar `notebooks/03_tokenization_and_chunking.ipynb`.
+- [x] Criar `notebooks/03_tokenizacao_e_chunks.ipynb`.
 - [x] Separar cada transcrição em turnos de locutor.
 - [x] Confirmar se todas as reuniões seguem o padrão `[LOCUTOR N]:`.
   Resultado: 48 não possuem marcador e 100 têm texto antes do primeiro marcador.
@@ -56,7 +57,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 - [x] Criar um guia inicial para exemplos positivos, negativos e ambíguos.
 - [x] Verificar se já existem rótulos confiáveis nos dados.
   Resultado: não existe campo de rótulo; será necessária anotação humana.
-- [x] Criar `notebooks/04_target_and_bertimbau.ipynb`.
+- [x] Criar `notebooks/04_alvo_e_bertimbau.ipynb`.
 - [x] Definir uma fila inicial cega com 150 chunks para auditoria humana.
 - [x] Medir a distribuição inicial dos pseudo-rótulos.
   Resultado: 376 oportunidades e 530 não oportunidades em 906 concordâncias.
@@ -65,7 +66,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 
 ## Supervisão fraca inicial
 
-- [x] Criar `notebooks/05_weak_supervision_and_split.ipynb`.
+- [x] Criar `notebooks/05_supervisao_fraca_e_divisao.ipynb`.
 - [x] Criar um rotulador por regras apoiado pelo vocabulário comercial do RAG.
 - [x] Criar um rotulador semântico por protótipos com BERTimbau.
 - [x] Aceitar como pseudo-rótulo somente a concordância dos dois rotuladores.
@@ -94,7 +95,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 
 - [x] Criar a etapa de anotação inicial e split no notebook 05.
 - [x] Criar uma fila reproduzível para anotação humana.
-- [x] Criar `notebooks/06_baseline_tfidf_logreg.ipynb`.
+- [x] Criar `notebooks/06_baseline_oportunidade.ipynb`.
 - [x] Implementar TF-IDF + Regressão Logística.
 - [x] Treinar usando a divisão agrupada por reunião.
 - [x] Calcular matriz de confusão.
@@ -109,7 +110,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 
 ## BERTimbau — Sprint 3
 
-- [x] Criar `notebooks/07_bertimbau_finetuning.ipynb`.
+- [x] Criar `notebooks/07_treinamento_bertimbau.ipynb`.
 - [x] Registrar checkpoint, tokenizer e versão atual do Transformers.
 - [x] Preparar datasets e DataLoaders no formato esperado pelo BERTimbau.
 - [x] Fazer fine-tuning do BERTimbau para o mesmo alvo do baseline.
@@ -127,7 +128,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 
 ## Comparação dos modelos
 
-- [x] Criar `notebooks/08_model_comparison.ipynb`.
+- [x] Criar `notebooks/08_comparacao_modelos.ipynb`.
 - [x] Comparar TF-IDF + Regressão Logística e BERTimbau no mesmo split.
   Resultado: 140 chunks pareados de 98 reuniões.
 - [x] Escolher e justificar a métrica principal conforme o impacto de negócio.
@@ -167,13 +168,13 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
   MRR 76,64% e nDCG@5 80,36%.
 - [x] Implementar reranking considerando o nível de evidência.
   Resultado: o bônus de evidência não melhorou esta avaliação e não será o padrão.
-- [x] Criar `notebooks/09_rag_retrieval_evolution.ipynb`.
+- [x] Criar `notebooks/09_evolucao_busca_rag.ipynb`.
 - [x] Definir contrato de retrieval que sempre devolve fontes e nível de evidência.
 - [x] Definir política explícita que impede documentos de hipótese de sustentarem fatos.
 - [x] Testar um modelo especializado em embeddings de sentenças em português.
   Resultado: `multilingual-e5-small` venceu com Recall@5 98,44%, Hit@5 100%,
   MRR 92,19% e nDCG@5 93,47%.
-- [x] Criar `notebooks/10_sentence_embeddings_retrieval.ipynb`.
+- [x] Criar `notebooks/10_busca_embeddings_e5.ipynb`.
 - [x] Exigir fontes nas respostas comerciais produzidas pelo RAG.
 - [x] Impedir que hipótese comercial seja apresentada como fato.
 
@@ -190,7 +191,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 - [x] Definir tratamento para resultados conflitantes entre chunks.
   Resultado: reuniões candidatas com ao menos dois chunks ≤ 0,20 recebem flag
   de contexto misto para revisão, sem descartar evidências.
-- [x] Criar e executar `notebooks/11_final_integration.ipynb` nos 29.972 chunks.
+- [x] Criar e executar `notebooks/11_integracao_reunioes.ipynb` nos 29.972 chunks.
 - [ ] Criar avaliação ponta a ponta com reuniões anotadas.
 - [x] Documentar limitações, riscos e próximos experimentos.
   Diagnóstico: 975 de 1.126 reuniões foram candidatas e 935 têm contexto misto;
@@ -350,6 +351,10 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
   documentos sem fonte, fallbacks transparentes e erros de inferência não ocultados.
 - [x] Reorganizar as células dos notebooks 12 a 18 em etapas menores e ampliar
   as explicações Markdown de entradas, scores, fontes, fallbacks e revisão humana.
+- [x] Padronizar os nomes dos notebooks 00 a 18 em português e atualizar
+  carregamento, testes e documentação.
+- [x] Versionar apenas o NDJSON anonimizado e as reuniões processadas; manter
+  modelos, índices e demais dados ignorados por padrão.
 
 ### Conferência da rubrica da Sprint 4 — 24/09/2026
 
@@ -379,7 +384,7 @@ métricas de qualidade**.
 #### Plano de conclusão possível sem rótulos humanos
 
 1. **Reproduzir a demonstração com modelos reais.**
-   - [x] Integrar o arquivo local ao `data/raw/` ignorado pelo Git, ajustar o
+   - [x] Integrar o arquivo local ao `data/raw/` versionado, ajustar o
      notebook 01 e confirmar o relatório de preparação.
    - [x] Executar smoke test sem rótulos no notebook integrado e registrar
      apenas métricas agregadas, sem texto nem IDs de reuniões.
@@ -389,7 +394,7 @@ métricas de qualidade**.
    - [ ] Regenerar chunks, pseudo-rótulos, checkpoint BERTimbau e índice
      E5 com os notebooks 03, 05, 07 e 10, ou restaurar artefatos locais
      compatíveis; executar notebook 18 em `full` e registrar mecanismo,
-     versão e tempo, sem publicar transcrições.
+     versão e tempo sem incluir texto de transcrições no relatório.
 2. **Escolher o modelo do protótipo com justificativa honesta.**
    - [ ] Definir critério de escolha entre recall de oportunidade, erros,
      recursos e custo de revisão; registrar o classificador e o retriever

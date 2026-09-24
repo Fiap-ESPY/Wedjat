@@ -9,7 +9,7 @@ O desenvolvimento é centralizado em notebooks executáveis e documentados.
 
 ### 01 — Limpeza e entendimento das reuniões
 
-`notebooks/01_data_understanding.ipynb` contém o código completo que:
+`notebooks/01_preparacao_dados.ipynb` contém o código completo que:
 
 1. lê o arquivo NDJSON em streaming, sem carregar todas as transcrições na memória;
 2. valida `ID_MEETING` e `ANON_TRANSCRICAO`;
@@ -27,13 +27,13 @@ Saídas:
 
 ### 02 — Base de conhecimento TOTVS
 
-`notebooks/02_rag_knowledge_base.ipynb` carrega e valida a base já convertida
+`notebooks/02_base_conhecimento_rag.ipynb` carrega e valida a base já convertida
 em `data/knowledge_base/totvs_rag_kb_v1.json`, audita sua estrutura e executa
 uma busca lexical mínima que servirá como baseline para o RAG.
 
 ### 03 — Tokenização e chunking
 
-`notebooks/03_tokenization_and_chunking.ipynb` usa o tokenizer do
+`notebooks/03_tokenizacao_e_chunks.ipynb` usa o tokenizer do
 `neuralmind/bert-base-portuguese-cased` para criar janelas de até 510 tokens de
 conteúdo, com sobreposição-alvo de 64 tokens e limites em palavras completas.
 Cada chunk preserva reunião, ordem, offsets de caracteres e locutores.
@@ -45,14 +45,14 @@ Saídas:
 
 ### 04 — Alvo supervisionado e BERTimbau
 
-`notebooks/04_target_and_bertimbau.ipynb` define oportunidade comercial como
+`notebooks/04_alvo_e_bertimbau.ipynb` define oportunidade comercial como
 primeiro alvo binário, documenta o guia inicial de anotação e demonstra com
 textos sintéticos como o BERTimbau tokeniza e representará os chunks. O
 notebook também comprova que os dados atuais ainda não possuem rótulos.
 
 ### 05 — Supervisão fraca e split seguro
 
-`notebooks/05_weak_supervision_and_split.ipynb` combina um rotulador por regras
+`notebooks/05_supervisao_fraca_e_divisao.ipynb` combina um rotulador por regras
 apoiado pelo RAG com um rotulador semântico por protótipos do BERTimbau. Somente
 as concordâncias são salvas como pseudo-rótulos; previsões automáticas não são
 tratadas como verdade-terreno.
@@ -71,7 +71,7 @@ Saídas:
 
 ### 06 — Baseline TF-IDF + Regressão Logística
 
-`notebooks/06_baseline_tfidf_logreg.ipynb` treina o baseline no split agrupado
+`notebooks/06_baseline_oportunidade.ipynb` treina o baseline no split agrupado
 do notebook 05. O modelo usa unigramas e bigramas, `class_weight=balanced` e
 limiar 0,5. O vocabulário é ajustado somente nos 539 chunks de treino e avaliado
 em 140 chunks de 98 reuniões exclusivas.
@@ -92,7 +92,7 @@ Saídas:
 
 ### 07 — Fine-tuning do BERTimbau
 
-`notebooks/07_bertimbau_finetuning.ipynb` ajusta o checkpoint
+`notebooks/07_treinamento_bertimbau.ipynb` ajusta o checkpoint
 `neuralmind/bert-base-portuguese-cased` no mesmo split do baseline. O treino usa
 512 tokens, batch físico 4, acumulação de gradiente 2, FP16, pesos de classe,
 AdamW e três épocas. Assim, cada entrada preserva o limite completo definido no
@@ -116,7 +116,7 @@ sujeitos ao viés dos pseudo-rótulos e não substituem o conjunto humano final.
 
 ### 08 — Comparação dos modelos
 
-`notebooks/08_model_comparison.ipynb` valida que os dois modelos foram avaliados
+`notebooks/08_comparacao_modelos.ipynb` valida que os dois modelos foram avaliados
 nos mesmos 140 chunks de 98 reuniões e recalcula todas as métricas de forma
 pareada. Também executa teste exato de McNemar e bootstrap com duas mil
 reamostragens agrupadas por reunião.
@@ -150,7 +150,7 @@ Saídas:
 
 ### 09 — Evolução e avaliação do retrieval do RAG
 
-`notebooks/09_rag_retrieval_evolution.ipynb` compara quatro retrievers sobre 32
+`notebooks/09_evolucao_busca_rag.ipynb` compara quatro retrievers sobre 32
 consultas curadas: BM25 com aliases, embeddings do BERTimbau base, fusão híbrida
 por RRF e híbrida com reranking por evidência. A avaliação calcula Recall@1/3/5,
 Hit@1/3/5, MRR e nDCG.
@@ -176,7 +176,7 @@ Saídas:
 
 ### 10 — Embeddings especializados
 
-`notebooks/10_sentence_embeddings_retrieval.ipynb` avalia o encoder
+`notebooks/10_busca_embeddings_e5.ipynb` avalia o encoder
 `intfloat/multilingual-e5-small` com prefixos `query:` e `passage:`, mean pooling
 com máscara e normalização L2. Ele é comparado de forma pareada ao BM25, ao
 BERTimbau base e à fusão BM25 + E5.
@@ -194,7 +194,7 @@ Saídas:
 
 ### 11 — Integração final
 
-`notebooks/11_final_integration.ipynb` executa o classificador BERTimbau nos
+`notebooks/11_integracao_reunioes.ipynb` executa o classificador BERTimbau nos
 29.972 chunks, agrega os resultados nas 1.126 reuniões e consulta a base TOTVS
 com o E5 vencedor. O resultado por reunião contém probabilidades, índices dos
 chunks de apoio, produtos/categorias, nível de evidência, política de uso e URLs,

@@ -1,9 +1,12 @@
-# Dados de transcrição podem ser grandes ou sensíveis e não devem ir para o Git.
+# Apenas os dois arquivos anonimizados autorizados são versionados.
+# Outros dados e artefatos gerados continuam ignorados por padrão.
 ANON_transcricao.json
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/ANON_transcricao.json
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/meetings.jsonl
 
 # Artefatos locais do Python.
 __pycache__/

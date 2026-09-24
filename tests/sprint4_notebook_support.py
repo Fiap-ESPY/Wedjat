@@ -8,13 +8,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_FILES = (
-    "12_sprint4_foundation.ipynb",
-    "13_sprint4_products_and_terms.ipynb",
-    "14_sprint4_sentiment.ipynb",
-    "15_sprint4_churn.ipynb",
-    "16_sprint4_opportunity.ipynb",
-    "17_sprint4_recommendation.ipynb",
-    "18_sprint4_commercial_analysis.ipynb",
+    "12_fundamentos_analise.ipynb",
+    "13_produtos_e_termos.ipynb",
+    "14_analise_sentimento.ipynb",
+    "15_risco_churn.ipynb",
+    "16_oportunidade_comercial.ipynb",
+    "17_recomendacao_acao.ipynb",
+    "18_analise_comercial.ipynb",
 )
 
 

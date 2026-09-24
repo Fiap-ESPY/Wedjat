@@ -94,8 +94,8 @@ Wedjat/
 ├── data/
 │   ├── raw/                 # transcrições anonimizadas
 │   ├── knowledge_base/      # base TOTVS, aliases e consultas de avaliação
-│   └── processed/           # artefatos gerados localmente
-├── notebooks/               # pipeline e solução modular, numerados de 01 a 18
+│   └── processed/           # reuniões versionadas e demais artefatos locais
+├── notebooks/               # Colab (00) e módulos numerados de 01 a 18
 ├── reports/
 │   ├── figures/             # gráficos e matrizes de confusão
 │   └── metrics/             # métricas agregadas dos experimentos
@@ -113,7 +113,7 @@ está em [O_QUE_FIZEMOS_NO_PROJETO.md](O_QUE_FIZEMOS_NO_PROJETO.md).
 ### Google Colab
 
 Para executar tudo em uma única aba, use
-`notebooks/Wedjat_Projeto_Completo_Colab.ipynb`. Ele reúne as 11 etapas, preserva
+`notebooks/00_projeto_completo_colab.ipynb`. Ele reúne as 11 etapas, preserva
 as explicações e libera a memória da GPU entre os modelos.
 
 O pacote `Wedjat_Entrega_Colab_Notebook_Unico.zip` contém somente esse notebook,
@@ -139,14 +139,14 @@ jupyter notebook
 O PyTorch não é fixado no `requirements.txt`, porque a distribuição correta
 depende da versão de CUDA ou do runtime do Colab.
 
-Para reproduzir a preparação dos dados, coloque o NDJSON em
-`data/raw/ANON_transcricao.json` e execute o notebook 01. O arquivo de entrada
-e os dados processados ficam fora do Git. A base recebida nesta etapa contém
+Para reproduzir a preparação dos dados, execute o notebook 01 com o NDJSON
+versionado em `data/raw/ANON_transcricao.json`. O arquivo de entrada e
+`data/processed/meetings.jsonl` fazem parte do repositório. A base contém
 1.126 reuniões únicas e reproduz os agregados já descritos neste projeto.
 Sem prova de independência, seu uso serve para testar o funcionamento, não
 como validação em reuniões inéditas.
 
-Para a Sprint 4, abra `notebooks/18_sprint4_commercial_analysis.ipynb`. Ele
+Para a Sprint 4, abra `notebooks/18_analise_comercial.ipynb`. Ele
 carrega os notebooks 12 a 17 no mesmo kernel. A execução está separada em
 células para configurar, carregar, analisar, revisar labels e JSON, e salvar
 somente quando houver um caminho de saída. Cada funcionalidade permanece em
@@ -166,9 +166,10 @@ persistência do JSON e exemplos de configuração.
 
 ## Privacidade e uso responsável
 
-As transcrições, mesmo anonimizadas, devem ser tratadas como dados sensíveis.
-Elas e os artefatos processados ficam fora do Git. Não publique o ZIP de entrega,
-não compartilhe o runtime do Colab e mantenha o Google Drive restrito.
+As transcrições anonimizadas de entrada e `meetings.jsonl` são versionadas
+neste projeto estudantil. Outros artefatos gerados, inclusive checkpoints e
+índices, continuam fora do Git. Mantenha o acesso ao runtime e ao Drive conforme
+as regras do projeto.
 
 O Wedjat deve ser usado como apoio à revisão comercial. Ele não deve tomar
 decisões automáticas sobre clientes, vendedores ou oportunidades enquanto não

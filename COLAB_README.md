@@ -1,14 +1,13 @@
 # Execução do Wedjat no Google Colab
 
-Este pacote contém os arquivos necessários para reproduzir o projeto a partir
-das transcrições anonimizadas. O diretório `data/processed/` começa vazio porque
-seus arquivos são gerados pelos notebooks.
+Este guia usa os arquivos do repositório para reproduzir o projeto a partir
+das transcrições anonimizadas. O arquivo `data/processed/meetings.jsonl` é
+versionado; os demais artefatos são gerados pelos notebooks.
 
 ## Atenção aos dados
 
-`data/raw/ANON_transcricao (2).json` contém transcrições anonimizadas. Mesmo sem
-nomes explícitos, trate o arquivo como sensível: não publique o ZIP, não deixe o
-runtime compartilhado e mantenha o Google Drive com acesso restrito.
+`data/raw/ANON_transcricao.json` e `data/processed/meetings.jsonl` são
+versionados neste projeto. Os demais artefatos gerados permanecem locais.
 
 ## Preparação do Colab
 
@@ -28,7 +27,7 @@ O PyTorch é fornecido pelo runtime do Colab e, por isso, não é fixado no
 
 ## Execução recomendada: notebook único
 
-Abra `notebooks/Wedjat_Projeto_Completo_Colab.ipynb` e use **Runtime > Run all**.
+Abra `notebooks/00_projeto_completo_colab.ipynb` e use **Runtime > Run all**.
 Ele reúne todo o conteúdo dos notebooks 01 a 11, explica cada etapa e libera
 objetos grandes entre os modelos para controlar o uso de memória da GPU.
 
@@ -42,17 +41,17 @@ O notebook único executa internamente a seguinte ordem:
 
 Execute os notebooks integralmente nesta ordem:
 
-1. `01_data_understanding.ipynb`
-2. `02_rag_knowledge_base.ipynb`
-3. `03_tokenization_and_chunking.ipynb`
-4. `04_target_and_bertimbau.ipynb`
-5. `05_weak_supervision_and_split.ipynb`
-6. `06_baseline_tfidf_logreg.ipynb`
-7. `07_bertimbau_finetuning.ipynb`
-8. `08_model_comparison.ipynb`
-9. `09_rag_retrieval_evolution.ipynb`
-10. `10_sentence_embeddings_retrieval.ipynb`
-11. `11_final_integration.ipynb`
+1. `01_preparacao_dados.ipynb`
+2. `02_base_conhecimento_rag.ipynb`
+3. `03_tokenizacao_e_chunks.ipynb`
+4. `04_alvo_e_bertimbau.ipynb`
+5. `05_supervisao_fraca_e_divisao.ipynb`
+6. `06_baseline_oportunidade.ipynb`
+7. `07_treinamento_bertimbau.ipynb`
+8. `08_comparacao_modelos.ipynb`
+9. `09_evolucao_busca_rag.ipynb`
+10. `10_busca_embeddings_e5.ipynb`
+11. `11_integracao_reunioes.ipynb`
 
 Os checkpoints `neuralmind/bert-base-portuguese-cased` e
 `intfloat/multilingual-e5-small` são baixados na primeira execução. Os notebooks

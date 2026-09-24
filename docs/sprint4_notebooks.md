@@ -1,6 +1,6 @@
 # Sprint 4 — análise comercial em notebooks
 
-O ponto de entrada é `notebooks/18_sprint4_commercial_analysis.ipynb`. Ele
+O ponto de entrada é `notebooks/18_analise_comercial.ipynb`. Ele
 carrega os módulos anteriores no mesmo kernel, processa exatamente uma
 transcrição e apresenta um JSON para revisão humana. Não há CLI, biblioteca de
 aplicação ou interface web.
@@ -9,13 +9,13 @@ aplicação ou interface web.
 
 | Notebook | Responsabilidade |
 | --- | --- |
-| `12_sprint4_foundation.ipynb` | Normalização interna, tokens e catálogo TOTVS. |
-| `13_sprint4_products_and_terms.ipynb` | Ranking de até três produtos e até dez termos. |
-| `14_sprint4_sentiment.ipynb` | Pysentimiento e fallback lexical. |
-| `15_sprint4_churn.ipynb` | MiniLM zero-shot e fallback lexical. |
-| `16_sprint4_opportunity.ipynb` | BERTimbau ajustado e fallback comercial. |
-| `17_sprint4_recommendation.ipynb` | Prioridade da próxima ação e revisão humana. |
-| `18_sprint4_commercial_analysis.ipynb` | Entrada, integração, visualização e saída opcional. |
+| `12_fundamentos_analise.ipynb` | Normalização interna, tokens e catálogo TOTVS. |
+| `13_produtos_e_termos.ipynb` | Ranking de até três produtos e até dez termos. |
+| `14_analise_sentimento.ipynb` | Pysentimiento e fallback lexical. |
+| `15_risco_churn.ipynb` | MiniLM zero-shot e fallback lexical. |
+| `16_oportunidade_comercial.ipynb` | BERTimbau ajustado e fallback comercial. |
+| `17_recomendacao_acao.ipynb` | Prioridade da próxima ação e revisão humana. |
+| `18_analise_comercial.ipynb` | Entrada, integração, visualização e saída opcional. |
 
 O notebook 18 deve ser executado de cima para baixo. Os notebooks 12 a 17 são
 módulos explicativos e também podem ser abertos para estudar cada indicador.
