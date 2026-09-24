@@ -19,6 +19,14 @@ aplicação ou interface web.
 
 O notebook 18 deve ser executado de cima para baixo. Os notebooks 12 a 17 são
 módulos explicativos e também podem ser abertos para estudar cada indicador.
+As células de código da Sprint 4 separam preparação, consulta aos modelos,
+agregação e montagem do resultado. O Markdown anterior a cada etapa descreve
+o que entra, o que sai e como interpretar seus limites.
+
+No notebook 18, configure a fonte e o modo em uma célula; depois execute,
+em ordem, as células de carregamento, análise, revisão das labels e JSON, e
+persistência opcional. Revise `analysis_mode`, `score_legend` e as fontes dos
+produtos candidatos antes de usar a recomendação de ação.
 
 ## Instalação
 

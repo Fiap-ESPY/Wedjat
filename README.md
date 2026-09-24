@@ -140,8 +140,9 @@ O PyTorch não é fixado no `requirements.txt`, porque a distribuição correta
 depende da versão de CUDA ou do runtime do Colab.
 
 Para a Sprint 4, abra `notebooks/18_sprint4_commercial_analysis.ipynb`. Ele
-carrega os notebooks 12 a 17 no mesmo kernel e apresenta somente a configuração
-da nova transcrição e o resultado integrado. Cada funcionalidade permanece em
+carrega os notebooks 12 a 17 no mesmo kernel. A execução está separada em
+células para configurar, carregar, analisar, revisar labels e JSON, e salvar
+somente quando houver um caminho de saída. Cada funcionalidade permanece em
 um notebook menor, explicado e testado separadamente.
 
 O guia [docs/sprint4_notebooks.md](docs/sprint4_notebooks.md) descreve os modos

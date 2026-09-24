@@ -348,3 +348,5 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - [x] Executar testes, revisão de código e validação ponta a ponta.
   Resultado: 31 testes determinísticos aprovados, incluindo persistência do JSON,
   documentos sem fonte, fallbacks transparentes e erros de inferência não ocultados.
+- [x] Reorganizar as células dos notebooks 12 a 18 em etapas menores e ampliar
+  as explicações Markdown de entradas, scores, fontes, fallbacks e revisão humana.
