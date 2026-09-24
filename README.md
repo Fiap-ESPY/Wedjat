@@ -139,6 +139,13 @@ jupyter notebook
 O PyTorch não é fixado no `requirements.txt`, porque a distribuição correta
 depende da versão de CUDA ou do runtime do Colab.
 
+Para reproduzir a preparação dos dados, coloque o NDJSON em
+`data/raw/ANON_transcricao.json` e execute o notebook 01. O arquivo de entrada
+e os dados processados ficam fora do Git. A base recebida nesta etapa contém
+1.126 reuniões únicas e reproduz os agregados já descritos neste projeto.
+Sem prova de independência, seu uso serve para testar o funcionamento, não
+como validação em reuniões inéditas.
+
 Para a Sprint 4, abra `notebooks/18_sprint4_commercial_analysis.ipynb`. Ele
 carrega os notebooks 12 a 17 no mesmo kernel. A execução está separada em
 células para configurar, carregar, analisar, revisar labels e JSON, e salvar

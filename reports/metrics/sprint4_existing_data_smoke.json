@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "purpose": "unlabeled_in_sample_smoke_only",
+  "source": "data/processed/meetings.jsonl",
+  "source_meetings": 1126,
+  "sample_method": "18 meeting IDs with smallest SHA-256 rank plus shortest and longest transcript; duplicate IDs removed",
+  "sample_meetings": 20,
+  "sample_transcript_characters": {
+    "min": 304,
+    "max": 185575
+  },
+  "analysis_mode": "fallback",
+  "validation": {
+    "contract_failures": {},
+    "meetings_with_grounded_product": 20,
+    "all_product_candidates_have_sources": true,
+    "contract_checks": [
+      "original transcription preserved",
+      "at most three product candidates",
+      "at most ten key terms",
+      "human review required",
+      "all components used fallback",
+      "each returned product candidate has at least one source",
+      "returned product candidate scores are labeled heuristic"
+    ]
+  },
+  "label_counts": {
+    "sentimento": {
+      "misto": 12,
+      "neutro": 3,
+      "positivo": 5
+    },
+    "risco_churn": {
+      "medio": 2,
+      "baixo": 16,
+      "alto": 2
+    },
+    "oportunidade_comercial": {
+      "detectada": 15,
+      "nao_detectada": 5
+    },
+    "recomendacao_acao": {
+      "revisar_manualmente": 13,
+      "acompanhar_conta": 3,
+      "acionar_retencao": 2,
+      "qualificar_oportunidade": 2
+    }
+  },
+  "runtime_seconds": {
+    "total": 30.346,
+    "max_per_meeting": 5.321
+  },
+  "limitations": [
+    "The same 1,126-meeting dataset was used in earlier project stages; this is not validation on new meetings.",
+    "No human labels are available; label counts and contract checks do not measure accuracy.",
+    "Only lexical fallback was run; optional model artifacts are absent from this checkout."
+  ]
+}

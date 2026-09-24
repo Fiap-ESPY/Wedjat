@@ -350,3 +350,67 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
   documentos sem fonte, fallbacks transparentes e erros de inferência não ocultados.
 - [x] Reorganizar as células dos notebooks 12 a 18 em etapas menores e ampliar
   as explicações Markdown de entradas, scores, fontes, fallbacks e revisão humana.
+
+### Conferência da rubrica da Sprint 4 — 24/09/2026
+
+O arquivo recebido em `data/raw/ANON_transcricao.json` tem 1.174 registros
+NDJSON, 1.126 reuniões únicas e 48 duplicatas exatas. As cerca de 342 mil
+linhas estão dentro do texto das transcrições; não são novas reuniões. O
+notebook 01 reproduziu exatamente o relatório de preparação já versionado.
+Sem a base antiga para comparar hashes por ID, não há prova de independência
+do conjunto; ele não será tratado como teste inédito. Não há rótulos humanos.
+
+| Entrega da rubrica | Situação atual | Evidência ou lacuna |
+| --- | --- | --- |
+| Pipeline completo de processamento | Parcial | Notebook 18 integra entrada, indicadores e saída; falta demonstrar uma execução `full` reproduzível com os artefatos reais. |
+| Modelo final selecionado e justificativa | Pendente | BERTimbau é provisório na pseudo-validação; `model_comparison.json` registra `final_model_selected: null`. É possível selecionar um modelo para o protótipo com ressalva explícita, mas não validar sua qualidade real sem rótulos. |
+| Sistema de scoring/indicadores | Parcial | Labels, scores, tipos e mecanismos estão no JSON; limiares e adequação ao domínio ainda não foram avaliados em dados humanos. |
+| Protótipo funcional | Atende no modo `fallback` | Notebook 18, 31 testes determinísticos e smoke test em 20 reuniões reais existentes passaram pelo contrato. |
+| Validação com novas transcrições | Pendente | Os agregados coincidem com os da base histórica e não há prova de independência. O smoke test mede execução, não acurácia nem generalização. |
+| Recomendações de negócio | Parcial | A prioridade das ações e a revisão humana estão implementadas; falta explicitar o motivo da sugestão e avaliar sua utilidade. |
+| Limitações e próximos passos | Atende | README, guia da Sprint 4 e este TODO documentam modelos opcionais, pseudo-rótulos e revisão humana. |
+
+O smoke test agregado está em `reports/metrics/sprint4_existing_data_smoke.json`:
+20 reuniões escolhidas de modo determinístico, incluindo a mais curta e a
+mais longa; zero falhas de contrato no modo `fallback`, com fontes em todos os
+produtos candidatos. Contagens de labels sem rótulos de referência **não são
+métricas de qualidade**.
+
+#### Plano de conclusão possível sem rótulos humanos
+
+1. **Reproduzir a demonstração com modelos reais.**
+   - [x] Integrar o arquivo local ao `data/raw/` ignorado pelo Git, ajustar o
+     notebook 01 e confirmar o relatório de preparação.
+   - [x] Executar smoke test sem rótulos no notebook integrado e registrar
+     apenas métricas agregadas, sem texto nem IDs de reuniões.
+   - [!] `needs-info`: disponibilizar ambiente com PyTorch, Transformers,
+     Pysentimiento e acesso aos modelos/cache. Neste ambiente, esses pacotes
+     e os artefatos BERTimbau/E5 não estão instalados.
+   - [ ] Regenerar chunks, pseudo-rótulos, checkpoint BERTimbau e índice
+     E5 com os notebooks 03, 05, 07 e 10, ou restaurar artefatos locais
+     compatíveis; executar notebook 18 em `full` e registrar mecanismo,
+     versão e tempo, sem publicar transcrições.
+2. **Escolher o modelo do protótipo com justificativa honesta.**
+   - [ ] Definir critério de escolha entre recall de oportunidade, erros,
+     recursos e custo de revisão; registrar o classificador e o retriever
+     escolhidos para a entrega do Challenge. Usar os resultados existentes de
+     pseudo-validação somente como evidência experimental, sem chamá-los de
+     acurácia em produção ou de seleção validada por humanos.
+   - [ ] Consolidar em um relatório a comparação do notebook 08, a escolha do
+     E5 do notebook 10 e as limitações dos modelos de sentimento e churn.
+3. **Finalizar a apresentação da solução.**
+   - [ ] Exibir no notebook 18 o fluxo
+     Transcrição → Processamento → Modelo → Indicadores → Recomendação, com
+     tabela de labels, tipo de score, mecanismo e fontes; adicionar motivo
+     curto e rastreável à recomendação de ação.
+   - [ ] Incluir uma seção final de conclusões que diferencie: contrato
+     funcional verificado; métricas em pseudo-rótulos; teste sem rótulos nesta
+     base histórica; avaliação humana e generalização ainda não medidas.
+4. **Validação de qualidade futura, dependente de pessoas.**
+   - [!] `ready-for-human`: obter rótulos para a fila reservada de 150 chunks
+     e um conjunto separado de reuniões inéditas, dividido por reunião entre
+     calibração e teste final. Sem esse material, não calcular precisão real,
+     não ajustar limiares pelo teste e não afirmar seleção final para produção.
+   - [ ] Quando os rótulos existirem, comparar os classificadores no mesmo
+     teste humano e avaliar produto, sentimento, churn, oportunidade e ação
+     contra revisão comercial; registrar métricas por classe e divergências.
