@@ -1,213 +1,115 @@
+<p align="center">
+  <img src="assets/wedjat-identidade.png" alt="Identidade visual Wedjat: marca branca sobre azul petróleo, com detalhes em laranja" width="100%">
+</p>
+
 # Wedjat
 
-Wedjat é uma ferramenta de inteligência comercial para analisar transcrições de
-reuniões, identificar possíveis oportunidades de negócio e relacionar as
-necessidades encontradas com produtos, conceitos e evidências da base de
-conhecimento TOTVS.
+**Inteligência comercial que enxerga além do óbvio.**
 
-O projeto combina classificação supervisionada com RAG (*Retrieval-Augmented
-Generation*). Atualmente, a saída final é estruturada e fundamentada em fontes;
-o sistema ainda não gera respostas livres com um modelo de linguagem.
+O Wedjat é um projeto estudantil de inteligência comercial para a TOTVS. O protótipo recebe **uma nova transcrição** e devolve indicadores estruturados para revisão da área comercial: produto candidato, sentimento, risco de churn, oportunidade, termos principais e recomendação de ação. A imagem acima foi extraída da apresentação do Challenge e traz sua identidade em azul petróleo, branco e laranja.
 
-## O que a ferramenta faz
+> O pitch apresenta uma visão mais ampla, com captura de áudio, Wedjat Touch, interfaces por perfil e briefing 360°. Esses recursos são conceitos da apresentação; o protótipo deste repositório começa com uma transcrição já disponível e produz uma análise em notebooks.
 
-A versão atual consegue:
-
-- limpar e validar transcrições anonimizadas;
-- remover reuniões duplicadas;
-- dividir transcrições longas em chunks compatíveis com transformers;
-- detectar possíveis oportunidades comerciais em cada chunk;
-- agregar os resultados no nível da reunião;
-- recuperar produtos, dores, sinais e comparações na base TOTVS;
-- devolver nível de evidência, política de uso e URLs das fontes;
-- impedir que documentos sem fonte sustentem afirmações factuais;
-- manter hipóteses explicitamente separadas de fatos;
-- analisar uma nova transcrição com produto, sentimento, risco de churn,
-  oportunidade, termos e recomendação sujeita a revisão humana.
-
-## Como funciona
+## Fluxo do protótipo
 
 ```text
-Transcrição anonimizada
-        ↓
-Limpeza e deduplicação
-        ↓
-Chunking com tokenizer BERTimbau
-        ↓
-Classificação de oportunidade por chunk
-        ↓
-Agregação e detecção de contexto misto por reunião
-        ↓
-Busca semântica na base TOTVS com multilingual-e5-small
-        ↓
-Insight estruturado + produto + evidência + fontes
+Transcrição → Processamento → Modelos ou fallback → Indicadores → Recomendação
 ```
 
-## Modelos e estratégias avaliados
+O ponto de entrada é [`notebooks/18_analise_comercial.ipynb`](notebooks/18_analise_comercial.ipynb). Ele compõe os notebooks 12 a 17 e expõe a função `analisar_transcricao(transcricao, modo="auto")`. A saída JSON preserva o texto de entrada e informa, por indicador, label, score, tipo de score, mecanismo utilizado e fontes quando há produto candidato. A ação sugerida traz critérios e motivo; **toda ação exige revisão humana**.
 
-Para a classificação de oportunidade foram comparados:
+| Saída | O que representa |
+| --- | --- |
+| Produto principal e candidatos | Ranking de documentos da base TOTVS, com fontes e correspondência explícita quando encontrada. |
+| Sentimento | Sinal de linguagem positiva, neutra, negativa ou mista. |
+| Risco de churn | Sinal comercial baixo, médio ou alto; não é previsão calibrada de cancelamento. |
+| Oportunidade comercial | Sinal de necessidade detectada ou não detectada. |
+| Termos principais | Até dez termos relevantes para a análise. |
+| Recomendação de ação | Próximo passo sugerido, com critérios, motivo e revisão humana obrigatória. |
 
-- TF-IDF + Regressão Logística;
-- BERTimbau com fine-tuning.
+Os scores `model_probability`, `normalized_cosine_similarity` e `heuristic` têm significados diferentes. A legenda `score_legend` acompanha cada resultado; nenhum desses valores deve ser lido automaticamente como probabilidade de compra.
 
-O BERTimbau foi escolhido para o caminho com modelos do protótipo por apresentar
-melhor desempenho equilibrado na pseudo-validação. O baseline lexical continua
-sendo uma referência barata e obteve o maior recall nesse experimento. A escolha
-não é validação para produção; o critério, os custos e os limites estão em
-[reports/sprint4_conclusao.md](reports/sprint4_conclusao.md).
+## Executar uma transcrição
 
-Para a recuperação da base foram comparados:
-
-- busca lexical BM25 com aliases;
-- embeddings do BERTimbau base;
-- recuperação híbrida;
-- `multilingual-e5-small`, especializado em busca semântica.
-
-O E5 foi o melhor retriever no conjunto inicial de 32 consultas, com Recall@5
-de 98,44%, Hit@5 de 100%, MRR de 92,19% e nDCG@5 de 93,47%.
-
-Essas métricas são experimentais. O conjunto de consultas foi construído a
-partir da própria base, e o classificador ainda foi treinado com pseudo-rótulos.
-Os números não representam precisão comprovada em produção.
-
-## Estado atual
-
-O pipeline completo já processa:
-
-- 1.174 registros de entrada;
-- 1.126 reuniões únicas após remover 48 duplicatas;
-- 29.972 chunks;
-- 107 documentos na base de conhecimento TOTVS;
-- 29 grupos de aliases de produtos, módulos e concorrentes.
-
-A integração final gera
-`data/processed/meeting_commercial_insights.jsonl`, contendo apenas IDs,
-probabilidades, documentos recuperados, produtos, categorias, políticas de
-grounding e fontes.
-
-A aplicação completa marcou muitas reuniões como candidatas e encontrou grande
-quantidade de contexto misto. Isso indica que os limiares e a agregação precisam
-ser calibrados com reuniões rotuladas por pessoas antes de qualquer uso real.
-
-## Estrutura do projeto
-
-```text
-Wedjat/
-├── data/
-│   ├── raw/                 # transcrições anonimizadas
-│   ├── knowledge_base/      # base TOTVS, aliases e consultas de avaliação
-│   └── processed/           # reuniões versionadas e demais artefatos locais
-├── notebooks/               # Colab (00) e módulos numerados de 01 a 18
-├── reports/
-│   ├── figures/             # gráficos e matrizes de confusão
-│   └── metrics/             # métricas agregadas dos experimentos
-├── COLAB_README.md           # instruções específicas para Google Colab
-├── O_QUE_FIZEMOS_NO_PROJETO.md
-├── TODO.md
-└── requirements.txt
-```
-
-O histórico técnico detalhado, com todas as decisões e resultados por notebook,
-está em [O_QUE_FIZEMOS_NO_PROJETO.md](O_QUE_FIZEMOS_NO_PROJETO.md).
-
-## Como executar
-
-### Google Colab
-
-Para executar tudo em uma única aba, use
-`notebooks/00_projeto_completo_colab.ipynb`. Ele reúne as 11 etapas, preserva
-as explicações e libera a memória da GPU entre os modelos.
-
-O pacote `Wedjat_Entrega_Colab_Notebook_Unico.zip` contém somente esse notebook,
-os dados e os arquivos auxiliares necessários. Siga as instruções de
-[COLAB_README.md](COLAB_README.md) e ative um runtime com GPU.
-
-### Ambiente local
-
-Recomenda-se Python 3.12 e uma GPU CUDA para os notebooks do BERTimbau.
+Instale as dependências de `requirements.txt` em um ambiente Python 3.12. Para usar modelos, instale antes a variante do PyTorch adequada ao seu sistema e à sua GPU pelo [seletor oficial](https://pytorch.org/get-started/locally/). O PyTorch não é fixado no arquivo de requisitos porque a distribuição depende do hardware.
 
 ```bash
 python -m venv .venv
-```
-
-Ative o ambiente virtual, instale uma versão do PyTorch apropriada para sua GPU
-e depois execute:
-
-```bash
-pip install -r requirements.txt
+# Ative .venv no seu sistema operacional.
+python -m pip install -r requirements.txt
+python -m pip check
 jupyter notebook
 ```
 
-O PyTorch não é fixado no `requirements.txt`, porque a distribuição correta
-depende da versão de CUDA ou do runtime do Colab.
+No notebook 18, configure a entrada e execute as células de cima para baixo:
 
-Para reproduzir a preparação dos dados, execute o notebook 01 com o NDJSON
-versionado em `data/raw/ANON_transcricao.json`. O arquivo de entrada e
-`data/processed/meetings.jsonl` fazem parte do repositório. A base contém
-1.126 reuniões únicas e reproduz os agregados já descritos neste projeto.
-Sem prova de independência, seu uso serve para testar o funcionamento, não
-como validação em reuniões inéditas.
+```python
+FONTE_ENTRADA = "texto"
+TRANSCRICAO_DIRETA = "Usamos Protheus e queremos avaliar uma proposta para implantar um ERP."
+ARQUIVO_ENTRADA = None
+CAMPO_JSON = "transcricao"
+MODO_ANALISE = "fallback"
+ARQUIVO_SAIDA = None
+```
 
-Para a Sprint 4, abra `notebooks/18_analise_comercial.ipynb`. Ele
-carrega os notebooks 12 a 17 no mesmo kernel. A execução está separada em
-células para configurar, carregar, analisar, revisar labels e JSON, e salvar
-somente quando houver um caminho de saída. Cada funcionalidade permanece em
-um notebook menor, explicado e testado separadamente.
+A entrada também pode ser um `.txt` ou um `.json` com uma única transcrição, usando `FONTE_ENTRADA="arquivo"` e `ARQUIVO_ENTRADA=Path(...)`. O campo de texto do JSON é escolhido por `CAMPO_JSON`. `ARQUIVO_SAIDA=None` mantém o resultado apenas em memória; informe um caminho `.json` para gravá-lo.
 
-A geração dos artefatos e a conferência da execução `full` em um PC com GPU
-estão descritas em [docs/sprint4_execucao_full_gpu.md](docs/sprint4_execucao_full_gpu.md).
+| Modo | Comportamento |
+| --- | --- |
+| `fallback` | Usa busca BM25 com aliases e regras lexicais, sem carregar modelos pesados. É o modo executado e testado neste ambiente. |
+| `auto` | Tenta os modelos disponíveis e registra os motivos de fallback por componente. |
+| `full` | Exige os modelos e os artefatos locais; interrompe com erro claro quando faltam. Ainda precisa ser reproduzido em um PC com GPU. |
 
-O guia [docs/sprint4_notebooks.md](docs/sprint4_notebooks.md) descreve os modos
-de análise, os três formatos de entrada, os modelos opcionais, cache offline,
-persistência do JSON e exemplos de configuração.
+| Indicador | Modelo do caminho `full` | Fallback |
+| --- | --- | --- |
+| Produto | `intfloat/multilingual-e5-small` e índice do notebook 10 | BM25 com aliases |
+| Sentimento | `pysentimiento/bertweet-pt-sentiment` | Regras lexicais |
+| Risco de churn | `MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli` | Regras lexicais |
+| Oportunidade | Checkpoint BERTimbau do notebook 07 | Regras comerciais |
 
-## Principais artefatos
+Os modelos de sentimento e churn não foram treinados para prever resultados comerciais nestas reuniões. O score de churn é um sinal de triagem, não uma probabilidade calibrada de cancelamento.
 
-- `reports/metrics/model_comparison.json`: comparação dos classificadores;
-- `reports/metrics/rag_retrieval_evaluation.json`: avaliação inicial do RAG;
-- `reports/metrics/sentence_embeddings_retrieval.json`: avaliação do E5;
-- `reports/metrics/final_integration_summary.json`: resumo do pipeline completo;
-- `data/processed/meeting_commercial_insights.jsonl`: resultado por reunião.
+### Executar com modelos no PC com GPU
 
-## Privacidade e uso responsável
+A partir da raiz do projeto, instale o PyTorch adequado à GPU, execute `python -m pip install -r requirements.txt` e confira `python -c "import torch; print(torch.cuda.is_available())"`. No Jupyter, execute integralmente, nesta ordem:
 
-As transcrições anonimizadas de entrada e `meetings.jsonl` são versionadas
-neste projeto estudantil. Outros artefatos gerados, inclusive checkpoints e
-índices, continuam fora do Git. Mantenha o acesso ao runtime e ao Drive conforme
-as regras do projeto.
+1. `03_tokenizacao_e_chunks.ipynb` — gera `data/processed/chunks_bertimbau.jsonl`.
+2. `05_supervisao_fraca_e_divisao.ipynb` — gera pseudo-rótulos e a fila reservada de auditoria.
+3. `07_treinamento_bertimbau.ipynb` — gera `data/processed/bertimbau_opportunity_best/`.
+4. `10_busca_embeddings_e5.ipynb` — gera `data/processed/rag_multilingual_e5_small_embeddings.npz`.
 
-O Wedjat deve ser usado como apoio à revisão comercial. Ele não deve tomar
-decisões automáticas sobre clientes, vendedores ou oportunidades enquanto não
-houver avaliação humana representativa, calibração e monitoramento.
+Esses notebooks estão na pasta `notebooks/`. BERTimbau e E5 são baixados quando não estão no cache; o modo `full` também carrega os modelos de sentimento e de NLI para churn. Confira a existência do checkpoint e do índice antes de alterar `MODO_ANALISE="full"` no notebook 18. Execute primeiro com uma transcrição sintética e verifique `analysis_mode`, fontes, tipos de score e tempo. Registre data, versões, GPU, mecanismos e tempo sem copiar transcrições ou IDs para um relatório público. Preserve os relatórios versionados se quiser comparar métricas: os notebooks de treino podem reescrevê-los localmente.
 
-## Próximas funcionalidades
+Para reproduzir todas as etapas anteriores em uma única aba do **Google Colab**, use `notebooks/00_projeto_completo_colab.ipynb` com runtime de GPU, os dados deste repositório e `pip install -r requirements.txt`. O notebook único reúne as etapas 01 a 11; o notebook 18 é a demonstração interativa da Sprint 4.
 
-As próximas evoluções planejadas são:
+## Resultados e limites
 
-1. concluir a anotação humana da fila reservada;
-2. criar um conjunto de teste final exclusivamente humano;
-3. medir precisão real dos pseudo-rotuladores e classificadores;
-4. calibrar limiares e agregação no nível da reunião;
-5. implementar NER para extrair produtos, empresas, dores e concorrentes;
-6. usar entidades extraídas como filtros da recuperação semântica;
-7. separar fatos e inferências dentro de documentos mistos da base;
-8. registrar data de verificação e validade das fontes;
-9. avaliar o pipeline ponta a ponta com reuniões anotadas;
-10. aprimorar as células de consulta e revisão humana nos notebooks;
-11. gerar respostas narrativas com citações verificáveis;
-12. adicionar monitoramento de qualidade, drift e feedback humano.
+A preparação registra 1.174 entradas NDJSON e 1.126 reuniões únicas após 48 duplicatas exatas. O histórico experimental registra 29.972 chunks, 107 documentos na base TOTVS e 29 grupos de aliases. A base recebida tem agregados iguais aos da base histórica; sem hashes ou IDs antigos comparáveis, **não há prova de que seja um teste independente**.
 
-O acompanhamento detalhado das tarefas está em [TODO.md](TODO.md).
+BERTimbau foi escolhido para o caminho com modelos **do protótipo** na classificação de oportunidade. Em 140 chunks avaliados contra pseudo-rótulos, obteve F1 de oportunidade 0,974 e 3 erros; TF-IDF + Regressão Logística obteve F1 de 0,951, 6 erros e recall maior (1,000 contra 0,983). A diferença de acertos não foi conclusiva (McNemar p = 0,375), e o baseline é muito menor e mais barato. O Brier score foi 0,016 para BERTimbau e 0,106 para o baseline; no custo experimental registrado, o baseline passa a ser preferível se um falso negativo custar mais que quatro revisões de falso positivo. A escolha para produção depende de dados humanos e custos reais. Números completos: [`model_comparison.json`](reports/metrics/model_comparison.json).
 
----
+Na busca, `multilingual-e5-small` obteve Recall@5 de 0,984 e MRR de 0,922 em 32 consultas curadas da própria base, contra 0,938 e 0,766 de BM25 com aliases. O E5 é o retriever do caminho com modelos; BM25 é o fallback. Um documento comparativo pode aparecer acima do produto mencionado, por isso o produto principal e suas fontes exigem conferência humana. Números completos: [`sentence_embeddings_retrieval.json`](reports/metrics/sentence_embeddings_retrieval.json).
 
-## 👥 Integrantes
-- Beatriz Cortez - RM561431
- 
-- Bruno Alves - RM563986
- 
-- Gabriel Augusto - RM564126
- 
-- Davi Duarte - RM566316
- 
-- Raphaela Tatto - RM572059
+O protótipo passou por **34 testes determinísticos** e pela execução ponta a ponta do notebook 18 com uma transcrição sintética em `fallback`. Um smoke test adicional processou 20 reuniões da base histórica nesse modo, sem falhas de contrato. Esses testes verificam funcionamento; **não medem a qualidade das labels nem a generalização**. Ainda faltam a execução `full` com artefatos reais no PC com GPU, rótulos humanos para a fila de 150 chunks reservados e reuniões inéditas separadas por ID para calibração e teste final. Consulte [`sprint4_existing_data_smoke.json`](reports/metrics/sprint4_existing_data_smoke.json) e o plano em [`TODO.md`](TODO.md).
+
+## Organização
+
+```text
+assets/           imagem da identidade Wedjat extraída do pitch
+notebooks/        notebook único Colab (00), etapas 01–11 e análise 12–18
+data/raw/         transcrições anonimizadas versionadas
+data/processed/   reuniões versionadas; checkpoints e índices locais ignorados
+data/knowledge_base/  documentos, aliases e consultas de avaliação
+reports/metrics/ métricas agregadas dos experimentos
+tests/           testes determinísticos do contrato e das recomendações
+```
+
+As transcrições anonimizadas e `data/processed/meetings.jsonl` fazem parte deste projeto estudantil. Checkpoints, índices e outros artefatos gerados ficam fora do Git. A solução apoia a revisão comercial; nenhuma sugestão deve acionar clientes automaticamente antes de avaliação humana representativa e calibração.
+
+## Equipe
+
+- Beatriz Cortez — RM561431
+- Bruno Alves — RM563986
+- Gabriel Augusto — RM564126
+- Davi Duarte — RM566316
+- Raphaela Tatto — RM572059

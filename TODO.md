@@ -15,6 +15,9 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 - [x] Instalar as skills de `mattpocock/skills` e criar uma skill agregadora
   para roteamento entre elas.
 - [x] Organizar a estrutura inicial do repositório.
+- [x] Consolidar os guias e a conclusão no `README.md`, incorporar a arte
+  Wedjat do pitch e manter apenas `AGENTS.md`, `CONTEXT.md`, `README.md` e
+  `TODO.md` como arquivos Markdown.
 - [x] Adicionar as transcrições anonimizadas em `data/raw/`.
 - [x] Confirmar que a entrada é NDJSON com 1.174 registros.
 - [x] Implementar a limpeza conservadora das transcrições no notebook.
@@ -370,12 +373,12 @@ do conjunto; ele não será tratado como teste inédito. Não há rótulos human
 | Entrega da rubrica | Situação atual | Evidência ou lacuna |
 | --- | --- | --- |
 | Pipeline completo de processamento | Parcial | Notebook 18 integra entrada, indicadores e saída; falta demonstrar uma execução `full` reproduzível com os artefatos reais. |
-| Modelo final selecionado e justificativa | Atende para o protótipo | BERTimbau e E5 foram escolhidos para a demonstração em `reports/sprint4_conclusao.md`; a seleção para produção segue pendente de avaliação humana. |
+| Modelo final selecionado e justificativa | Atende para o protótipo | BERTimbau e E5 foram escolhidos para a demonstração na seção **Resultados e limites** do `README.md`; a seleção para produção segue pendente de avaliação humana. |
 | Sistema de scoring/indicadores | Parcial | Labels, scores, tipos e mecanismos estão no JSON; limiares e adequação ao domínio ainda não foram avaliados em dados humanos. |
 | Protótipo funcional | Atende no modo `fallback` | Notebook 18 executado com transcrição sintética, 34 testes determinísticos e smoke test em 20 reuniões da base histórica passaram pelo contrato. |
 | Validação com novas transcrições | Pendente | Os agregados coincidem com os da base histórica e não há prova de independência. O smoke test mede execução, não acurácia nem generalização. |
 | Recomendações de negócio | Parcial | A prioridade, critérios rastreáveis, motivo e revisão humana estão implementados; falta avaliar utilidade com pessoas da área comercial. |
-| Limitações e próximos passos | Atende | README, guia da Sprint 4 e este TODO documentam modelos opcionais, pseudo-rótulos e revisão humana. |
+| Limitações e próximos passos | Atende | README e este TODO documentam modelos opcionais, pseudo-rótulos e revisão humana. |
 
 O smoke test agregado está em `reports/metrics/sprint4_existing_data_smoke.json`:
 20 reuniões escolhidas de modo determinístico, incluindo a mais curta e a
@@ -390,9 +393,9 @@ métricas de qualidade**.
      notebook 01 e confirmar o relatório de preparação.
    - [x] Executar smoke test sem rótulos no notebook integrado e registrar
      apenas métricas agregadas, sem texto nem IDs de reuniões.
-   - [!] `ready-for-human`: reproduzir em PC com GPU, conforme
-     `docs/sprint4_execucao_full_gpu.md`. Neste ambiente CPU há cerca de
-     2,5 GB livres, sem CUDA e sem os artefatos BERTimbau/E5; a instalação
+   - [!] `ready-for-human`: reproduzir em PC com GPU, conforme a seção
+     **Executar com modelos no PC com GPU** do `README.md`. Neste ambiente CPU
+     há cerca de 2,5 GB livres, sem CUDA e sem os artefatos BERTimbau/E5; a instalação
      parcial foi removida para liberar espaço.
    - [!] `ready-for-human`: regenerar chunks, pseudo-rótulos, checkpoint
      BERTimbau e índice E5 com os notebooks 03, 05, 07 e 10, ou restaurar
@@ -404,7 +407,7 @@ métricas de qualidade**.
      escolhidos para a entrega do Challenge. Usar os resultados existentes de
      pseudo-validação somente como evidência experimental, sem chamá-los de
      acurácia em produção ou de seleção validada por humanos.
-   - [x] Consolidar em um relatório a comparação do notebook 08, a escolha do
+   - [x] Consolidar no README a comparação do notebook 08, a escolha do
      E5 do notebook 10 e as limitações dos modelos de sentimento e churn.
 3. **Finalizar a apresentação da solução.**
    - [x] Exibir no notebook 18 o fluxo
