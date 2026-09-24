@@ -1,12 +1,10 @@
 <p align="center">
-  <img src="assets/wedjat-identidade.png" alt="Identidade visual Wedjat: marca branca sobre azul petróleo, com detalhes em laranja" width="100%">
+  <img src="assets/wedjat-logo.png" alt="Logo Wedjat" width="650">
 </p>
-
-# Wedjat
 
 **Inteligência comercial que enxerga além do óbvio.**
 
-O Wedjat é um projeto estudantil de inteligência comercial para a TOTVS. O protótipo recebe **uma nova transcrição** e devolve indicadores estruturados para revisão da área comercial: produto candidato, sentimento, risco de churn, oportunidade, termos principais e recomendação de ação. A imagem acima foi extraída da apresentação do Challenge e traz sua identidade em azul petróleo, branco e laranja.
+O Wedjat é um projeto estudantil de inteligência comercial para a TOTVS. O protótipo recebe **uma nova transcrição** e devolve indicadores estruturados para revisão da área comercial: produto candidato, sentimento, risco de churn, oportunidade, termos principais e recomendação de ação. A marca acima e a arte ao final vêm da apresentação do Challenge e preservam a identidade visual em azul petróleo, branco e laranja.
 
 > O pitch apresenta uma visão mais ampla, com captura de áudio, Wedjat Touch, interfaces por perfil e briefing 360°. Esses recursos são conceitos da apresentação; o protótipo deste repositório começa com uma transcrição já disponível e produz uma análise em notebooks.
 
@@ -95,7 +93,7 @@ O protótipo passou por **34 testes determinísticos** e pela execução ponta a
 ## Organização
 
 ```text
-assets/           imagem da identidade Wedjat extraída do pitch
+assets/           logo e arte final extraídos do pitch
 notebooks/        notebook único Colab (00), etapas 01–11 e análise 12–18
 data/raw/         transcrições anonimizadas versionadas
 data/processed/   reuniões versionadas; checkpoints e índices locais ignorados
@@ -113,3 +111,9 @@ As transcrições anonimizadas e `data/processed/meetings.jsonl` fazem parte des
 - Gabriel Augusto — RM564126
 - Davi Duarte — RM566316
 - Raphaela Tatto — RM572059
+
+## Conheça o Wedjat
+
+<p align="center">
+  <img src="assets/wedjat-identidade.png" alt="Arte final Wedjat com QR code para conhecer a plataforma" width="100%">
+</p>

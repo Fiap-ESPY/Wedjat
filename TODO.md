@@ -15,9 +15,9 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 - [x] Instalar as skills de `mattpocock/skills` e criar uma skill agregadora
   para roteamento entre elas.
 - [x] Organizar a estrutura inicial do repositório.
-- [x] Consolidar os guias e a conclusão no `README.md`, incorporar a arte
-  Wedjat do pitch e manter apenas `AGENTS.md`, `CONTEXT.md`, `README.md` e
-  `TODO.md` como arquivos Markdown.
+- [x] Consolidar os guias e a conclusão no `README.md`, usar a marca Wedjat
+  no topo e a arte do pitch com QR code ao final; manter apenas `AGENTS.md`,
+  `CONTEXT.md`, `README.md` e `TODO.md` como arquivos Markdown.
 - [x] Adicionar as transcrições anonimizadas em `data/raw/`.
 - [x] Confirmar que a entrada é NDJSON com 1.174 registros.
 - [x] Implementar a limpeza conservadora das transcrições no notebook.
