@@ -14,7 +14,7 @@ O Wedjat é um projeto estudantil de inteligência comercial para a TOTVS. O pro
 Transcrição → Processamento → Modelos ou fallback → Indicadores → Recomendação
 ```
 
-O ponto de entrada é [`notebooks/18_analise_comercial.ipynb`](notebooks/18_analise_comercial.ipynb). Ele compõe os notebooks 12 a 17 e expõe a função `analisar_transcricao(transcricao, modo="auto")`. A saída JSON preserva o texto de entrada e informa, por indicador, label, score, tipo de score, mecanismo utilizado e fontes quando há produto candidato. A ação sugerida traz critérios e motivo; **toda ação exige revisão humana**.
+O ponto de entrada é [`notebooks/19_analise_final.ipynb`](notebooks/19_analise_final.ipynb). Por padrão, ele analisa dez transcrições distintas, chamando `analisar_transcricao(transcricao, modo="full")` do [notebook 18](notebooks/18_analise_comercial.ipynb) uma vez para cada transcrição. A saída JSON preserva cada texto de entrada e informa, por indicador, label, score, tipo de score, mecanismo utilizado e fontes quando há produto candidato. O notebook final grava o JSON completo e mostra seus dados em tabelas pandas; **toda ação exige revisão humana**.
 
 | Saída | O que representa |
 | --- | --- |
@@ -27,7 +27,7 @@ O ponto de entrada é [`notebooks/18_analise_comercial.ipynb`](notebooks/18_anal
 
 Os scores `model_probability`, `normalized_cosine_similarity` e `heuristic` têm significados diferentes. A legenda `score_legend` acompanha cada resultado; nenhum desses valores deve ser lido automaticamente como probabilidade de compra.
 
-## Executar uma transcrição
+## Executar as análises
 
 Instale as dependências de `requirements.txt` em um ambiente Python 3.12. Para usar modelos, instale antes a variante do PyTorch adequada ao seu sistema e à sua GPU pelo [seletor oficial](https://pytorch.org/get-started/locally/). O PyTorch não é fixado no arquivo de requisitos porque a distribuição depende do hardware.
 
@@ -39,18 +39,16 @@ python -m pip check
 jupyter notebook
 ```
 
-No notebook 18, configure a entrada e execute as células de cima para baixo:
+Abra o notebook 19 no kernel `Wedjat (Python 3.12 CUDA)` e execute **Run All / Executar tudo**. A configuração inicial analisa dez registros anonimizados com IDs de reunião distintos do arquivo NDJSON do projeto:
 
 ```python
-FONTE_ENTRADA = "texto"
-TRANSCRICAO_DIRETA = "Usamos Protheus e queremos avaliar uma proposta para implantar um ERP."
-ARQUIVO_ENTRADA = None
-CAMPO_JSON = "transcricao"
-MODO_ANALISE = "fallback"
-ARQUIVO_SAIDA = None
+ORIGEM = "arquivo"
+ARQUIVO_ENTRADA = "data/raw/ANON_transcricao.json"
+INDICES_REGISTROS = [117, 137, 141, 213, 254, 369, 394, 401, 418, 525]
+ARQUIVO_SAIDA = "data/processed/analises_finais_10.json"
 ```
 
-A entrada também pode ser um `.txt` ou um `.json` com uma única transcrição, usando `FONTE_ENTRADA="arquivo"` e `ARQUIVO_ENTRADA=Path(...)`. O campo de texto do JSON é escolhido por `CAMPO_JSON`. `ARQUIVO_SAIDA=None` mantém o resultado apenas em memória; informe um caminho `.json` para gravá-lo.
+O arquivo contém 1.174 registros; a lista de índices pode ser alterada para analisar outras reuniões. Os dez exemplos padrão foram escolhidos entre textos de 1.500 a 3.500 caracteres para uma execução local verificável; não formam uma amostra aleatória. Para uma entrada própria, use `ORIGEM="texto"` e cole o conteúdo em `TRANSCRICAO_DIRETA`, ou informe outro `.txt`, objeto `.json` ou `.jsonl` em `ARQUIVO_ENTRADA`. O notebook 19 exige CUDA e todos os modelos em `full`. Ele salva um JSON com uma análise por transcrição, lê o arquivo salvo e exibe tabelas pandas de indicadores, produtos candidatos e campos do JSON. O arquivo completo fica em `data/processed/`, ignorado pelo Git por conter textos e IDs.
 
 | Modo | Comportamento |
 | --- | --- |
@@ -76,9 +74,9 @@ A partir da raiz do projeto, instale o PyTorch adequado à GPU, execute `python 
 3. `07_treinamento_bertimbau.ipynb` — gera `data/processed/bertimbau_opportunity_best/`.
 4. `10_busca_embeddings_e5.ipynb` — gera `data/processed/rag_multilingual_e5_small_embeddings.npz`.
 
-Esses notebooks estão na pasta `notebooks/`. BERTimbau e E5 são baixados quando não estão no cache; o modo `full` também carrega os modelos de sentimento e de NLI para churn. Confira a existência do checkpoint e do índice antes de alterar `MODO_ANALISE="full"` no notebook 18. Execute primeiro com uma transcrição sintética e verifique `analysis_mode`, fontes, tipos de score e tempo. Registre data, versões, GPU, mecanismos e tempo sem copiar transcrições ou IDs para um relatório público. Preserve os relatórios versionados se quiser comparar métricas: os notebooks de treino podem reescrevê-los localmente.
+Esses notebooks estão na pasta `notebooks/`. BERTimbau e E5 são baixados quando não estão no cache; o modo `full` também carrega os modelos de sentimento e de NLI para churn. Confira a existência do checkpoint e do índice antes de executar o notebook 19. Registre data, versões, GPU, mecanismos e tempo sem copiar transcrições ou IDs para um relatório público. Preserve os relatórios versionados se quiser comparar métricas: os notebooks de treino podem reescrevê-los localmente.
 
-Em 25/09/2026, os **19 notebooks passaram** no kernel `wedjat` com PyTorch CUDA 13.0 e RTX 3050. O notebook 18 executou em `full` com E5, Pysentimiento, MiniLM e BERTimbau carregados em CUDA: 25,64 s para uma transcrição sintética, pico de 1.798 MiB de VRAM, três produtos candidatos com fontes e revisão humana obrigatória. O [resumo da execução](reports/metrics/notebook_gpu_run.json) contém apenas resultados agregados. Os notebooks 13 a 17 também executam isoladamente após carregar os fundamentos do 12.
+Em 25/09/2026, os **19 notebooks anteriores passaram** no kernel `wedjat` com PyTorch CUDA 13.0 e RTX 3050. O notebook 18 executou em `full` com E5, Pysentimiento, MiniLM e BERTimbau carregados em CUDA: 25,64 s para uma transcrição sintética, pico de 1.798 MiB de VRAM, três produtos candidatos com fontes e revisão humana obrigatória. O [resumo da execução](reports/metrics/notebook_gpu_run.json) contém apenas resultados agregados. O notebook 19 passou em `full` com dez transcrições reais distintas, gravou o JSON completo e exibiu as três tabelas pandas.
 
 Para reproduzir todas as etapas anteriores em uma única aba do **Google Colab**, use `notebooks/00_projeto_completo_colab.ipynb` com runtime de GPU, os dados deste repositório e `pip install -r requirements.txt`. O notebook único reúne as etapas 01 a 11; o notebook 18 é a demonstração interativa da Sprint 4.
 
@@ -90,7 +88,21 @@ BERTimbau foi escolhido para o caminho com modelos **do protótipo** na classifi
 
 Na busca, `multilingual-e5-small` obteve Recall@5 de 0,984 e MRR de 0,922 em 32 consultas curadas da própria base, contra 0,938 e 0,766 de BM25 com aliases. O E5 é o retriever do caminho com modelos; BM25 é o fallback. Um documento comparativo pode aparecer acima do produto mencionado, por isso o produto principal e suas fontes exigem conferência humana. Números completos: [`sentence_embeddings_retrieval.json`](reports/metrics/sentence_embeddings_retrieval.json).
 
-O protótipo passou por **34 testes determinísticos**, pelos 19 notebooks e pela execução ponta a ponta do notebook 18 em `fallback` e `full`. Um smoke test adicional processou 20 reuniões da base histórica em `fallback`, sem falhas de contrato. Esses testes verificam funcionamento; **não medem a qualidade das labels nem a generalização**. Consulte [`sprint4_existing_data_smoke.json`](reports/metrics/sprint4_existing_data_smoke.json), o [resumo da GPU](reports/metrics/notebook_gpu_run.json) e o plano em [`TODO.md`](TODO.md).
+O protótipo passou por **35 testes determinísticos**, pelos 19 notebooks anteriores e pelo notebook 19 em `full` com dez transcrições do projeto. O notebook 18 também passou de ponta a ponta em `fallback` e `full`. Um smoke test adicional processou 20 reuniões da base histórica em `fallback`, sem falhas de contrato. Esses testes verificam funcionamento; **não medem a qualidade das labels nem a generalização**. Consulte [`sprint4_existing_data_smoke.json`](reports/metrics/sprint4_existing_data_smoke.json), o [resumo da GPU](reports/metrics/notebook_gpu_run.json) e o plano em [`TODO.md`](TODO.md).
+
+### Dez análises de transcrições do projeto
+
+Na execução de 25/09/2026, o notebook 19 processou **10 transcrições de reuniões distintas** em `full` na RTX 3050. As dez preservaram o texto original, usaram modelos nos quatro componentes, trouxeram candidatos com fontes e exigiram revisão humana. O JSON integral está em `data/processed/analises_finais_10.json` (arquivo local ignorado pelo Git). O [resumo agregado em JSON](reports/metrics/analise_final_10_resumo.json) não contém transcrições nem IDs.
+
+| Indicador | Contagens nas 10 transcrições |
+| --- | --- |
+| Sentimento | 10 `neutro` |
+| Risco de churn | 9 `medio`, 1 `alto` |
+| Oportunidade comercial | 1 `detectada`, 9 `nao_detectada` |
+| Recomendação de ação | 9 `revisar_manualmente`, 1 `acionar_retencao` |
+| Produto principal candidato | 4 TOTVS Backoffice – Linha RM; 3 RD Station Conversas; 1 RD Station Mentor IA; 1 TOTVS Distribuição e Varejo – Linha WinThor; 1 TOTVS CRM Gestão de Clientes |
+
+A execução com modelos em cache e modo offline levou 27,24 s no total e atingiu 1.882,5 MiB de memória de GPU. A checagem encontrou 30 produtos candidatos com fontes, todos provenientes de documentos `document_type="produto"`. Essa restrição foi aplicada após a primeira execução ter retornado indevidamente “Taxonomia de entidades” como produto principal nas dez transcrições. **Essas contagens são saídas exploratórias do modelo, não métricas de acerto**: a amostra foi escolhida por tamanho, pertence à base histórica e não possui rótulos humanos para confronto.
 
 ### Revisão exploratória dos 150 chunks
 
@@ -102,7 +114,7 @@ Esses rótulos são uma segunda leitura por IA, **não um gabarito humano indepe
 
 ```text
 assets/           logo e arte final extraídos do pitch
-notebooks/        notebook único Colab (00), etapas 01–11 e análise 12–18
+notebooks/        notebook único Colab (00), etapas 01–11, análise 12–18 e entrada final 19
 data/raw/         transcrições anonimizadas versionadas
 data/processed/   reuniões versionadas; checkpoints e índices locais ignorados
 data/knowledge_base/  documentos, aliases e consultas de avaliação

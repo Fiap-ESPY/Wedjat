@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "purpose": "unlabeled_in_sample_full_gpu_smoke_only",
+  "date": "2026-09-25",
+  "source": "data/raw/ANON_transcricao.json",
+  "selection": "10 predefined records with distinct meeting IDs and transcription length between 1500 and 3500 characters",
+  "sample_transcriptions": 10,
+  "sample_transcript_characters": {
+    "min": 1517,
+    "median": 2655.0,
+    "max": 3049
+  },
+  "analysis_mode": "full",
+  "gpu": "NVIDIA GeForce RTX 3050",
+  "validation": {
+    "original_transcriptions_preserved": true,
+    "all_four_components_used_models": true,
+    "all_actions_require_human_review": true,
+    "product_candidates": 30,
+    "all_candidates_have_sources": true,
+    "all_candidate_documents_are_products": true
+  },
+  "label_counts": {
+    "sentimento": {
+      "neutro": 10
+    },
+    "risco_churn": {
+      "alto": 1,
+      "medio": 9
+    },
+    "oportunidade_comercial": {
+      "detectada": 1,
+      "nao_detectada": 9
+    },
+    "recomendacao_acao": {
+      "acionar_retencao": 1,
+      "revisar_manualmente": 9
+    }
+  },
+  "primary_product_counts": {
+    "RD Station Conversas": 3,
+    "RD Station Mentor IA": 1,
+    "TOTVS Backoffice – Linha RM": 4,
+    "TOTVS CRM Gestão de Clientes": 1,
+    "TOTVS Distribuição e Varejo – Linha WinThor": 1
+  },
+  "runtime_seconds": {
+    "total": 27.24,
+    "max_per_transcription": 24.39
+  },
+  "peak_gpu_memory_mib": 1882.5,
+  "limitations": [
+    "Length-constrained convenience sample from the project corpus, not a random or independent test set.",
+    "No human ground truth is available for these transcriptions; label and product counts do not measure accuracy.",
+    "Product candidates come only from knowledge base documents with document_type=produto; similarity scores do not confirm product fit.",
+    "Complete results with original transcriptions and meeting IDs are stored locally in ignored data/processed/analises_finais_10.json."
+  ]
+}

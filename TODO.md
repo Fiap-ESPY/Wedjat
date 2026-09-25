@@ -248,7 +248,7 @@ A área comercial precisa transformar uma nova transcrição em indicadores úte
 
 ### Solution
 
-Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI ou interface web, que processe uma transcrição por vez. Os notebooks 12 a 17 isolam fundamentos e funcionalidades; o notebook 18 é o ponto de entrada integrado, preserva o texto original, coordena os modelos e fallbacks disponíveis, consulta a base TOTVS e exibe um JSON estruturado. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
+Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI ou interface web. Os notebooks 12 a 17 isolam fundamentos e funcionalidades; o notebook 18 define a análise integrada de uma transcrição, preserva o texto original e coordena modelos e fallbacks. O notebook 19 é a entrada final para a pessoa usuária: por padrão seleciona dez transcrições distintas da base disponível, chama a análise individual para cada uma em `full` na GPU, grava o JSON e exibe tabelas pandas. Todo resultado exige revisão humana e declara os modelos, o modo de análise e o significado dos scores utilizados.
 
 ### User Stories
 
@@ -286,9 +286,9 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 ### Implementation Decisions
 
 - A fronteira principal é a função `analisar_transcricao` definida no notebook integrado; ela recebe uma transcrição e devolve uma análise comercial estruturada.
-- Toda a implementação da Sprint 4 fica distribuída nos notebooks 12 a 18, sem criar uma biblioteca ou CLI paralela.
+- A implementação da Sprint 4 fica nos notebooks 12 a 19, sem criar uma biblioteca ou CLI paralela. O notebook 19 é uma entrada simplificada que reutiliza a função `analisar_transcricao` do 18, sem duplicar o pipeline.
 - Cada funcionalidade possui um notebook com células pequenas e explicações; o notebook 18 contém configuração de entrada, seleção do modo, execução, visualização das labels e persistência opcional do JSON.
-- Uma execução aceita exatamente uma transcrição.
+- `analisar_transcricao` aceita exatamente uma transcrição por chamada; o notebook 19 pode repetir a chamada para uma lista de transcrições distintas.
 - O resultado inclui a transcrição original, sem normalização destrutiva.
 - O processamento pode usar uma cópia normalizada internamente.
 - A análise de sentimento usa Pysentimiento no modo completo e agrega chunks para produzir `positivo`, `neutro`, `negativo` ou `misto`.
@@ -298,6 +298,7 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - Componentes de modelo são carregados sob demanda e implementam interfaces substituíveis.
 - Fallbacks lexicais auditáveis mantêm a execução funcional e são declarados como heurísticos.
 - O produto principal é o primeiro de até três candidatos ranqueados.
+- Somente documentos da base com `document_type="produto"` podem gerar produtos candidatos; documentos de taxonomia ou arquitetura não são produtos comerciais.
 - Candidatos carregam score, tipo de score, termos correspondentes, documentos e URLs das fontes.
 - Sentimento, churn e oportunidade carregam label, score, tipo de score, mecanismo e modelo utilizado.
 - Scores zero-shot ou heurísticos não são descritos como probabilidades calibradas de negócio.
@@ -328,7 +329,7 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - Preenchimento completo dos campos SPICED.
 - Envio automático de mensagens, propostas ou descontos.
 - Treinamento de novos modelos ou apresentação de métricas como validadas sem rótulos humanos.
-- Processamento em lote de várias transcrições numa única execução.
+- Processamento distribuído ou agendado de toda a base de transcrições.
 
 ### Further Notes
 
@@ -340,6 +341,12 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 
 ### Progresso de implementação
 
+- [x] `ready-for-agent`: executar pelo menos dez transcrições distintas no notebook 19 e documentar os resultados.
+  Critérios: selecionar dez IDs de reunião únicos do NDJSON local; executar `analisar_transcricao` em `full` na GPU para cada transcrição com os quatro componentes em modelo; salvar um JSON completo local ignorado pelo Git e exibir uma linha por transcrição em pandas a partir desse JSON; publicar em `reports/metrics/` apenas um resumo agregado, sem textos nem IDs; atualizar o README com números observados e limites da amostra; passar nos testes determinísticos.
+  Resultado: dez análises concluídas no notebook 19, com JSON completo em `data/processed/analises_finais_10.json`, tabelas pandas e resumo sem texto ou IDs em `reports/metrics/analise_final_10_resumo.json`. Os quatro componentes usaram modelos na RTX 3050; todos os resultados exigem revisão humana. A execução mostrou que documentos de taxonomia eram indevidamente candidatos; o notebook 13 foi ajustado para limitar produtos a `document_type="produto"` e o lote foi repetido. As contagens são exploratórias, sem validação humana.
+- [x] `ready-for-agent`: criar `notebooks/19_analise_final.ipynb` para analisar uma transcrição com uma única célula de configuração.
+  Critérios: executar do início ao fim no kernel `wedjat` com CUDA e os quatro componentes em `full`; selecionar por padrão o registro 117 de `data/raw/ANON_transcricao.json`, mantendo suporte a texto colado, `.txt`, JSON de objeto e outro registro NDJSON; mostrar produto candidato com fontes, sentimento, risco de churn, oportunidade comercial, termos e recomendação de ação; gravar o JSON completo e exibir tabelas pandas geradas a partir do arquivo salvo, sem persistir a transcrição nos outputs versionados.
+  Resultado: execução `full` na RTX 3050 com quatro componentes de modelo, JSON salvo em `data/processed/analise_final.json` e tabelas pandas exibidas; texto colado, `.txt` e JSON de objeto também passaram em execução de conferência.
 - [x] Definir o contrato da análise comercial e a fronteira pública no notebook.
 - [x] Implementar carregamento e validação de uma transcrição por execução.
 - [x] Implementar identificação e ranking de produtos com fontes.
@@ -353,7 +360,7 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
 - [x] Criar notebook numerado para texto direto, arquivo texto, JSON e persistência opcional.
 - [x] Documentar instalação, modelos opcionais e exemplos de uso.
 - [x] Executar testes, revisão de código e validação ponta a ponta.
-  Resultado atual: 34 testes determinísticos aprovados, incluindo persistência do JSON,
+  Resultado atual: 35 testes determinísticos aprovados, incluindo persistência do JSON,
   documentos sem fonte, fallbacks transparentes e erros de inferência não ocultados.
 - [x] Reorganizar as células dos notebooks 12 a 18 em etapas menores e ampliar
   as explicações Markdown de entradas, scores, fontes, fallbacks e revisão humana.

@@ -84,9 +84,30 @@ class Sprint4ProductsAndTermsTest(unittest.TestCase):
             top_candidate["documents"][0]["id"], top_candidate["document_ids"][0]
         )
         self.assertTrue(top_candidate["documents"][0]["title"])
-        self.assertTrue(top_candidate["documents"][0]["document_type"])
+        self.assertEqual(top_candidate["documents"][0]["document_type"], "produto")
         self.assertTrue(top_candidate["sources"])
         self.assertNotIn("content", top_candidate)
+
+    def test_e5_does_not_present_taxonomy_as_a_product(self):
+        _, namespace = load_sprint4_namespace()
+        documents = [
+            {
+                "id": "taxonomy", "title": "Taxonomia", "document_type": "taxonomia",
+                "product": "Taxonomia de entidades", "sources": [{"url": "https://example.com/taxonomy"}],
+            },
+            {
+                "id": "product", "title": "TOTVS Protheus", "document_type": "produto",
+                "product": "TOTVS Protheus", "sources": [{"url": "https://example.com/product"}],
+            },
+        ]
+        namespace["_load_catalog"] = lambda: (documents, [])
+
+        candidates = namespace["_format_e5_candidates"](
+            "Precisamos de um ERP", [0.99, 0.65], top_k=3
+        )
+
+        self.assertEqual([item["product"] for item in candidates], ["TOTVS Protheus"])
+        self.assertEqual(candidates[0]["documents"][0]["document_type"], "produto")
 
     def test_discards_product_documents_without_sources(self):
         _, namespace = load_sprint4_namespace()
