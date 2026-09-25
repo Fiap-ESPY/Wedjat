@@ -54,9 +54,9 @@ A entrada também pode ser um `.txt` ou um `.json` com uma única transcrição,
 
 | Modo | Comportamento |
 | --- | --- |
-| `fallback` | Usa busca BM25 com aliases e regras lexicais, sem carregar modelos pesados. É o modo executado e testado neste ambiente. |
+| `fallback` | Usa busca BM25 com aliases e regras lexicais, sem carregar modelos pesados. |
 | `auto` | Tenta os modelos disponíveis e registra os motivos de fallback por componente. |
-| `full` | Exige os modelos e os artefatos locais; interrompe com erro claro quando faltam. Ainda precisa ser reproduzido em um PC com GPU. |
+| `full` | Exige os modelos e os artefatos locais; interrompe com erro claro quando faltam. Foi reproduzido na RTX 3050. |
 
 | Indicador | Modelo do caminho `full` | Fallback |
 | --- | --- | --- |
@@ -78,6 +78,8 @@ A partir da raiz do projeto, instale o PyTorch adequado à GPU, execute `python 
 
 Esses notebooks estão na pasta `notebooks/`. BERTimbau e E5 são baixados quando não estão no cache; o modo `full` também carrega os modelos de sentimento e de NLI para churn. Confira a existência do checkpoint e do índice antes de alterar `MODO_ANALISE="full"` no notebook 18. Execute primeiro com uma transcrição sintética e verifique `analysis_mode`, fontes, tipos de score e tempo. Registre data, versões, GPU, mecanismos e tempo sem copiar transcrições ou IDs para um relatório público. Preserve os relatórios versionados se quiser comparar métricas: os notebooks de treino podem reescrevê-los localmente.
 
+Em 25/09/2026, os **19 notebooks passaram** no kernel `wedjat` com PyTorch CUDA 13.0 e RTX 3050. O notebook 18 executou em `full` com E5, Pysentimiento, MiniLM e BERTimbau carregados em CUDA: 25,64 s para uma transcrição sintética, pico de 1.798 MiB de VRAM, três produtos candidatos com fontes e revisão humana obrigatória. O [resumo da execução](reports/metrics/notebook_gpu_run.json) contém apenas resultados agregados. Os notebooks 13 a 17 também executam isoladamente após carregar os fundamentos do 12.
+
 Para reproduzir todas as etapas anteriores em uma única aba do **Google Colab**, use `notebooks/00_projeto_completo_colab.ipynb` com runtime de GPU, os dados deste repositório e `pip install -r requirements.txt`. O notebook único reúne as etapas 01 a 11; o notebook 18 é a demonstração interativa da Sprint 4.
 
 ## Resultados e limites
@@ -88,7 +90,13 @@ BERTimbau foi escolhido para o caminho com modelos **do protótipo** na classifi
 
 Na busca, `multilingual-e5-small` obteve Recall@5 de 0,984 e MRR de 0,922 em 32 consultas curadas da própria base, contra 0,938 e 0,766 de BM25 com aliases. O E5 é o retriever do caminho com modelos; BM25 é o fallback. Um documento comparativo pode aparecer acima do produto mencionado, por isso o produto principal e suas fontes exigem conferência humana. Números completos: [`sentence_embeddings_retrieval.json`](reports/metrics/sentence_embeddings_retrieval.json).
 
-O protótipo passou por **34 testes determinísticos** e pela execução ponta a ponta do notebook 18 com uma transcrição sintética em `fallback`. Um smoke test adicional processou 20 reuniões da base histórica nesse modo, sem falhas de contrato. Esses testes verificam funcionamento; **não medem a qualidade das labels nem a generalização**. Ainda faltam a execução `full` com artefatos reais no PC com GPU, rótulos humanos para a fila de 150 chunks reservados e reuniões inéditas separadas por ID para calibração e teste final. Consulte [`sprint4_existing_data_smoke.json`](reports/metrics/sprint4_existing_data_smoke.json) e o plano em [`TODO.md`](TODO.md).
+O protótipo passou por **34 testes determinísticos**, pelos 19 notebooks e pela execução ponta a ponta do notebook 18 em `fallback` e `full`. Um smoke test adicional processou 20 reuniões da base histórica em `fallback`, sem falhas de contrato. Esses testes verificam funcionamento; **não medem a qualidade das labels nem a generalização**. Consulte [`sprint4_existing_data_smoke.json`](reports/metrics/sprint4_existing_data_smoke.json), o [resumo da GPU](reports/metrics/notebook_gpu_run.json) e o plano em [`TODO.md`](TODO.md).
+
+### Revisão exploratória dos 150 chunks
+
+Os 150 chunks da fila reservada foram lidos e receberam rótulos de IA em `data/processed/ai_labels_opportunity.jsonl`: 61 `oportunidade`, 61 `nao_oportunidade` e 28 `revisao` por contexto insuficiente ou ambíguo. Cada registro traz o identificador do chunk, rótulo, confiança e justificativa curta; nenhum campo `human_label` foi preenchido. A fila e os rótulos por chunk são artefatos locais ignorados pelo Git, conforme a política de dados do repositório. Apenas as [contagens agregadas](reports/metrics/ai_label_review_summary.json) são versionadas.
+
+Esses rótulos são uma segunda leitura por IA, **não um gabarito humano independente**. Como não há rótulos humanos disponíveis, continuam pendentes a medição de precisão real, a calibração de limiares e a avaliação em transcrições inéditas com independência comprovada da base histórica. A seleção de modelos para produção permanece em aberto.
 
 ## Organização
 
@@ -103,6 +111,10 @@ tests/           testes determinísticos do contrato e das recomendações
 ```
 
 As transcrições anonimizadas e `data/processed/meetings.jsonl` fazem parte deste projeto estudantil. Checkpoints, índices e outros artefatos gerados ficam fora do Git. A solução apoia a revisão comercial; nenhuma sugestão deve acionar clientes automaticamente antes de avaliação humana representativa e calibração.
+
+## Skills de engenharia
+
+As 25 skills de [`mattpocock/skills`](https://github.com/mattpocock/skills) estão em `.agents/skills/`, com a licença MIT original. Use [`$wedjat-matt-orchestrator`](.agents/skills/wedjat-matt-orchestrator/SKILL.md) para escolher um fluxo de investigação, planejamento, implementação ou revisão neste projeto. O orquestrador mantém backlog, critérios e bloqueios em `TODO.md` e segue o vocabulário de `CONTEXT.md`.
 
 ## Equipe
 

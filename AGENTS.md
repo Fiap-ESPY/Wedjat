@@ -11,3 +11,7 @@ Use `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human` e `wontfi
 ## Domínio
 
 Consulte `CONTEXT.md` antes de explorar ou alterar o modelo de domínio. Use os termos definidos ali e evite os sinônimos explicitamente rejeitados. Se houver uma decisão arquitetural em `docs/adr/`, sinalize qualquer contradição antes de alterá-la.
+
+## Skills de engenharia
+
+As skills de `mattpocock/skills` estão em `.agents/skills/`. Use `.agents/skills/wedjat-matt-orchestrator/SKILL.md` para escolher o fluxo adequado ao trabalho no Wedjat; as instruções acima prevalecem sobre convenções de rastreador, documentação e delegação das skills originais.

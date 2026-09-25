@@ -1,0 +1,177 @@
+{
+  "executed_at_utc": "2026-09-25T15:50:20.834482+00:00",
+  "python": "3.12.10",
+  "torch": "2.14.0+cu130",
+  "cuda_version": "13.0",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 3050",
+  "kernel": "wedjat",
+  "runs": [
+    {
+      "notebook": "01_preparacao_dados.ipynb",
+      "status": "passed",
+      "seconds": 5.77,
+      "code_cells": 10,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "02_base_conhecimento_rag.ipynb",
+      "status": "passed",
+      "seconds": 1.59,
+      "code_cells": 4,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "03_tokenizacao_e_chunks.ipynb",
+      "status": "passed",
+      "seconds": 82.89,
+      "code_cells": 9,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "04_alvo_e_bertimbau.ipynb",
+      "status": "passed",
+      "seconds": 13.74,
+      "code_cells": 4,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "05_supervisao_fraca_e_divisao.ipynb",
+      "status": "passed",
+      "seconds": 49.21,
+      "code_cells": 18,
+      "cuda_reported": true
+    },
+    {
+      "notebook": "06_baseline_oportunidade.ipynb",
+      "status": "passed",
+      "seconds": 5.55,
+      "code_cells": 12,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "07_treinamento_bertimbau.ipynb",
+      "status": "passed",
+      "seconds": 116.69,
+      "code_cells": 22,
+      "cuda_reported": true
+    },
+    {
+      "notebook": "08_comparacao_modelos.ipynb",
+      "status": "passed",
+      "seconds": 35.44,
+      "code_cells": 18,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "09_evolucao_busca_rag.ipynb",
+      "status": "passed",
+      "seconds": 21.46,
+      "code_cells": 26,
+      "cuda_reported": true
+    },
+    {
+      "notebook": "10_busca_embeddings_e5.ipynb",
+      "status": "passed",
+      "seconds": 22.19,
+      "code_cells": 17,
+      "cuda_reported": true
+    },
+    {
+      "notebook": "11_integracao_reunioes.ipynb",
+      "status": "passed",
+      "seconds": 309.39,
+      "code_cells": 18,
+      "cuda_reported": true
+    },
+    {
+      "notebook": "12_fundamentos_analise.ipynb",
+      "status": "passed",
+      "seconds": 1.56,
+      "code_cells": 7,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "13_produtos_e_termos.ipynb",
+      "status": "passed",
+      "seconds": 3.44,
+      "code_cells": 19,
+      "cuda_reported": false,
+      "retested_after_fix": true
+    },
+    {
+      "notebook": "14_analise_sentimento.ipynb",
+      "status": "passed",
+      "seconds": 2.96,
+      "code_cells": 7,
+      "cuda_reported": false,
+      "retested_after_fix": true
+    },
+    {
+      "notebook": "15_risco_churn.ipynb",
+      "status": "passed",
+      "seconds": 2.83,
+      "code_cells": 7,
+      "cuda_reported": false,
+      "retested_after_fix": true
+    },
+    {
+      "notebook": "16_oportunidade_comercial.ipynb",
+      "status": "passed",
+      "seconds": 2.84,
+      "code_cells": 9,
+      "cuda_reported": false,
+      "retested_after_fix": true
+    },
+    {
+      "notebook": "17_recomendacao_acao.ipynb",
+      "status": "passed",
+      "seconds": 2.86,
+      "code_cells": 3,
+      "cuda_reported": false,
+      "retested_after_fix": true
+    },
+    {
+      "notebook": "18_analise_comercial.ipynb",
+      "status": "passed",
+      "seconds": 52.88,
+      "code_cells": 15,
+      "cuda_reported": false
+    },
+    {
+      "notebook": "00_projeto_completo_colab.ipynb",
+      "status": "passed",
+      "seconds": 549.96,
+      "code_cells": 169,
+      "cuda_reported": true
+    }
+  ],
+  "full_mode": {
+    "status": "passed",
+    "executed_at_utc": "2026-09-25T16:12:41.372754+00:00",
+    "seconds": 25.64,
+    "components": {
+      "products": "model",
+      "sentiment": "model",
+      "churn": "model",
+      "opportunity": "model"
+    },
+    "score_types": {
+      "product": "normalized_cosine_similarity",
+      "sentiment": "model_probability",
+      "churn": "model_probability",
+      "opportunity": "model_probability"
+    },
+    "candidate_count": 3,
+    "sources_present": true,
+    "human_review": true,
+    "devices": {
+      "products": "cuda",
+      "sentiment": "cuda:0",
+      "churn": "cuda:0",
+      "opportunity": "cuda:0"
+    },
+    "peak_gpu_memory_mb": 1797.83,
+    "device_check_seconds": 26.29
+  }
+}

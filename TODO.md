@@ -12,8 +12,9 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 
 ## Concluído
 
-- [x] Instalar as skills de `mattpocock/skills` e criar uma skill agregadora
-  para roteamento entre elas.
+- [x] Instalar as 25 skills de `mattpocock/skills` em `.agents/skills/` e criar
+  `.agents/skills/wedjat-matt-orchestrator/SKILL.md` para roteamento entre elas,
+  preservando `TODO.md` como rastreador único.
 - [x] Organizar a estrutura inicial do repositório.
 - [x] Consolidar os guias e a conclusão no `README.md`, usar a marca Wedjat
   no topo e a arte do pitch com QR code ao final; manter apenas `AGENTS.md`,
@@ -129,7 +130,7 @@ próximos passos do projeto. Atualize os checkboxes a cada avanço relevante.
 - [x] Validar inferência local na RTX 3050 com PyTorch CUDA.
 - [x] Documentar hardware, tempo de inferência e limitações da pseudo-rotulagem.
 - [x] Documentar hardware e tempo do fine-tuning completo.
-  Resultado: 104 segundos e pico de aproximadamente 2,14 GB de VRAM na RTX 3050.
+  Última execução: 94,55 segundos e pico de 2.551 MiB de VRAM na RTX 3050.
 
 ## Comparação dos modelos
 
@@ -360,8 +361,13 @@ Entregar um conjunto modular de notebooks documentados, sem biblioteca nova, CLI
   carregamento, testes e documentação.
 - [x] Versionar apenas o NDJSON anonimizado e as reuniões processadas; manter
   modelos, índices e demais dados ignorados por padrão.
+- [x] Executar os 19 notebooks no kernel `wedjat` com a RTX 3050, corrigir a
+  inicialização isolada dos notebooks 13 a 17 e repetir a execução.
+  Critérios: 19/19 sem erro; notebook 18 em `full` com E5, Pysentimiento,
+  MiniLM e BERTimbau na GPU, fontes nos produtos candidatos e revisão humana.
+  Evidência: `reports/metrics/notebook_gpu_run.json`; 34 testes passaram.
 
-### Conferência da rubrica da Sprint 4 — 24/09/2026
+### Conferência da rubrica da Sprint 4 — 25/09/2026
 
 O arquivo recebido em `data/raw/ANON_transcricao.json` tem 1.174 registros
 NDJSON, 1.126 reuniões únicas e 48 duplicatas exatas. As cerca de 342 mil
@@ -372,10 +378,10 @@ do conjunto; ele não será tratado como teste inédito. Não há rótulos human
 
 | Entrega da rubrica | Situação atual | Evidência ou lacuna |
 | --- | --- | --- |
-| Pipeline completo de processamento | Parcial | Notebook 18 integra entrada, indicadores e saída; falta demonstrar uma execução `full` reproduzível com os artefatos reais. |
+| Pipeline completo de processamento | Atende no protótipo | Os 19 notebooks passaram na RTX 3050. O notebook 18 passou em `full` com os quatro componentes de modelo em CUDA. |
 | Modelo final selecionado e justificativa | Atende para o protótipo | BERTimbau e E5 foram escolhidos para a demonstração na seção **Resultados e limites** do `README.md`; a seleção para produção segue pendente de avaliação humana. |
 | Sistema de scoring/indicadores | Parcial | Labels, scores, tipos e mecanismos estão no JSON; limiares e adequação ao domínio ainda não foram avaliados em dados humanos. |
-| Protótipo funcional | Atende no modo `fallback` | Notebook 18 executado com transcrição sintética, 34 testes determinísticos e smoke test em 20 reuniões da base histórica passaram pelo contrato. |
+| Protótipo funcional | Atende em `fallback` e `full` | Notebook 18 executado com transcrição sintética nos dois caminhos; 34 testes determinísticos e smoke test em 20 reuniões históricas passaram pelo contrato. |
 | Validação com novas transcrições | Pendente | Os agregados coincidem com os da base histórica e não há prova de independência. O smoke test mede execução, não acurácia nem generalização. |
 | Recomendações de negócio | Parcial | A prioridade, critérios rastreáveis, motivo e revisão humana estão implementados; falta avaliar utilidade com pessoas da área comercial. |
 | Limitações e próximos passos | Atende | README e este TODO documentam modelos opcionais, pseudo-rótulos e revisão humana. |
@@ -386,6 +392,13 @@ mais longa; zero falhas de contrato no modo `fallback`, com fontes em todos os
 produtos candidatos. Contagens de labels sem rótulos de referência **não são
 métricas de qualidade**.
 
+A execução na RTX 3050 está em `reports/metrics/notebook_gpu_run.json`: 19/19
+notebooks passaram após corrigir a inicialização isolada dos módulos 13 a 17.
+O notebook 18 em `full` usou os quatro componentes em CUDA, devolveu três
+produtos candidatos com fontes, preservou a transcrição sintética e exigiu
+revisão humana. O tempo dessa análise foi 25,64 s e o pico de VRAM foi
+1.798 MiB. Essa execução verifica funcionamento, não qualidade das labels.
+
 #### Plano de conclusão possível sem rótulos humanos
 
 1. **Reproduzir a demonstração com modelos reais.**
@@ -393,14 +406,11 @@ métricas de qualidade**.
      notebook 01 e confirmar o relatório de preparação.
    - [x] Executar smoke test sem rótulos no notebook integrado e registrar
      apenas métricas agregadas, sem texto nem IDs de reuniões.
-   - [!] `ready-for-human`: reproduzir em PC com GPU, conforme a seção
-     **Executar com modelos no PC com GPU** do `README.md`. Neste ambiente CPU
-     há cerca de 2,5 GB livres, sem CUDA e sem os artefatos BERTimbau/E5; a instalação
-     parcial foi removida para liberar espaço.
-   - [!] `ready-for-human`: regenerar chunks, pseudo-rótulos, checkpoint
-     BERTimbau e índice E5 com os notebooks 03, 05, 07 e 10, ou restaurar
-     artefatos locais compatíveis; executar notebook 18 em `full` no PC com GPU
-     e registrar mecanismo, versão e tempo sem texto de transcrições.
+   - [x] Reproduzir no PC com RTX 3050 usando PyTorch CUDA 13.0 e o kernel
+     `wedjat`; registrar os 19 resultados agregados sem texto de transcrições.
+   - [x] Regenerar chunks, pseudo-rótulos, checkpoint BERTimbau e índice E5
+     com os notebooks 03, 05, 07 e 10; executar o notebook 18 em `full` e
+     confirmar os dispositivos dos quatro componentes.
 2. **Escolher o modelo do protótipo com justificativa honesta.**
    - [x] Definir critério de escolha entre recall de oportunidade, erros,
      recursos e custo de revisão; registrar o classificador e o retriever
@@ -417,14 +427,24 @@ métricas de qualidade**.
    - [x] Incluir uma seção final de conclusões que diferencie: contrato
      funcional verificado; métricas em pseudo-rótulos; teste sem rótulos nesta
      base histórica; avaliação humana e generalização ainda não medidas.
-   - [x] Executar os 34 testes determinísticos, validar os 19 notebooks e
-     executar o notebook 18 de ponta a ponta com transcrição sintética em
-     `fallback` (15 células de código, sem erros).
+   - [x] Executar os 34 testes determinísticos e os 19 notebooks; executar o
+     notebook 18 de ponta a ponta com transcrição sintética em `fallback` e
+     `full`, incluindo fontes e revisão humana.
 4. **Validação de qualidade futura, dependente de pessoas.**
+   - [x] `ready-for-agent`: ler os 150 chunks da fila reservada e registrar
+     rótulos de IA em arquivo separado, com `revisao` para casos ambíguos.
+     Critérios: 150 itens inspecionados, nenhum `human_label` preenchido,
+     justificativa curta por item e somente contagens agregadas em relatório.
+     Esses rótulos exploratórios não substituem o teste humano final.
+     Resultado: `data/processed/ai_labels_opportunity.jsonl` contém 61
+     `oportunidade`, 61 `nao_oportunidade` e 28 `revisao`; contagens em
+     `reports/metrics/ai_label_review_summary.json`.
    - [!] `ready-for-human`: obter rótulos para a fila reservada de 150 chunks
-     e um conjunto separado de reuniões inéditas, dividido por reunião entre
-     calibração e teste final. Sem esse material, não calcular precisão real,
-     não ajustar limiares pelo teste e não afirmar seleção final para produção.
+     e um conjunto de transcrições inéditas, com evidência de independência
+     da base histórica e divisão por reunião entre calibração e teste final.
+     Sem esse material, não calcular precisão real, ajustar limiares pelo teste
+     ou afirmar seleção final para produção.
    - [ ] Quando os rótulos existirem, comparar os classificadores no mesmo
-     teste humano e avaliar produto, sentimento, churn, oportunidade e ação
-     contra revisão comercial; registrar métricas por classe e divergências.
+     teste humano e avaliar produto, sentimento, risco de churn, oportunidade
+     comercial e recomendação de ação contra revisão comercial; registrar
+     métricas por classe, divergências e limiares escolhidos só na calibração.

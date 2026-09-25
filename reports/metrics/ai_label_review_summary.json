@@ -1,0 +1,19 @@
+{
+  "source": "data/processed/annotation_queue_opportunity.jsonl",
+  "output": "data/processed/ai_labels_opportunity.jsonl",
+  "label_source": "ai_review",
+  "total_reviewed": 150,
+  "ai_label_counts": {
+    "nao_oportunidade": 61,
+    "oportunidade": 61,
+    "revisao": 28
+  },
+  "confidence_counts": {
+    "alta": 59,
+    "baixa": 28,
+    "media": 63
+  },
+  "human_labels_filled": 0,
+  "evaluation_status": "exploratory_only",
+  "note": "Rótulos revisados por IA; revisao indica contexto insuficiente. Não são gabarito humano nem teste final independente."
+}

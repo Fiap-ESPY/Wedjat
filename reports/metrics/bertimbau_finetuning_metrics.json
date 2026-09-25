@@ -40,8 +40,8 @@
   "history": [
     {
       "epoch": 1,
-      "train_loss": 0.3447145984606586,
-      "validation_loss": 0.1257075011730194,
+      "train_loss": 0.34471925103549667,
+      "validation_loss": 0.12579612795795714,
       "accuracy": 0.9357142857142857,
       "precision_oportunidade": 0.8656716417910447,
       "recall_oportunidade": 1.0,
@@ -50,8 +50,8 @@
     },
     {
       "epoch": 2,
-      "train_loss": 0.13426597958520498,
-      "validation_loss": 0.08582007684079664,
+      "train_loss": 0.13423576608822027,
+      "validation_loss": 0.08593158671366317,
       "accuracy": 0.9714285714285714,
       "precision_oportunidade": 0.9354838709677419,
       "recall_oportunidade": 1.0,
@@ -60,8 +60,8 @@
     },
     {
       "epoch": 3,
-      "train_loss": 0.061464721576270955,
-      "validation_loss": 0.04206629650933402,
+      "train_loss": 0.061509161675262485,
+      "validation_loss": 0.0420004740357399,
       "accuracy": 0.9785714285714285,
       "precision_oportunidade": 0.9661016949152542,
       "recall_oportunidade": 0.9827586206896551,
@@ -70,7 +70,7 @@
     }
   ],
   "metrics": {
-    "loss": 0.04206629650933402,
+    "loss": 0.0420004740357399,
     "accuracy": 0.9785714285714285,
     "precision_oportunidade": 0.9661016949152542,
     "recall_oportunidade": 0.9827586206896551,
@@ -142,9 +142,9 @@
   "hardware": {
     "device": "cuda",
     "device_name": "NVIDIA GeForce RTX 3050",
-    "peak_gpu_memory_mb": 2142.732421875
+    "peak_gpu_memory_mb": 2550.9619140625
   },
-  "training_seconds": 93.66048490000139,
+  "training_seconds": 94.55235889999994,
   "python_version": "3.12.10",
   "torch_version": "2.14.0+cu130",
   "transformers_version": "5.17.0"

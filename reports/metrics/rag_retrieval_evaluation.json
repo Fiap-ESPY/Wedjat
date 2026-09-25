@@ -2272,8 +2272,8 @@
     "dimensions": 768,
     "max_length": 512,
     "device": "cuda",
-    "document_embedding_seconds": 0.6278323999995337,
-    "query_embedding_seconds": 0.07481530000040948
+    "document_embedding_seconds": 0.632825000000139,
+    "query_embedding_seconds": 0.06546530000014172
   },
   "keyword_audit": "reports\\metrics\\rag_keyword_audit.json",
   "grounding_contract": {

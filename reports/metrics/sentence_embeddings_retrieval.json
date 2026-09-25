@@ -1743,8 +1743,8 @@
     "dimensions": 384,
     "max_length": 512,
     "device": "cuda",
-    "document_seconds": 0.43472250000013446,
-    "query_seconds": 0.029450199999701
+    "document_seconds": 0.34826829999974507,
+    "query_seconds": 0.02958500000022468
   },
   "warning": "Avaliação inicial curada a partir da própria base; requer revisão humana e novas consultas externas."
 }
