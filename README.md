@@ -124,10 +124,6 @@ tests/           testes determinísticos do contrato e das recomendações
 
 As transcrições anonimizadas e `data/processed/meetings.jsonl` fazem parte deste projeto estudantil. Checkpoints, índices e outros artefatos gerados ficam fora do Git. A solução apoia a revisão comercial; nenhuma sugestão deve acionar clientes automaticamente antes de avaliação humana representativa e calibração.
 
-## Skills de engenharia
-
-As 25 skills de [`mattpocock/skills`](https://github.com/mattpocock/skills) estão em `.agents/skills/`, com a licença MIT original. Use [`$wedjat-matt-orchestrator`](.agents/skills/wedjat-matt-orchestrator/SKILL.md) para escolher um fluxo de investigação, planejamento, implementação ou revisão neste projeto. O orquestrador mantém backlog, critérios e bloqueios em `TODO.md` e segue o vocabulário de `CONTEXT.md`.
-
 ## Equipe
 
 - Beatriz Cortez — RM561431
